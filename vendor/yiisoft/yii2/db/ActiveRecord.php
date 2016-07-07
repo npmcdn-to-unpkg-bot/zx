@@ -97,6 +97,20 @@ class ActiveRecord extends BaseActiveRecord
     const OP_ALL = 0x07;
 
 
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => \yii\behaviors\TimestampBehavior::className(),
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+            ],
+        ];
+    }
+
+
     /**
      * Loads default values from database table schema
      *
