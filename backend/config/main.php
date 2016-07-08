@@ -18,6 +18,9 @@ return [
         'user' => [
             'class' => 'app\modules\user\UserModule',
         ],
+        'developer' => [
+            'class' => 'app\modules\developer\DeveloperModule',
+        ],
     ],
     'components' => [
         'user' => [

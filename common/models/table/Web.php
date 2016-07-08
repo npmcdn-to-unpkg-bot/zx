@@ -12,6 +12,7 @@ use Yii;
  * @property string $name
  * @property string $logo
  * @property string $config
+ * @property string $wxinfo
  * @property string $smtp
  * @property string $keyword
  * @property string $description
@@ -36,7 +37,7 @@ class Web extends \yii\db\ActiveRecord
         return [
             [['admin'], 'required'],
             [['admin'], 'integer'],
-            [['config', 'smtp', 'keyword', 'description'], 'string'],
+            [['config', 'wxinfo', 'smtp', 'keyword', 'description'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['logo'], 'string', 'max' => 255],
             [['created_at', 'updated_at'], 'string', 'max' => 20],
@@ -54,6 +55,7 @@ class Web extends \yii\db\ActiveRecord
             'name' => '网站名称',
             'logo' => '网站LOGO',
             'config' => '配置',
+            'wxinfo' => 'Wxinfo',
             'smtp' => 'SMTP邮箱配置',
             'keyword' => '网站关键字',
             'description' => '网站描述',

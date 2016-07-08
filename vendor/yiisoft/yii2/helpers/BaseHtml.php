@@ -701,6 +701,7 @@ class BaseHtml
         }
         if (isset($options['label'])) {
             $label = $options['label'];
+            $label="<span class='text'>".$label."</span>";//为了配合beyondAdmin所以加了
             $labelOptions = isset($options['labelOptions']) ? $options['labelOptions'] : [];
             unset($options['label'], $options['labelOptions']);
             $content = static::label(static::input('radio', $name, $value, $options) . ' ' . $label, null, $labelOptions);
@@ -743,6 +744,7 @@ class BaseHtml
         }
         if (isset($options['label'])) {
             $label = $options['label'];
+            $label="<span class='text'>".$label."</span>";//为了配合beyondAdmin所以加了
             $labelOptions = isset($options['labelOptions']) ? $options['labelOptions'] : [];
             unset($options['label'], $options['labelOptions']);
             $content = static::label(static::input('checkbox', $name, $value, $options) . ' ' . $label, null, $labelOptions);

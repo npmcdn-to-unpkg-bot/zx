@@ -97,7 +97,7 @@ class CheckboxColumn extends Column
         if ($this->header !== null || !$this->multiple) {
             return parent::renderHeaderCellContent();
         } else {
-            return Html::checkbox($this->getHeaderCheckBoxName(), false, ['class' => 'select-on-check-all']);
+            return Html::checkbox($this->getHeaderCheckBoxName(), false, ['class' => 'select-on-check-all','label'=>'全选']);
         }
     }
 
@@ -115,6 +115,7 @@ class CheckboxColumn extends Column
         if (!isset($options['value'])) {
             $options['value'] = is_array($key) ? Json::encode($key) : $key;
         }
+        $options['label']=' ';//为了让beyondadmin的样式出来
 
         return Html::checkbox($this->name, !empty($options['checked']), $options);
     }
