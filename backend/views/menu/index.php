@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'sort_order'=>['class' => 'yii\grid\SortColumn'],
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template'=>'{update}{manage}{tmpset}{createchild}{delete}',
+                'template'=>'{update}{delete}{tmpset}{createchild}{manage}',
                 'buttons'=>[
                     'update'=>function ($url,$model,$key) {
                         $options = array_merge([
