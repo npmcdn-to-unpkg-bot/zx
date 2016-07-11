@@ -7,7 +7,6 @@ use common\models\table\Menu;
 use common\models\search\MenuSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\helpers\UHelper;
 
@@ -16,20 +15,6 @@ use yii\helpers\UHelper;
  */
 class MenuController extends BaseController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     /**
      * Lists all Menu models.

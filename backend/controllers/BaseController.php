@@ -9,6 +9,7 @@ namespace backend\controllers;
 
 use Yii;
 use yii\web\Controller;
+use yii\filters\VerbFilter;
 use common\helper\UHelper;
 /**
  * Site controller
@@ -31,11 +32,19 @@ class BaseController extends Controller
                     return \Yii::$app->getResponse()->redirect(\yii\helpers\Url::to(['/user/access/login']));
                 }
             ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
         ];
     }
 
     public function init()
     {
+
+
         parent::init();
 
         // custom initialization code goes here

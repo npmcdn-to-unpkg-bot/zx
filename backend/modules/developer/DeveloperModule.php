@@ -28,8 +28,18 @@ class DeveloperModule extends \yii\base\Module
                     return \Yii::$app->getResponse()->redirect(\yii\helpers\Url::to(['/user/access/login']));
                 }
             ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
         ];
     }
+
+
+
+
 
 
     /**

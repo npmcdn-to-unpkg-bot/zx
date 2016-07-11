@@ -6,8 +6,10 @@
  * Time: 21:47
  */
 namespace backend\controllers;
+use yii\base\Exception;
 use yii\helpers\Url;
 use yii\helpers\UHelper;
+use yii\web\ForbiddenHttpException;
 
 /**
  * Site controller
@@ -24,13 +26,21 @@ class IndexController extends BaseController
     public function actionIndex()
     {
         if(time()>\Yii::$app->user->identity->expire){
-            UHelper::alert('帐号已过期','error');
+
+            throw new ForbiddenHttpException('帐号已过期');exit;
+
         }else{
             $day=(int)floor((\Yii::$app->user->identity->expire-time())/(24*3600));
             UHelper::alert('您的帐号有效期还有'.$day.'天','success');
         }
 
         return $this->render('index');
+    }
+
+    public function actionDev()
+    {
+
+        return $this->render('dev');
     }
 
 }
