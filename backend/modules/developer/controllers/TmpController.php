@@ -27,11 +27,15 @@ class TmpController extends Controller
         $params=Yii::$app->request->queryParams;
         $params['TmpSearch']['plugid']=\Yii::$app->request->get('plugid');
 
+        $plugname=\common\models\table\Plug::find()->where(['id'=>\Yii::$app->request->get('plugid')])->select('name')->asArray()->one();
+
+
         $dataProvider = $searchModel->search($params);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'plugname'=>$plugname['name']
         ]);
     }
 
@@ -56,9 +60,23 @@ class TmpController extends Controller
     {
         $model = new Tmp();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $request=Yii::$app->request;
+
+        if ($request->isPost) {
+
+            $model->load($request->post());
+
+            $maxmodel=Tmp::find()->where(['plugid'=>$request->post('Tmp')['plugid']])->select('MAX(tmpid)')->asArray()->one();
+
+            $model->tmpid=$maxmodel['MAX(tmpid)']+1;
+
+            if($model->save()){
+                \yii\helpers\UHelper::alert($model->name.'新增成功！');
+                return $this->redirect(['index','plugid'=>$model->plugid]);
+            }
         } else {
+            $model->loadDefaultValues();
+
             return $this->render('create', [
                 'model' => $model,
             ]);
@@ -75,11 +93,22 @@ class TmpController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $request=\Yii::$app->request;
+
+        if ($request->isPost) {
+
+            $model->load($request->post());
+
+            if($model->save()){
+                return $this->redirect(['index','plugid'=>$model->plugid]);
+            }
+
         } else {
+            $plugname=\common\models\table\Plug::find()->where(['id'=>$model->plugid])->select('name')->asArray()->one();
+
             return $this->render('update', [
                 'model' => $model,
+                'plugname'=>$plugname['name']
             ]);
         }
     }
@@ -92,9 +121,12 @@ class TmpController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model=$this->findModel($id);
 
-        return $this->redirect(['index']);
+
+        $model->delete();
+
+        return $this->redirect(['index','plugid'=>$model->plugid]);
     }
 
     /**

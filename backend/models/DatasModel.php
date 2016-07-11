@@ -51,4 +51,20 @@ class DatasModel
         return $return;
     }
 
+    /*
+     * 获取插件的模板列表
+     * */
+    public static function tmpList(){
+        $tmpList=\common\models\table\Tmp::find()->where(['is_use'=>1,'plugid'=>$plugid])
+            ->orderBy('tmpid asc')
+            ->select('name,tmpid')
+            ->asArray()->all();
+        $list=[];
+        foreach($tmpList as $k=>$v){
+            $list[$v['id']]=$v['name'];
+        }
+        return $list;
+    }
+
+
 }

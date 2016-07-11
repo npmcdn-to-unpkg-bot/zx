@@ -51,6 +51,8 @@ class TmpSearch extends Tmp
 
         $this->load($params);
 
+        $query->orderBy('tmpid desc,id desc');
+
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
