@@ -7,6 +7,7 @@
  */
 namespace backend\controllers;
 use yii\base\Exception;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\helpers\UHelper;
 use yii\web\ForbiddenHttpException;
@@ -39,6 +40,15 @@ class IndexController extends BaseController
 
     public function actionDev()
     {
+        if(\Yii::$app->request->isPost){
+            $data=\yii\helpers\UHelper::w_inputs_post(['name','width','height']);
+
+            echo '<pre>';
+
+            print_r($data);
+            echo '</pre>';
+
+        }
 
         return $this->render('dev');
     }
