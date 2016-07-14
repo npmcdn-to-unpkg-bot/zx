@@ -14,11 +14,13 @@ class JquploadAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'vendor/jqupload/css/style.css',
     ];
     public $js = [
         'vendor/jqupload/js/vendor/jquery.ui.widget.js',
         'vendor/jqupload/js/jquery.iframe-transport.js',
-        'vendor/jqupload/js/jquery.fileupload.js'
+        'vendor/jqupload/js/jquery.fileupload.js',
+        'vendor/jqupload/js/zx.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

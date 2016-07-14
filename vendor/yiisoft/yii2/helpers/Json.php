@@ -16,4 +16,9 @@ namespace yii\helpers;
  */
 class Json extends BaseJson
 {
+    public static function ajaxreturn($data,$json_option=320){
+        // 返回JSON数据格式到客户端 包含状态信息
+        header('Content-Type:application/json; charset=utf-8');
+        exit(self::encode($data,$json_option));
+    }
 }

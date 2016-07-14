@@ -4,39 +4,32 @@
  * Time: 17:05
  */
 
+use backend\assets\JquploadAsset;
+
+JquploadAsset::register($this);
+
+$data=json_decode($model->$attribute,1);
+
 ?>
-<style>
-    .dropdown-menu .jqupload-input{text-align: center;}
-    .jqupload-info-menu{width:100%;}
-    .jqupload-click{position: relative;}
-    .jqupload-input{width:100%;height: 100%;position: absolute;left: 0px;top: 0px;z-index:2;cursor: pointer;opacity: 0;}
-    .jqupload-box{z-index: 1;}
-    .modal-body .jqupload-info-input{margin-top: 5px;}
-</style>
 
-
-
-
-<div class="form-group">
-    <label class="control-label" id="jq-label-show" for="user-user_portrait">图片</label>
+<div class="form-group" data-url="<?=\yii\helpers\Url::toRoute(['/base/jqupload/uploadimg'])?>">
+<!--    <label class="control-label">--><?//=$label?><!--</label>-->
     <div class="input-group">
-      <input type="text" class="form-control jqupload-links" value="" readonly  name="" placeholder="显示图片上传后的路径" />
+      <input type="text" class="form-control jqupload-img-path" value="<?=$data['path']?>" readonly  name="" placeholder="显示图片上传后的路径" />
       <span class="input-group-btn jqupload-click">
         <div class="btn btn-default jqupload-box" >点击上传</div>
-        <input id="qweqw" class="jqupload-input" type="file" name="jqupload" />
+        <input id="jqupload_<?=$attribute?>" class="jqupload-input-img" type="file" name="jqupload" />
       </span>
       <span class="input-group-btn" style="border-left: none;border-right: none;">
-        <a class="btn btn-default jqupload-preview" data-toggle="modal" data-target="#myModal"   style="border-left: none;border-right: none;">图片设置</a>
+        <a class="btn btn-default" data-toggle="modal" data-target="#myModal_<?=$attribute?>"   style="border-left: none;border-right: none;">图片设置</a>
       </span>
       <span class="input-group-btn">
         <a class="btn btn-default jqupload-delete" >删除图片</a>
       </span>
     </div>
     <div class="help-block"></div>
-
-    <img src="/upload/guize.png" style="margin:auto;max-width:80%;max-height:300px;" />
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" >
+    <img class="jqupload_img" src="<?=$data['path']?>" style="margin:auto;max-width:80%;max-height:300px;" />
+    <div class="modal fade" id="myModal_<?=$attribute?>" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -45,29 +38,30 @@
                 <div class="modal-body">
                     <div class="input-group jqupload-info-input">
                         <span class="input-group-addon">图片标题</span>
-                        <input type="text" name="jqupload-title[]" class="form-control" placeholder="" >
+                        <input type="text" name="jqupload-title[]" value="<?=$data['title']?>" class="form-control jqupload_img_title" placeholder="" >
                     </div>
                     <div class="input-group jqupload-info-input">
                         <span class="input-group-addon">图片链接</span>
-                        <input type="text" name="jqupload-link[]" class="form-control" placeholder="" >
+                        <input type="text" name="jqupload-link[]" value="<?=$data['link']?>" class="form-control jqupload_img_link" placeholder="" >
                     </div>
                     <div class="input-group jqupload-info-input">
                         <span class="input-group-addon">宽　　度</span>
-                        <input type="text" name="jqupload-width[]" class="form-control" placeholder="" >
+                        <input type="text" name="jqupload-width[]" value="<?=$data['width']?>" class="form-control  jqupload_img_width" placeholder="" >
                     </div>
                     <div class="input-group jqupload-info-input">
                         <span class="input-group-addon">高　　度</span>
-                        <input type="text" name="jqupload-height" class="form-control" placeholder="" >
+                        <input type="text" name="jqupload-height[]" value="<?=$data['height']?>" class="form-control  jqupload_img_height" placeholder="" >
                     </div>
                     <div class="input-group jqupload-info-input">
                         <span class="input-group-addon">大　　小</span>
-                        <input type="text" name="jqupload-size" class="form-control" placeholder="" >
+                        <input type="text" name="jqupload-size[]" value="<?=$data['size']?>" readonly class="form-control  jqupload_img_size" placeholder="" >
                     </div>
-                    <input type="hidden" name="jqupload-id" />
+                    <?=\yii\helpers\Html::activeHiddenInput($model,$attribute,['class'=>'jqupload_img_info','value'=>''])?>
+                    <input type="hidden" name="jqupload-images_id" class="jqupload_img_images_id" />
+                    <input type="hidden" name="mid[]" class="jqupload-img-mid" value="<?=$mid?>" />
+                    <input type="hidden" name="cid[]" class="jqupload-img-cid" value="<?=$cid?>" />
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-

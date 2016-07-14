@@ -41,12 +41,13 @@ class IndexController extends BaseController
     public function actionDev()
     {
         if(\Yii::$app->request->isPost){
-            $data=\yii\helpers\UHelper::w_inputs_post(['name','width','height']);
 
             echo '<pre>';
 
-            print_r($data);
+            print_r(\Yii::$app->request->post());
             echo '</pre>';
+
+            die;
 
         }
 
