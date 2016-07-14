@@ -29,7 +29,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'images')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'img_menu')->widget(backend\widgets\JquploadWidget::className()) ?>
+
+    <?= $form->field($model, 'img_smenu')->widget(backend\widgets\JquploadWidget::className()) ?>
 
     <?= $form->field($model, 'configs')->textarea(['rows' => 6]) ?>
 

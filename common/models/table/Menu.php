@@ -17,7 +17,8 @@ use Yii;
  * @property string $link
  * @property integer $tmp
  * @property string $tmp_config
- * @property string $images
+ * @property string $img_smenu
+ * @property string $img_menu
  * @property string $plist
  * @property string $ext_data
  * @property string $configs
@@ -46,10 +47,11 @@ class Menu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['wid','title', 'type'], 'required'],
+            [['wid', 'pid', 'title', 'img_menu'], 'required'],
             [['wid', 'pid', 'type', 'tmp', 'sort_order', 'is_open'], 'integer'],
-            [['description', 'tmp_config', 'images', 'ext_data', 'configs', 'configdata', 'configimg', 'share', 'seo'], 'string'],
+            [['description', 'tmp_config', 'ext_data', 'configs', 'configdata', 'configimg', 'share', 'seo'], 'string'],
             [['title', 'mtitle', 'link', 'plist'], 'string', 'max' => 255],
+            [['img_smenu', 'img_menu'], 'string', 'max' => 500],
             [['created_at', 'updated_at'], 'string', 'max' => 30],
         ];
     }
@@ -70,7 +72,8 @@ class Menu extends \yii\db\ActiveRecord
             'link' => '菜单链接',
             'tmp' => '菜单模板',
             'tmp_config' => '模板配置信息',
-            'images' => '图片数据',
+            'img_smenu' => '菜单副图标',
+            'img_menu' => '菜单图标',
             'plist' => '所有的父菜单id',
             'ext_data' => '额外的数据',
             'configs' => '配置信息，一般拿来保存子菜单需要的配置信息',

@@ -140,6 +140,8 @@ class MenuController extends BaseController
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'plugList'=>\backend\models\DatasModel::plugList(),
+                'menuList' =>\backend\models\DatasModel::menuList(),
             ]);
         }
     }

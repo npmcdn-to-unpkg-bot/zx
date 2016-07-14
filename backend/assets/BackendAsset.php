@@ -16,7 +16,6 @@ class BackendAsset extends AssetBundle
     public $css = [
         'source/css/font-awesome.min.css',
         'source/css/beyond.min.css',
-
     ];
     public $js = [
         'source/js/beyond.min.js',

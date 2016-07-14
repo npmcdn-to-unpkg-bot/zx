@@ -3,7 +3,6 @@
  * Date: 2016/7/12
  * Time: 16:42
  */
-
 ?>
 <div class="form-group">
     <label class="control-label"><?=$label?></label>

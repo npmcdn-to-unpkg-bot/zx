@@ -11,6 +11,7 @@ namespace app\modules\base\controllers;
 /**
  * Jquoload 上传图片的响应类
  */
+use yii\base\Exception;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\UploadedFile;
@@ -23,8 +24,127 @@ class JquploadController extends Controller
     public $enableCsrfValidation = false;
     public $file;
 
-
     public function actionUploadimg()
+    {
+        $request=\Yii::$app->request;
+        $return['success']=true;
+        try{
+            if(!$request->isAjax){
+                throw new Exception('非法请求');
+            }
+            if(\Yii::$app->user->isGuest){
+                throw new Exception('请先登录');
+            }
+
+            $file = UploadedFile::getInstanceByName('jqupload');
+
+            if($file->size>1024*1024*2){
+                throw new Exception('上传的图片不得大于2M');
+            }
+
+            $allow_ext=array('jpg', 'jpeg', 'png','gif');
+
+            if (!in_array($file->getExtension(),$allow_ext)) {
+
+                throw new Exception('只能上传'.implode(",",$allow_ext).'格式的图片');
+
+            } else {
+                $user_id = \Yii::$app->user->getId();
+                if (!$user_id) {
+
+                    throw new Exception('请先登录');
+
+                } else {
+
+                    $dirNo = 'x' . sprintf("%05d", $user_id) . '/';
+
+                }
+
+                $month = date("Ym", time()) . '/';
+
+                $saveDir = \Yii::getAlias('@upload') .'/'. $dirNo .'Images/' . $month;
+
+                FileHelper::createDirectory($saveDir);
+
+                $saveName =  date('dHis', time()). 'x' . substr(md5($file->getBaseName() . $file->getExtension()),5,5) . '.' . $file->getExtension();
+
+                $path = $saveDir . $saveName;
+
+                $file->saveAs($path);
+
+                $width=$request->post("width");
+
+                $height=$request->post("height");
+
+                if($width>0 && $height>0){
+
+                    Image::thumbnail($path,$width,$height)->save($path);
+
+                    $size=filesize($path);
+                }else{
+                    $size=$file->size;
+                }
+
+
+
+                $returnDir=\Yii::getAlias('@uploadreturn') .'/'. $dirNo .'Images/' . $month;
+
+                $return_url=$returnDir . $saveName;
+
+                /*插入数据库*/
+
+
+                if($request->post('imgid')){
+                    $model=\common\models\table\Images::find()->where(['wid'=>\Yii::$app->user->identity->wid,'id'=>$request->post('imgid')])->one();
+
+                    unlink(\Yii::getAlias('@uiiroot').$model->path);
+                    $model->isuse=1;
+                }else{
+                    $model=new \common\models\table\Images();
+                    $model->isuse=0;
+                }
+                $size=ceil(($size/1024));
+                if($size>1024){$size=sprintf("%.2f", ($size/1024))."M";}else{$size=$size."K";}
+
+                $model->size=$size;
+                $model->wid=$data['wid']=\Yii::$app->user->identity->wid;
+                $model->mid=$data['mid']=$request->post('mid');
+                $model->cid=$data['cid']=$request->post('cid');
+                $model->type=$data['type']='Jquery-Upload';
+                $model->uid=$data['uid'] =$user_id;
+                $model->title=$data['title']=$request->post('title');
+                $model->link=$data['link']=$request->post('link');
+                $model->path=$data['path']=$return_url;
+                $model->width=$width?$width:0;
+                $model->height=$height?$height:0;
+
+                $model->save();
+
+                $return['path']=$return_url;
+
+                $return['size']=$model->size;
+                $return['imgid']=$model->id;
+
+                $return['info']=[
+                    'title'=>$model->title,
+                    'path' =>$model->path,
+                    'link' =>$model->link,
+                    'width'=>$model->width,
+                    'height'=>$model->height,
+                    'size' =>$model->size,
+                    'imgid'=>$model->id,
+                ];
+
+            }
+        }catch (Exception $e){
+            $return['success']=false;
+
+        }
+        Json::ajaxreturn($return);
+    }
+
+
+    public function actionUploadimg1()
     {
         $request=\Yii::$app->request;
         if(!$request->isAjax){

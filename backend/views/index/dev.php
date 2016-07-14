@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 
-//http://localhost:8888/admin/index/dev
+
 //echo backend\widgets\JquploadWidget::widget();
 ?>
 
@@ -21,10 +21,4 @@ use yii\widgets\ActiveForm;
 
 <?php ActiveForm::end(); ?>
 
-<script type="text/javascript">
 
-
-    $(window).close(function(){
-        alert(1);
-    })
-</script>
