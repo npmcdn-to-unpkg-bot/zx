@@ -111,11 +111,20 @@ class MenuController extends BaseController
         }
         if($request->isPost){
             $model->load($request->post());
+
+            $model->img_menu=UHelper::uploadimg('img_menu');
+
+            $model->img_smenu=UHelper::uploadimg('img_smenu');
+
             if($model->save()){
                 UHelper::alert($model->title.'新增成功！','success');
-                return $this->redirect($request->referrer);
+                return $this->redirect(['index']);
             }
         }else{
+
+            if($request->get('type')=='addchild'){
+                $model->pid=$request->get('id');
+            }
 
             return $this->render('create', [
                 'model' => $model,
@@ -135,8 +144,20 @@ class MenuController extends BaseController
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $request=\Yii::$app->request;
+        if ($request->isPost) {
+
+            $model->load($request->post());
+
+            $model->img_menu=UHelper::uploadimg('img_menu');
+
+            $model->img_smenu=UHelper::uploadimg('img_smenu');
+
+            if($model->save()){
+                UHelper::alert($model->title.'修改成功！','success');
+                return $this->redirect(['index']);
+            }
+
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -146,6 +167,13 @@ class MenuController extends BaseController
         }
     }
 
+    public function actionCreatechild()
+    {
+        return $this->redirect(['create','id'=>Yii::$app->request->get('id'),'type'=>'addchild']);
+    }
+
+
+
     /**
      * Deletes an existing Menu model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -154,8 +182,16 @@ class MenuController extends BaseController
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model=$this->findModel($id);
 
+        $img_menu=json_decode($model->img_menu,1);
+        $img_smenu=json_decode($model->img_smenu,1);
+
+        @unlink(\Yii::getAlias('@uiiroot').$img_menu['path']);
+
+        @unlink(\Yii::getAlias('@uiiroot').$img_smenu['path']);
+
+        $model->delete();
         return $this->redirect(['index']);
     }
 

@@ -106,33 +106,18 @@ class JquploadController extends Controller
                 $size=ceil(($size/1024));
                 if($size>1024){$size=sprintf("%.2f", ($size/1024))."M";}else{$size=$size."K";}
 
-                $model->size=$size;
-                $model->wid=$data['wid']=\Yii::$app->user->identity->wid;
-                $model->mid=$data['mid']=$request->post('mid');
-                $model->cid=$data['cid']=$request->post('cid');
-                $model->type=$data['type']='Jquery-Upload';
-                $model->uid=$data['uid'] =$user_id;
-                $model->title=$data['title']=$request->post('title');
-                $model->link=$data['link']=$request->post('link');
-                $model->path=$data['path']=$return_url;
-                $model->width=$width?$width:0;
-                $model->height=$height?$height:0;
-
-                $model->save();
-
                 $return['path']=$return_url;
 
-                $return['size']=$model->size;
+                $return['size']=$size;
                 $return['imgid']=$model->id;
 
                 $return['info']=[
-                    'title'=>$model->title,
-                    'path' =>$model->path,
-                    'link' =>$model->link,
-                    'width'=>$model->width,
-                    'height'=>$model->height,
-                    'size' =>$model->size,
-                    'imgid'=>$model->id,
+                    'title'=>$request->post('title'),
+                    'path' =>$return_url,
+                    'link' =>$request->post('link'),
+                    'width'=>$width?$width:0;
+                    'height'=>$height?$height:0;
+                    'size' =>$size,
                 ];
 
             }
