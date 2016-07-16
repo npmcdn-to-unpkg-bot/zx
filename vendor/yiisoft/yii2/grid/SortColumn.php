@@ -13,7 +13,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 
 /**
- *排序功能啊
+ *排序功能
  */
 class SortColumn extends Column
 {
@@ -38,7 +38,7 @@ class SortColumn extends Column
 
     protected function renderHeaderCellContent()
     {
-        return Html::a('保存排序','javascript:;', ['class' => 'btn btn-primary','id'=>'saveorders']);
+        return Html::a('保存排序','javascript:;', ['class' => 'btn','id'=>'saveorders','style'=>'background:#dedede;']);
     }
 
     protected function renderDataCellContent($model, $key, $index)

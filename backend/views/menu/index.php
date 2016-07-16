@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'sort_order'=>['class' => 'yii\grid\SortColumn'],
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template'=>'{update}{delete}{tmpset}{createchild}{manage}',
+                'template'=>'{update}{delete}{tmpset}{manage}{createchild}',
                 'buttons'=>[
                     'update'=>function ($url,$model,$key) {
                         $options = array_merge([
@@ -114,11 +114,54 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                 ]
             ],
+            [
+                'attribute'=>'is_open',
+                'header'=>'是否显示',
+                'format'=>'Raw',
+                'value'=>function($model){
+                    $options['label']=' ';//为了让beyondadmin的样式出来
+                    $options['checked']=$model['is_open']?true:false;
+                    $options['data-id']=$model['id'];
+                    return Html::checkbox('isopen',$options['checked'], $options);
+                }
+            ],
             ['class' => 'yii\grid\CheckboxColumn'],
         ],
     ]); ?>
 </div>
 <script>
+$(function(){
+    /*start-是否显示*/
+    $("input[name=isopen]").change(function(){
+        var obj=$(this);
+
+        var isopen=$(this).is(':checked')?1:0;
+
+        $.ajax({
+            url: "<?=\yii\helpers\Url::toRoute(['menu/setopen'])?>",
+            type:"post",
+            data:{
+                'id':obj.attr('data-id'),
+                'isopen':isopen,
+            },
+            dataType:"json",
+            beforeSend:function(){
+                loadingshow();
+            },
+            complete:function(){
+                loadinghide();
+            },
+            error:function (XMLHttpRequest, textStatus, errorThrown){
+                alert("网络错误,请重试...");
+            },
+            success: function(data){
+                if(!data.success){
+                    alert(data.msg);
+                }
+            }
+        });
+    });
+
     /*start-菜单表格折叠*/
     $(".Mtabeltoggle").on("click",function(){
         var obj=$(this);
@@ -138,6 +181,56 @@ $this->params['breadcrumbs'][] = $this->title;
         }
     });
     /*end-菜单表格折叠*/
+
+    /*start-保存菜单的排序*/
+    $(".save_sort_order").on("change",function(){
+        $(this).addClass('have_change_order');
+        $("#saveorders").addClass('btn-primary');
+    });
+
+    $("#saveorders").on("click",function(){
+        var obj=$(".have_change_order");
+        var orders = [];
+        var ids    = [];
+        if(!$(this).hasClass('btn-primary')){
+            return;
+        }
+
+        $.each(obj,function(n,v){
+            orders.push($(this).val());
+            ids.push($(this).attr('data-id'));
+        });
+        $.ajax({
+            url: "<?=\yii\helpers\Url::toRoute(['menu/saveorder'])?>",
+            type:"post",
+            data:{
+                'ids':ids,
+                'orders':orders,
+            },
+            dataType:"json",
+            beforeSend:function(){
+                loadingshow();
+            },
+            complete:function(){
+                loadinghide();
+            },
+            error:function (XMLHttpRequest, textStatus, errorThrown){
+                alert("网络错误,请重试...");
+            },
+            success: function(data){
+                if(data.success){
+                    $("#saveorders").removeClass('btn-primary');
+                    $.each($(".save_sort_order"),function(n,v){
+                        $(this).removeClass('have_change_order');
+                    });
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    });
+    /*end-保存菜单的排序*/
+})
 </script>
 <style>
     .Mtabeltoggle{border-left: 0px dashed #d2322d;position: relative;}

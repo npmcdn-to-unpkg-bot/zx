@@ -21,13 +21,14 @@ use yii\widgets\ActiveForm;
         ->dropDownList($plugList,['options'=>[$model->id=>['disabled' => true]]])
     ?>
 
+
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'mtitle')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')->widget(backend\widgets\KindeditorWidget::className()) ?>
 
     <?= $form->field($model,'img_menu')->widget(backend\widgets\FileInputWidget::className(),['width'=>100,'height'=>100]);?>
 
@@ -40,12 +41,14 @@ use yii\widgets\ActiveForm;
 
 
 
+
+
     <div style="display: none;">
         <?= $form->field($model, 'wid')->hiddenInput(['value'=>Yii::$app->user->identity->wid]) ?>
 
-        <?= $form->field($model, 'created_at')->hiddenInput(['maxlength' => true]) ?>
+        <?//= $form->field($model, 'created_at')->hiddenInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'updated_at')->hiddenInput(['maxlength' => true]) ?>
+        <?//= $form->field($model, 'updated_at')->hiddenInput(['maxlength' => true]) ?>
 
         <?//= $form->field($model, 'configs')->textarea(['rows' => 6]) ?>
 

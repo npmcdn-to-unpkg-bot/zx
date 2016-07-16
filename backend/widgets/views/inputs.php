@@ -38,7 +38,5 @@ $(function(){
     $(document).on("click",".inputs_widget_del_one",function(){
         $(this).parent().parent().parent().remove();
     });
-
-
 })
 </script>

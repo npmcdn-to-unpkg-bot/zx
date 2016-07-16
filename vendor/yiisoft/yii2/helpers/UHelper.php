@@ -140,15 +140,26 @@ class UHelper
 
             }
         }else{
-            $model->path=$info['path']=$request->post($attribute.'_file_input_path');
-            $model->width=$info['width']=$width;
-            $model->height=$info['height']=$height;
-            $model->title=$info['title']=$request->post($attribute.'_file_input_title');
-            $model->link=$info['link']=$request->post($attribute.'_file_input_link');
-            $model->size=$request->post($attribute.'_file_input_size');
-            $info['uploadID']=$request->post($attribute.'_file_input_uploadID');
+            if($request->post($attribute.'_file_input_delete')){
+                @unlink(\Yii::getAlias('@uiiroot').$request->post($attribute.'_file_input_path'));
+                $model->delete();
+                $info['path']='';
+                $info['width']=0;
+                $info['height']=0;
+                $info['title']='';
+                $info['link']='';
+                $info['size']='';
 
-            $model->save();
+            }else{
+                $model->path=$info['path']=$request->post($attribute.'_file_input_path');
+                $model->width=$info['width']=$width;
+                $model->height=$info['height']=$height;
+                $model->title=$info['title']=$request->post($attribute.'_file_input_title');
+                $model->link=$info['link']=$request->post($attribute.'_file_input_link');
+                $model->size=$request->post($attribute.'_file_input_size');
+                $info['uploadID']=$request->post($attribute.'_file_input_uploadID');
+                $model->save();
+            }
         }
 
         return $tojson?\yii\helpers\Json::encode($info):$info;

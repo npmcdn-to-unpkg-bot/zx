@@ -19,7 +19,7 @@ class BackendAsset extends AssetBundle
     ];
     public $js = [
         'source/js/beyond.min.js',
-        'source/js/uii-common.js',
+        'source/js/backend.common.js',
     ];
     public $jsOptions = [
     ];

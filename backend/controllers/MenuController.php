@@ -5,6 +5,8 @@ namespace backend\controllers;
 use Yii;
 use common\models\table\Menu;
 use common\models\search\MenuSearch;
+use yii\base\Exception;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\helpers\ArrayHelper;
@@ -22,13 +24,6 @@ class MenuController extends BaseController
      */
     public function actionIndex()
     {
-//        $searchModel = new MenuSearch();
-//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-//
-//        return $this->render('index', [
-//            'searchModel' => $searchModel,
-//            'dataProvider' => $dataProvider,
-//        ]);
 
         $searchModel = new MenuSearch();
 
@@ -105,6 +100,7 @@ class MenuController extends BaseController
         $model->loadDefaultValues();
         $request = Yii::$app->request;
         $allMenu=$model::find()->where(['wid'=>Yii::$app->user->identity->wid])->count();
+
         if($allMenu>=200){
             UHelper::alert('每个账号最多建200个菜单','error');
             return $this->redirect(['index']);
@@ -167,11 +163,95 @@ class MenuController extends BaseController
         }
     }
 
+
+    public function actionTmpset($id)
+    {
+        $model = $this->findModel($id);
+
+        $request=\Yii::$app->request;
+        if ($request->isPost) {
+
+            $model->load($request->post());
+            if($model->save()){
+                UHelper::alert($model->title.'修改成功！','success');
+                return $this->redirect(['index']);
+            }
+        } else {
+
+
+            return $this->render('tmpset', [
+                'model' => $model,
+                'tmpList'=>\backend\models\DatasModel::tmpList($model->type),
+            ]);
+        }
+    }
+
+
+
+    /*
+     *新建子菜单
+     * */
     public function actionCreatechild()
     {
         return $this->redirect(['create','id'=>Yii::$app->request->get('id'),'type'=>'addchild']);
     }
 
+    /*
+     *保存排序
+     * */
+    public function actionSaveorder()
+    {
+        $request=\Yii::$app->request;
+        $return['success']=true;
+        $return['msg']='更新成功';
+        try{
+            if($request->isAjax){
+                $ids=$request->post('ids');
+                $orders=$request->post('orders');
+
+                foreach($ids as $k=>$v){
+                    $model=Menu::findOne($v);
+                    $model->sort_order=$orders[$k];
+                    if(!$model->save()){
+                        throw new Exception('更新失败');
+                    }
+                    unset($model);
+                }
+            }else{
+                throw new Exception('非法请求');
+            }
+        }catch (Exception $e){
+            $return['success']=false;
+            $return['msg']=$e->getMessage();
+        }
+        \yii\helpers\Json::ajaxreturn($return);
+    }
+
+    /*
+     * 修改是否显示
+     * */
+    public function actionSetopen()
+    {
+        $request=\Yii::$app->request;
+        $return['success']=true;
+        $return['msg']='更新成功';
+        try{
+            if($request->isAjax){
+                $model=Menu::findOne($request->post('id'));
+                $model->is_open=$request->post('isopen');
+                if(!$model->save()){
+                    throw new Exception('更新失败');
+                }
+                unset($model);
+            }else{
+                throw new Exception('非法请求');
+            }
+        }catch (Exception $e){
+            $return['success']=false;
+            $return['msg']=$e->getMessage();
+        }
+        \yii\helpers\Json::ajaxreturn($return);
+    }
 
 
     /**
