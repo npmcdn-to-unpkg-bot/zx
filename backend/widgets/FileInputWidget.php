@@ -22,7 +22,7 @@ class FileInputWidget extends Widget
 
     public function run()
     {
-
+        /*XIUGAIYIXIAKANKAN */
         return $this->render('fileinput',[
             'model'=>$this->model,
             'attribute'=>$this->attribute,
