@@ -2,13 +2,13 @@
 /**
  * Date: 2016/7/16
  * Time: 15:33
- * 日期时间选择粉色发生
+ * 日期时间选择
  */
 namespace backend\widgets;
 
 use yii\base\Widget;
 
-class DatetimePickerWidget extends Widget
+class DatetimeWidget extends Widget
 {
     public $model;
     public $attribute;
@@ -36,7 +36,7 @@ class DatetimePickerWidget extends Widget
 
 
 
-        return $this->render('datetimepicker',[
+        return $this->render('datetime',[
             'model'=>$this->model,
             'attribute'=>$this->attribute,
             'config'=>$this->config,
