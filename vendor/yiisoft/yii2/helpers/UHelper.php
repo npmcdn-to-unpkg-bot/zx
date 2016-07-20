@@ -41,15 +41,20 @@ class UHelper
     }
 
     /*图片上传*/
-    public static function uploadimg($attribute,$type='images',$tojson=1)
+    public static function uploadimg($attribute,$size='',$type='images',$tojson=1)
     {
         $request = \Yii::$app->request;
 
         $file = \yii\web\UploadedFile::getInstanceByName($attribute . '_file_input');
 
-        $width = $request->post($attribute . '_file_input_width');
+        if(is_array($size)){
+            $width=$size[0];
+            $height=$size[1];
+        }else{
+            $width = $request->post($attribute . '_file_input_width');
 
-        $height = $request->post($attribute . '_file_input_height');
+            $height = $request->post($attribute . '_file_input_height');
+        }
 
         if($request->post($attribute.'_file_input_uploadID')){
             $model=\common\models\table\Upload::find()->where(['id'=>$request->post($attribute.'_file_input_uploadID')])->one();
