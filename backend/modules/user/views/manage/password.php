@@ -7,8 +7,8 @@
  */
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 use yii\widgets\ActiveField;
+use yii\widgets\ActiveForm;
 
 $this->title = '修改密码: ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
@@ -27,11 +27,12 @@ $filed=new ActiveField();
 
         <?= $form->field($model, 'email')->textInput(['maxlength' => true,'disabled'=>true]) ?>
 
-        <?= Html::uinput('旧密码','old_password')?>
+        <?= $form->field($model,'password')->textInput(['name'=>'old_password','value'=>''])->label('旧密码')?>
 
-        <?= Html::uinput('新密码','new_password','',['type'=>'password','class'=>'form-control'])?>
+        <?= $form->field($model,'password')->passwordInput(['name'=>'new_password','value'=>''])->label('新密码')?>
 
-        <?= Html::uinput('确认密码','confirm_password','',['type'=>'password','class'=>'form-control pwdmsg'])?>
+        <?= $form->field($model,'password')->passwordInput(['name'=>'confirm_password','value'=>'','class'=>'form-control pwdmsg'])->label('确认密码')?>
+
 
         <div class="form-group">
             <?= Html::submitButton('确认修改', ['class' => 'btn btn-primary']) ?>
@@ -45,19 +46,19 @@ $(function(){
     $("input[name=old_password]").on("blur",function(){
         if($(this).val().length<6){
             $(this).parent().find(".help-block").html('密码长度必须大于等于6位');
-            return;
+
         }else{
             $(this).parent().find(".help-block").html('');
-            return;
+
         }
     });
     $("input[name=new_password]").on("blur",function(){
         if($(this).val().length<6){
             $(this).parent().find(".help-block").html('密码长度必须大于等于6位');
-            return;
+
         }else{
             $(this).parent().find(".help-block").html('');
-            return;
+
         }
     });
 

@@ -2,15 +2,13 @@
 
 namespace backend\controllers;
 
-use Yii;
-use common\models\table\Menu;
 use common\models\search\MenuSearch;
+use common\models\table\Menu;
+use Yii;
 use yii\base\Exception;
-use yii\helpers\Json;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\UHelper;
+use yii\web\NotFoundHttpException;
 
 /**
  * MenuController implements the CRUD actions for Menu model.
@@ -284,7 +282,7 @@ class MenuController extends BaseController
      */
     protected function findModel($id)
     {
-        if (($model = Menu::findOne($id)) !== null) {
+        if (($model = Menu::find()->where(['id'=>$id,'wid'=>\Yii::$app->user->identity->wid])->one()) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

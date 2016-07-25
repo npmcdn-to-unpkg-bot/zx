@@ -47,9 +47,9 @@ $data=json_decode($model->$attribute,1);
                     <input type="hidden" name="<?=$attribute?>_file_input_path" value="<?=isset($data['path'])?$data['path']:''?>" />
                     <input type="hidden" name="<?=$attribute?>_file_input_size" value="<?=isset($data['size'])?$data['size']:0?>" />
                     <input type="hidden" class="file_input_delete" name="<?=$attribute?>_file_input_delete" value="0" />
-                    <?if(isset($data['path'])){?>
+                    <?php if(isset($data['path'])){?>
                         <img class="file_input_img_show" src="<?=$data['path']?>" style="margin:auto;margin-top: 10px;max-width:90%;" />
-                    <?}?>
+                    <?php }?>
                 </div>
             </div>
         </div>

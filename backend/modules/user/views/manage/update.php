@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <div class="user-form">
 
-        <?php $form = ActiveForm::begin(); ?>
+        <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
         <?//= $form->field($model, 'wid')->textInput() ?>
 
@@ -33,13 +33,13 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'is_active')->radioList(['1'=>'启用','0'=>'停用'])->label('使用状态') ?>
 
-            <?= Html::uinput('重新设置密码','changepwd') ?>
+            <?= $form->field($model,'password')->passwordInput(['name'=>'changepwd','value'=>''])?>
 
         <?}?>
 
         <?= $form->field($model, 'nickname')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'portrait')->widget(backend\widgets\JquploadWidget::className(),['data'=>$model->portrait]) ?>
+        <?= $form->field($model, 'portrait')->widget(backend\widgets\FileInputWidget::className(),['width'=>100,'height'=>100]) ?>
 
         <?= $form->field($model, 'last_login_time')->textInput(['maxlength' => true,'disabled'=>true,'value'=>\Yii::$app->formatter->asDatetime($model->last_login_time)]) ?>
 

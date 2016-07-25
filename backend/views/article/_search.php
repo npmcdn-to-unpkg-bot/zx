@@ -15,15 +15,15 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+<!--    --><?//= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'mid') ?>
+<!--    --><?//= $form->field($model, 'mid') ?>
+<!---->
+<!--    --><?//= $form->field($model, 'wid') ?>
 
-    <?= $form->field($model, 'wid') ?>
+    <?= $form->field($model, 'title')->textInput(['style'=>'width:50%']) ?>
 
-    <?= $form->field($model, 'title') ?>
-
-    <?= $form->field($model, 'mtitle') ?>
+<!--    --><?//= $form->field($model, 'mtitle') ?>
 
     <?php // echo $form->field($model, 'img_list') ?>
 
@@ -56,8 +56,8 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'updated_at') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton('搜索', ['class' => 'btn btn-primary']) ?>
+<!--        --><?//= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

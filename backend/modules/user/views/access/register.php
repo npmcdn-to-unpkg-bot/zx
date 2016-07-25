@@ -7,6 +7,7 @@
  */
 use backend\assets\BackendAsset;
 use backend\assets\BackheadAsset;
+
 BackendAsset::register($this);
 BackheadAsset::register($this);
 
@@ -28,7 +29,7 @@ BackheadAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <div class="register-container animated fadeInDown">
-    <?if($AlertMsg=\Yii::$app->session->getFlash('AlertMsg')){
+    <?php if($AlertMsg=\Yii::$app->session->getFlash('AlertMsg')){
         echo yii\bootstrap\Alert::widget(['body'=>$AlertMsg]);
     }?>
     <div class="registerbox bg-white">

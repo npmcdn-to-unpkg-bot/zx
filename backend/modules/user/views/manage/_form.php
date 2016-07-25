@@ -12,15 +12,10 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?//= $form->field($model, 'wid')->textInput() ?>
-
-    <?//= $form->field($model, 'pid')->textInput() ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true,'disabled'=>true]) ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-    <?//= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'nickname')->textInput(['maxlength' => true]) ?>
 
@@ -37,12 +32,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'created_at')->textInput(['maxlength' => true,'disabled'=>true,'value'=>\Yii::$app->formatter->asDate($model->created_at)]) ?>
 
     <?= $form->field($model, 'updated_at')->textInput(['maxlength' => true,'disabled'=>true,'value'=>\Yii::$app->formatter->asDate($model->updated_at)]) ?>
-
-    <?//= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
-
-    <?//= $form->field($model, 'access_token')->textInput(['maxlength' => true]) ?>
-
-    <?//= $form->field($model, 'is_active')->radioList(['1'=>'已激活','0'=>'未激活'],['disabled'=>true]) ?>
 
     <?= $form->field($model, 'expire')->textInput(['maxlength' => true,'disabled'=>true,'value'=>\Yii::$app->formatter->asDate($model->expire)])?>
 

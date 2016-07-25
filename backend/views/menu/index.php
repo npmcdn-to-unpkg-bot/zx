@@ -1,7 +1,7 @@
 <?php
 
-use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Html;
 use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'sort_order'=>['class' => 'yii\grid\SortColumn'],
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template'=>'{update}{delete}{tmpset}{manage}{createchild}',
+                'template'=>'{update}{delete}{tmpset}{manage}{shareseo}{createchild}',
                 'buttons'=>[
                     'update'=>function ($url,$model,$key) {
                         $options = array_merge([
@@ -99,6 +99,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]);
                         $url=['createchild','id'=>$model['id']];
                         return Html::a('<span class="glyphicon glyphicon-plus"></span>', $url, $options);
+                    },
+                    'shareseo'=>function ($url, $model, $key) {
+                        $options = array_merge([
+                            'title' => Yii::t('yii', '分享，SEO配置'),
+                            'aria-label' => Yii::t('yii', 'shareseo'),
+                            'data-pjax' => '0',
+                            'style'=>'margin-left:5px;'
+                        ]);
+                        $url=['shareseo','id'=>$model['id']];
+                        return Html::a('<span class="glyphicon glyphicon-share-alt"></span>', $url, $options);
                     },
                     'delete'=>function ($url, $model, $key) {
                         $options = array_merge([

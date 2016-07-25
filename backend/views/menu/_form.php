@@ -39,10 +39,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'is_open')->radioList(['0'=>'不启用','1'=>'启用']) ?>
 
 
-
-
-
-
     <div style="display: none;">
         <?= $form->field($model, 'wid')->hiddenInput(['value'=>Yii::$app->user->identity->wid]) ?>
 

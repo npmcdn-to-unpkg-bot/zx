@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2016-07-16 18:00:13
+Date: 2016-07-25 17:59:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,11 +41,12 @@ CREATE TABLE `zx_article` (
   `created_at` varchar(30) DEFAULT NULL COMMENT '创建时间',
   `updated_at` varchar(30) DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zx_article
 -- ----------------------------
+INSERT INTO `zx_article` VALUES ('1', '51', '1', '第一篇文章1', '1231', '{\"path\":\"/upload/x00001/images/201607/25145537x57c4f.png\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"size\":\"13080\",\"uploadID\":43}', '{\"path\":\"/upload/x00001/images/201607/25145537x15f80.png\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"size\":\"16172\",\"uploadID\":44}', '描述1', '<p>\r\n	<span style=\"color:#E53333;background-color:#337FE5;\">哈哈哈哈哈哈哈哈啊哈a</span> \r\n</p>\r\n<p>\r\n	<strong><em>u就按粉红色的附件是离开饭店</em></strong> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	进口粮食局连接链接了 111111\r\n</p>', '2016-08-11', '本站原创1', 'http://www.baidu.com1', '1', '0', null, '1231312', '{\"title\":\"seo\\u6807\\u9898\",\"desc\":\"seo \\u63cf\\u8ff0\"}', '{\"title\":\"\\u7b2c\\u4e00\\u7bc7\\u6587\\u7ae0\\u5206\\u4eab\\u6807\\u9898\",\"desc\":\"\\u7b2c\\u4e00\\u7bc7\\u6587\\u7ae0\\u5206\\u4eab\\u63cf\\u8ff0\\u5206\\u4eab\\u63cf\\u8ff0\\u5206\\u4eab\\u63cf\\u8ff0\",\"img\":\"\\/upload\\/x00001\\/images\\/201607\\/25150835xff9b4.jpg\"}', '1469429536', '1469430515');
 
 -- ----------------------------
 -- Table structure for `zx_menu`
@@ -93,10 +94,10 @@ INSERT INTO `zx_menu` VALUES ('38', '1', '6', '123123', '1231231', '23123', '3',
 INSERT INTO `zx_menu` VALUES ('39', '1', '0', '新增一个标题看看', '', '描述描述', '1', '123123123', '1', null, '12313', null, '0', null, '123312', '3', '1', '21313', '12331', '123123', '213123', '1467962267', '1468634746');
 INSERT INTO `zx_menu` VALUES ('51', '1', '39', 'qweqwe', 'qweqweqw', '', '2', 'eqweqwe', '1', null, '{\"path\":\"/upload/x00001/images/201607/15175755x9a193.png\",\"width\":\"100\",\"height\":\"100\",\"title\":\"\",\"link\":\"\",\"size\":\"668\",\"uploadID\":32}', '{\"path\":\"/upload/x00001/images/201607/15175755x22a36.png\",\"width\":\"100\",\"height\":\"100\",\"title\":\"\",\"link\":\"\",\"size\":\"1226\",\"uploadID\":33}', '0', null, null, '0', '1', null, null, null, null, '1468576675', '1468576675');
 INSERT INTO `zx_menu` VALUES ('47', '1', '0', 'sssssssssss', 'sss', '', '1', '', '1', null, '{\"path\":\"/upload/x00001/images/201607/15171737xbc82c.jpg\",\"width\":\"0\",\"height\":\"0\",\"title\":\"sasaa\",\"link\":\"\",\"size\":44091,\"uploadID\":null}', '{\"path\":\"/upload/x00001/images/201607/15171737x3243c.jpg\",\"width\":\"15\",\"height\":\"15\",\"title\":\"1212\",\"link\":\"1212\",\"size\":827,\"uploadID\":null}', '0', null, '', '4', '1', '', '', '', '', '1468574257', '1468634837');
-INSERT INTO `zx_menu` VALUES ('45', '1', '0', '321231231313131', '123123', '', '1', '', '2', null, '{\"path\":\"/upload/x00001/images/201607/15170425xdf410.jpg\",\"width\":\"155\",\"height\":\"155\",\"title\":\"ttttttt\",\"link\":\"http://www.baiud.comttt\",\"size\":3696,\"uploadID\":null}', '{\"path\":\"/upload/x00001/images/201607/15170425x45a69.png\",\"width\":\"55\",\"height\":\"55\",\"title\":\"中奖ttttt\",\"link\":\"http://www.tudou.comtttt\",\"size\":3464,\"uploadID\":null}', '0', null, '', '2', '1', '', '', '', '', '1468573198', '1468661788');
+INSERT INTO `zx_menu` VALUES ('45', '1', '0', '321231231313131', '123123', '', '1', '', '2', null, '{\"path\":\"/upload/x00001/images/201607/15170425xdf410.jpg\",\"width\":\"155\",\"height\":\"155\",\"title\":\"ttttttt\",\"link\":\"http://www.baiud.comttt\",\"size\":3696,\"uploadID\":null}', '{\"path\":\"/upload/x00001/images/201607/15170425x45a69.png\",\"width\":\"55\",\"height\":\"55\",\"title\":\"中奖ttttt\",\"link\":\"http://www.tudou.comtttt\",\"size\":3464,\"uploadID\":null}', '0', null, '', '2', '1', '', '', '{\"title\":\"\\u5206\\u4eab\\u6807\\u9898\",\"desc\":\"\\u5206\\u4eab\\u63cf\\u8ff0\",\"img\":\"\\/upload\\/x00001\\/images\\/201607\\/18134803xbe797.png\"}', '{\"title\":\"SEO\\u6807\\u9898\",\"desc\":\"SEO\\u63cf\\u8ff0\"}', '1468573198', '1468820883');
 INSERT INTO `zx_menu` VALUES ('48', '1', '0', 'fefeefefef', '', '', '1', '', '1', null, '{\"path\":\"/upload/x00001/images/201607/15172307xbc82c.jpg\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"size\":\"44091\",\"uploadID\":26}', '{\"path\":\"/upload/x00001/images/201607/15172307x3243c.jpg\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"size\":\"11920\",\"uploadID\":27}', '0', null, '', '7', '1', '', '', '', '', '1468574587', '1468637771');
 INSERT INTO `zx_menu` VALUES ('49', '1', '0', '2222ddddd', 'd2', '', '1', '', '1', null, '{\"path\":\"/upload/x00001/images/201607/15172755x8d034.png\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"size\":\"1578\",\"uploadID\":28}', '{\"path\":\"/upload/x00001/images/201607/15172755xa04db.png\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"size\":\"1650\",\"uploadID\":29}', '0', null, '', '3', '1', '', '', '', '', '1468574875', '1468637775');
-INSERT INTO `zx_menu` VALUES ('50', '1', '0', '123123', '', '', '1', '', '1', null, '{\"path\":\"\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"uploadID\":\"0\"}', '{\"path\":\"\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"uploadID\":\"0\"}', '0', null, '', '2', '0', '', '', '', '', '1468575160', '1468639130');
+INSERT INTO `zx_menu` VALUES ('50', '1', '0', '123123', '', '', '1', '', '1', null, '{\"path\":\"\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"uploadID\":\"0\"}', '{\"path\":\"\",\"width\":\"0\",\"height\":\"0\",\"title\":\"\",\"link\":\"\",\"uploadID\":\"0\"}', '0', null, '', '2', '0', '', '', '{\"title\":\"rrrrrrrrrrrr\",\"desc\":\"tttttttttttttt\",\"img\":\"\\/upload\\/x00001\\/images\\/201607\\/18140913x7765e.png\"}', '{\"title\":\"dddddd\",\"desc\":\"ffffffffff\"}', '1468575160', '1468822153');
 INSERT INTO `zx_menu` VALUES ('52', '1', '0', 'ooooooooooooooooo', '', '', '1', '', '1', null, '{\"path\":\"/upload/x00001/images/201607/16171055x7765e.png\",\"width\":\"100\",\"height\":\"100\",\"title\":\"hahhah\",\"link\":\"http://www.tudou.com\",\"uploadID\":\"34\"}', '{\"path\":\"/upload/x00001/images/201607/16171924xb3812.png\",\"width\":\"100\",\"height\":\"100\",\"title\":\"xiaoming\",\"link\":\"http://www.baidu.com\",\"uploadID\":\"36\"}', '0', null, null, '5', '1', null, null, null, null, '1468660256', '1468660874');
 
 -- ----------------------------
@@ -189,7 +190,7 @@ CREATE TABLE `zx_upload` (
   `created_at` varchar(30) DEFAULT NULL COMMENT '添加时间',
   `updated_at` varchar(30) DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zx_upload
@@ -216,6 +217,22 @@ INSERT INTO `zx_upload` VALUES ('32', '1', null, null, '1', '', '', '100', '100'
 INSERT INTO `zx_upload` VALUES ('33', '1', null, null, '1', '', '', '100', '100', '/upload/x00001/images/201607/15175755x22a36.png', null, '1226', null, '1', '1468576675', '1468576675');
 INSERT INTO `zx_upload` VALUES ('34', '1', null, null, '1', 'hahhah', 'http://www.tudou.com', '100', '100', '/upload/x00001/images/201607/16171055x7765e.png', null, '0', null, '1', '1468660256', '1468660874');
 INSERT INTO `zx_upload` VALUES ('36', '1', null, null, '1', 'xiaoming', 'http://www.baidu.com', '100', '100', '/upload/x00001/images/201607/16171924xb3812.png', null, '14577', null, '1', '1468660764', '1468660874');
+INSERT INTO `zx_upload` VALUES ('37', '1', null, null, '1', null, null, null, null, '/upload/x00001/images/201607/18115620x1cbdb.png', null, '41004', null, '1', '1468814180', '1468814180');
+INSERT INTO `zx_upload` VALUES ('38', '1', null, null, '1', null, null, '360', '360', '/upload/x00001/images/201607/18134803xbe797.png', null, '83870', null, '1', '1468820883', '1468820883');
+INSERT INTO `zx_upload` VALUES ('39', null, null, null, null, null, null, '360', '360', '/upload/x00001/images/201607/18134803xbe797.png', null, null, null, null, '1468820979', '1468820979');
+INSERT INTO `zx_upload` VALUES ('40', '1', null, null, '1', null, null, '360', '360', '/upload/x00001/images/201607/18140913x7765e.png', null, '97320', null, '1', '1468822153', '1468822153');
+INSERT INTO `zx_upload` VALUES ('41', null, null, null, null, '', '', '0', '0', '', null, '0', null, null, '1469429536', '1469429536');
+INSERT INTO `zx_upload` VALUES ('42', null, null, null, null, '', '', '0', '0', '', null, '0', null, null, '1469429536', '1469429536');
+INSERT INTO `zx_upload` VALUES ('43', '1', null, null, '1', '', '', '0', '0', '/upload/x00001/images/201607/25145537x57c4f.png', null, '13080', null, '1', '1469429737', '1469429737');
+INSERT INTO `zx_upload` VALUES ('44', '1', null, null, '1', '', '', '0', '0', '/upload/x00001/images/201607/25145537x15f80.png', null, '16172', null, '1', '1469429737', '1469429737');
+INSERT INTO `zx_upload` VALUES ('45', '1', null, null, '1', null, null, '360', '360', '/upload/x00001/images/201607/25150835xff9b4.jpg', null, '4094', null, '1', '1469430515', '1469430515');
+INSERT INTO `zx_upload` VALUES ('46', null, null, null, null, '', '', '100', '100', '', null, '0', null, null, '1469432824', '1469432824');
+INSERT INTO `zx_upload` VALUES ('47', '1', null, null, '1', '', '', '100', '100', '/upload/x00001/images/201607/25154940x4de91.jpg', null, '3482', null, '1', '1469432981', '1469432981');
+INSERT INTO `zx_upload` VALUES ('48', '1', null, null, '1', '', '', '100', '100', '/upload/x00001/images/201607/25154949x4de91.jpg', null, '3482', null, '1', '1469432990', '1469432990');
+INSERT INTO `zx_upload` VALUES ('49', '1', null, null, '1', '', '', '100', '100', '/upload/x00001/images/201607/25155136x4de91.jpg', null, '3482', null, '1', '1469433096', '1469433096');
+INSERT INTO `zx_upload` VALUES ('50', '1', null, null, '1', '', '', '100', '100', '/upload/x00001/images/201607/25155315x4de91.jpg', null, '3482', null, '1', '1469433195', '1469433195');
+INSERT INTO `zx_upload` VALUES ('51', '1', null, null, '1', '', '', '100', '100', '/upload/x00001/images/201607/25155331x4de91.jpg', null, '3482', null, '1', '1469433211', '1469433211');
+INSERT INTO `zx_upload` VALUES ('52', '1', null, null, '1', '', '', '100', '100', '/upload/x00001/images/201607/25155458x4de91.jpg', null, '3482', null, '1', '1469433298', '1469433298');
 
 -- ----------------------------
 -- Table structure for `zx_user`
@@ -228,7 +245,7 @@ CREATE TABLE `zx_user` (
   `name` varchar(100) DEFAULT NULL COMMENT '用户名',
   `password` varchar(100) DEFAULT NULL COMMENT '密码',
   `nickname` varchar(100) DEFAULT NULL COMMENT '昵称',
-  `portrait` varchar(100) DEFAULT NULL COMMENT '头像',
+  `portrait` varchar(500) DEFAULT NULL COMMENT '头像',
   `last_login_time` varchar(20) DEFAULT NULL COMMENT '上次登录时间',
   `last_login_ip` varchar(30) DEFAULT NULL COMMENT '上次登录IP',
   `login_times` int(6) DEFAULT NULL COMMENT '总登录次数',
@@ -249,7 +266,7 @@ CREATE TABLE `zx_user` (
 -- ----------------------------
 -- Records of zx_user
 -- ----------------------------
-INSERT INTO `zx_user` VALUES ('1', '1', null, '陆荣泽', '$2y$13$uy0aB58DVquOk0gkOurLCe/ZA4lpSswbtxj9ivUWDXbt2DUeIRrEa', null, null, '1468226662', '::1', '2', '1946755280@qq.com', 'DEVELOPER', '1467884992', '1468226662', 'D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI', '5a81pcW5be-41A_1uXwrsXvPMG5psLYq', '1', '1567884992', null, null, null);
+INSERT INTO `zx_user` VALUES ('1', '1', null, '陆荣泽', '$2y$13$B1PZjzx.XKlw2cVyu.MR8eWMTJIvo38BKcP6D8fuUgWJ.GpY888Le', '', '{\"path\":\"/upload/x00001/images/201607/25155458x4de91.jpg\",\"width\":\"100\",\"height\":\"100\",\"title\":\"\",\"link\":\"\",\"size\":\"3482\",\"uploadID\":52}', '1469432401', '::1', '4', '1946755280@qq.com', 'DEVELOPER', '1467884992', '1469433299', 'D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI', '5a81pcW5be-41A_1uXwrsXvPMG5psLYq', '1', '1567884992', null, null, null);
 
 -- ----------------------------
 -- Table structure for `zx_web`
@@ -261,6 +278,13 @@ CREATE TABLE `zx_web` (
   `name` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '网站名称',
   `logo` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '网站LOGO',
   `config` text CHARACTER SET utf8 COMMENT '配置',
+  `wx_appid` varchar(255) DEFAULT NULL COMMENT '公众号appid',
+  `wx_appsecret` varchar(255) DEFAULT NULL COMMENT '公众号appsecret',
+  `wx_merchant_number` varchar(100) DEFAULT NULL COMMENT '微信支付商户号',
+  `wx_merchant_key` varchar(255) DEFAULT NULL COMMENT '微信支付秘钥',
+  `wx_apiclient_cert` varchar(255) DEFAULT NULL COMMENT '微信支付证书apiclient_cert',
+  `wx_apiclient_key` varchar(255) DEFAULT NULL COMMENT '微信支付证书apiclient_key',
+  `wx_use` tinyint(4) DEFAULT NULL COMMENT '是否使用本公众号的授权接口',
   `wxinfo` text CHARACTER SET utf8,
   `smtp` text CHARACTER SET utf8 COMMENT 'SMTP邮箱配置',
   `keyword` text CHARACTER SET utf8 COMMENT '网站关键字',
@@ -273,4 +297,4 @@ CREATE TABLE `zx_web` (
 -- ----------------------------
 -- Records of zx_web
 -- ----------------------------
-INSERT INTO `zx_web` VALUES ('1', '1', null, null, null, null, null, null, null, '1467884992', '1467884992');
+INSERT INTO `zx_web` VALUES ('1', '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1467884992', '1467884992');

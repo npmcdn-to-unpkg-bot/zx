@@ -2,17 +2,17 @@
 
 namespace backend\controllers;
 
-use Yii;
-use common\models\table\Article;
 use common\models\search\ArticleSearch;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
+use common\models\table\Article;
+use Yii;
 use yii\filters\VerbFilter;
+use yii\helpers\UHelper;
+use yii\web\NotFoundHttpException;
 
 /**
  * ArticleController implements the CRUD actions for Article model.
  */
-class ArticleController extends Controller
+class ArticleController extends BaseController
 {
     /**
      * @inheritdoc
@@ -36,6 +36,15 @@ class ArticleController extends Controller
     public function actionIndex()
     {
         $searchModel = new ArticleSearch();
+
+        $params=Yii::$app->request->queryParams;
+        $params['ArticleSearch']['mid']=\Yii::$app->request->get('mid');
+        if(!\Yii::$app->request->get('mid')){
+            throw new NotFoundHttpException('页面不存在！');
+        }
+
+        $params['ArticleSearch']['wid']=\Yii::$app->user->identity->wid;
+
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -65,8 +74,24 @@ class ArticleController extends Controller
     {
         $model = new Article();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $request=Yii::$app->request;
+
+        if ($request->isPost) {
+            $model->load($request->post());
+
+            $model->img_list=UHelper::uploadimg('img_list');
+
+            $model->img_title=UHelper::uploadimg('img_title');
+
+            if($model->save()){
+                UHelper::alert($model->title.'新增成功！可继续添加','success');
+            }else{
+                UHelper::alert('新增失败！','error');
+            }
+
+            return $this->redirect($request->referrer);
+
+
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -84,8 +109,24 @@ class ArticleController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $request=\Yii::$app->request;
+
+        if ($request->isPost) {
+            $model->load($request->post());
+
+            $model->img_list=UHelper::uploadimg('img_list');
+
+            $model->img_title=UHelper::uploadimg('img_title');
+
+            if($model->save()){
+                UHelper::alert($model->title.'修改成功！','success');
+                return $this->redirect(['index','mid'=>$model->mid]);
+            }else{
+                UHelper::alert($model->title.'修改失败！','error');
+                return $this->redirect($request->referrer);
+            }
+
+
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -101,7 +142,17 @@ class ArticleController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+
+        $model=$this->findModel($id);
+
+        $img_list=json_decode($model->img_list,1);
+        $img_title=json_decode($model->img_title,1);
+
+        @unlink(\Yii::getAlias('@uiiroot').$img_list['path']);
+
+        @unlink(\Yii::getAlias('@uiiroot').$img_title['path']);
+
+        $model->delete();
 
         return $this->redirect(['index']);
     }
@@ -115,10 +166,10 @@ class ArticleController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Article::findOne($id)) !== null) {
+        if (($model = Article::find()->where(['id'=>$id,'wid'=>\Yii::$app->user->identity->wid])->one()) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('页面不存在！');
         }
     }
 }

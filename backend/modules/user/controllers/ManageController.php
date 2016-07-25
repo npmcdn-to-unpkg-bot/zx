@@ -2,15 +2,13 @@
 
 namespace app\modules\user\controllers;
 
-use common\helper\UHelper;
-use Yii;
 use common\models\table\User;
-use common\models\search\UserSearch;
-use yii\helpers\Json;
+use Yii;
+use yii\filters\VerbFilter;
+use yii\helpers\UHelper;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * IndexController implements the CRUD actions for User model.
@@ -91,10 +89,10 @@ class ManageController extends Controller
                 $model->is_active=$request->post('User')['is_active'];
                 if($model->validate() && $model->save()){
                     \Yii::info(\Yii::$app->user->id.'账号创建了一个子账号'.$model->id,__METHOD__);
-                    UHelper::alert('创建成功！');
+                    UHelper::alert('创建成功！','success');
                 }else{
                     UHelper::output($model->errors);
-                    UHelper::alert('创建失败！');
+                    UHelper::alert('创建失败！','error');
                 }
             }
             return $this->redirect(['index']);
@@ -119,20 +117,20 @@ class ManageController extends Controller
         $request=\Yii::$app->request;
         if ($request->isPost) {
             $model->load($request->post());
-            $model->portrait= \common\helper\JquploadHelper::jqformat();
+            $model->portrait=UHelper::uploadimg('portrait');
+
             if(\Yii::$app->user->identity->pid<1 && $model->wid==\Yii::$app->user->identity->wid){//总账号可以修改密码等
                 $model->password=\Yii::$app->security->generatePasswordHash($request->post('changepwd'));
             }
             if($model->save()){
-                UHelper::alert('更新成功！');
-                return $this->redirect(['update', 'id' => $model->id]);
+                UHelper::alert('更新成功！','error');
+                return $this->redirect($request->referrer);
+            }else{
+                print_r($model->errors);
+                die;
             }
         } else {
-            if(!$model->portrait){
-                $model->portrait=[['label'=>'图片上传','width'=>'200','height'=>'200']];
-            }else{
-                $model->portrait=Json::decode($model->portrait,1);
-            }
+
             return $this->render('update', [
                 'model' => $model,
             ]);
@@ -153,13 +151,14 @@ class ManageController extends Controller
               }else{
                 $model->password=Yii::$app->security->generatePasswordHash($npwd);
                 if($model->save()){
+                    \Yii::info(\Yii::$app->user->id.'修改了密码'.$model->id,__METHOD__);
                     return $this->redirect(Url::toRoute(['access/logout','changepwd'=>1]));
                 }else{
-                    UHelper::alert('抱歉，密码修改失败！');
+                    UHelper::alert('抱歉，密码修改失败！','error');
                 }
               }
             }else{
-                UHelper::alert('两次输入的密码不一致！');
+                UHelper::alert('两次输入的密码不一致！','error');
             }
         }
         return $this->render('password',['model'=>$model]);

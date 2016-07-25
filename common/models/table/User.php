@@ -47,9 +47,10 @@ class User extends \yii\db\ActiveRecord
         return [
             [['wid', 'pid', 'login_times', 'is_active'], 'integer'],
             [['menulist', 'rightlist', 'extdata'], 'string'],
-            [['name', 'password', 'nickname', 'portrait', 'email', 'auth_key', 'access_token'], 'string', 'max' => 100],
+            [['name', 'password', 'nickname','email', 'auth_key', 'access_token'], 'string', 'max' => 100],
             [['last_login_time', 'role', 'created_at', 'updated_at', 'expire'], 'string', 'max' => 20],
             [['last_login_ip'], 'string', 'max' => 30],
+            [['portrait'], 'string', 'max' => 500],
         ];
     }
 

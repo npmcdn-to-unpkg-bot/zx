@@ -5,25 +5,26 @@
  * Date: 2015/12/26
  * Time: 20:44
  */
-use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
+
 $dependency = [
     'class' => 'yii\caching\DbDependency',
     'sql' => 'SELECT MAX(updated_at) FROM {{%menu}} WHERE wid='.\Yii::$app->user->identity->wid,
 ];
 ?>
 
-<?
+<?php
 if ($this->beginCache(\Yii::$app->user->identity->wid.'beyondadmin_menu',['dependency'=>$dependency])) {
 ?>
     <ul class="nav sidebar-menu">
-        <li <?if($route=="system/index/index"){?>class="active"<?}?>>
+        <li <?php if($route=="system/index/index"){?>class="active"<?php }?>>
             <a href="<?=Url::toRoute(['/index/index'])?>">
                 <i class="menu-icon glyphicon glyphicon-home"></i>
                 <span class="menu-text"> 控制面板 </span>
             </a>
         </li>
-        <li <?if($route=="system/menu/index"){?>class="active"<?}?>>
+        <li <?php if($route=="system/menu/index"){?>class="active"<?php }?>>
             <a href="<?=Url::toRoute(['/menu/index'])?>">
                 <i class="menu-icon fa fa-th"></i>
                 <span class="menu-text">菜单列表</span>
@@ -31,18 +32,17 @@ if ($this->beginCache(\Yii::$app->user->identity->wid.'beyondadmin_menu',['depen
         </li>
         <?=ArrayHelper::beyondmenu($data,$plist,\Yii::$app->request->get('mid'))?>
     </ul>
-<?
+<?php
     $this->endCache();
-}
-?>
+}?>
 <script>
 $(function(){
     /***为当前菜单添加active,open类***/
-    <?if(is_array($plist)){?>
-        <?foreach($plist as $key=>$value){?>
+    <?php if(is_array($plist)){?>
+        <?php foreach($plist as $key=>$value){?>
         $("#beyondmenu<?=$value?>").addClass('open');
-        <?}?>
-    <?}?>
+        <?php }?>
+    <?php }?>
     $("#beyondmenu<?=\Yii::$app->request->get('mid')?>").addClass('active');
 })
 </script>

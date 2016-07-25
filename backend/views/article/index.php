@@ -1,51 +1,47 @@
 <?php
 
-use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\ArticleSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Articles';
+$this->title = '文章列表';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="article-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
-        <?= Html::a('Create Article', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增文章', ['create','mid'=>\Yii::$app->request->get('mid')], ['class' => 'btn btn-primary']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+//        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'mid',
-            'wid',
+//            'id',
             'title',
-            'mtitle',
-            // 'img_list',
-            // 'img_title',
-            // 'desc',
-            // 'content:ntext',
-            // 'pubtime',
-            // 'from',
-            // 'link',
-            // 'isopen',
-            // 'isrecommend',
-            // 'catid',
-            // 'sort_order',
-            // 'seo:ntext',
-            // 'share:ntext',
-            // 'created_at',
-            // 'updated_at',
-
-            ['class' => 'yii\grid\ActionColumn'],
+             'isopen',
+             'isrecommend',
+             'sort_order',
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template'=>'{update}{shareseo}{delete}',
+                'buttons'=>[
+                    'shareseo'=>function ($url, $model, $key) {
+                        $options = array_merge([
+                            'title' => Yii::t('yii', '分享，SEO配置'),
+                            'aria-label' => Yii::t('yii', 'shareseo'),
+                            'data-pjax' => '0',
+                            'style'=>'margin-left:5px;'
+                        ]);
+                        $url=['shareseo','id'=>$model->id];
+                        return Html::a('<span class="glyphicon glyphicon-share-alt"></span>', $url, $options);
+                    },
+                ],
+            ],
         ],
     ]); ?>
 </div>
