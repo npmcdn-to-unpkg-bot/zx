@@ -5,7 +5,7 @@ namespace common\models\table;
 use Yii;
 
 /**
- * This is the model class for table "{{%images}}".
+ * This is the model class for table "{{%upload}}".
  *
  * @property integer $id
  * @property integer $wid
@@ -18,19 +18,20 @@ use Yii;
  * @property integer $height
  * @property string $path
  * @property string $type
+ * @property string $size
  * @property string $desc
  * @property integer $isuse
  * @property string $created_at
  * @property string $updated_at
  */
-class Images extends \yii\db\ActiveRecord
+class Upload extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%images}}';
+        return '{{%upload}}';
     }
 
     /**
@@ -39,8 +40,9 @@ class Images extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['wid', 'mid', 'cid', 'uid', 'width', 'height', 'isuse'], 'integer'],
+            [['wid', 'mid', 'uid'], 'integer'],
             [['title', 'link', 'path', 'type', 'desc'], 'string', 'max' => 100],
+            [['size'], 'string', 'max' => 10],
             [['created_at', 'updated_at'], 'string', 'max' => 30],
         ];
     }
@@ -62,6 +64,7 @@ class Images extends \yii\db\ActiveRecord
             'height' => '高度',
             'path' => '图片路径',
             'type' => '类型',
+            'size' => '大小',
             'desc' => '描述',
             'isuse' => '是否再用',
             'created_at' => '添加时间',
@@ -71,10 +74,10 @@ class Images extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return \common\models\query\ImagesQuery the active query used by this AR class.
+     * @return \common\models\query\UploadQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \common\models\query\ImagesQuery(get_called_class());
+        return new \common\models\query\UploadQuery(get_called_class());
     }
 }

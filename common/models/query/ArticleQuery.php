@@ -3,11 +3,11 @@
 namespace common\models\query;
 
 /**
- * This is the ActiveQuery class for [[\common\models\table\Images]].
+ * This is the ActiveQuery class for [[\common\models\table\Article]].
  *
- * @see \common\models\table\Images
+ * @see \common\models\table\Article
  */
-class ImagesQuery extends \yii\db\ActiveQuery
+class ArticleQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {
@@ -16,7 +16,7 @@ class ImagesQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \common\models\table\Images[]|array
+     * @return \common\models\table\Article[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class ImagesQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \common\models\table\Images|array|null
+     * @return \common\models\table\Article|array|null
      */
     public function one($db = null)
     {

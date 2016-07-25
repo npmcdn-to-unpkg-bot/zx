@@ -47,7 +47,7 @@ $list=[
 
 ?>
 <div class="row">
-    <?foreach($list as $k=>$v){
+    <?php foreach($list as $k=>$v){
         if($v['show']<1){continue;}
     ?>
         <div class="col-lg-4 col-sm-6 col-xs-12">
@@ -61,5 +61,5 @@ $list=[
                 </div>
             </a>
         </div>
-    <?}?>
+    <?php }?>
 </div>

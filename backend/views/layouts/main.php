@@ -7,12 +7,10 @@
  */
 use backend\assets\BackendAsset;
 use backend\assets\BackheadAsset;
-use yii\helpers\Url;
-use yii\helpers\Html;
-
 use backend\widgets\BeyondmenuWidget;
-
 use yii\bootstrap\Alert;
+use yii\helpers\Html;
+use yii\helpers\Url;
 
 BackendAsset::register($this);
 BackheadAsset::register($this);
@@ -44,23 +42,9 @@ Purchase: http://wrapbootstrap.com
 <!-- Loading Container -->
 <div class="loading-container">
     <div class="loading-progress">
-        <div class="rotator">
-            <div class="rotator">
-                <div class="rotator colored">
-                    <div class="rotator">
-                        <div class="rotator colored">
-                            <div class="rotator colored"></div>
-                            <div class="rotator"></div>
-                        </div>
-                        <div class="rotator colored"></div>
-                    </div>
-                    <div class="rotator"></div>
-                </div>
-                <div class="rotator"></div>
-            </div>
-            <div class="rotator"></div>
+        <div class="la-ball-spin-clockwise la-2x">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         </div>
-        <div class="rotator"></div>
     </div>
 </div>
 <!--  /Loading Container -->
@@ -308,9 +292,9 @@ Purchase: http://wrapbootstrap.com
                             <a class="login-area dropdown-toggle" data-toggle="dropdown">
                                 <div class="avatar" title="View your public profile">
                                     <?php
-                                        $a=\yii\helpers\Json::decode(Yii::$app->user->identity->portrait);
+                                        $portrait=\yii\helpers\Json::decode(Yii::$app->user->identity->portrait);
                                     ?>
-                                    <img src="<?=$a[0]['url']?>">
+                                    <img src="<?=$portrait['path']?>">
                                 </div>
                                 <section>
                                     <h2><span class="profile"><span style="min-width:100px;"><?=Yii::$app->user->identity->name?></span></span></h2>
@@ -323,38 +307,38 @@ Purchase: http://wrapbootstrap.com
                                 <!--Avatar Area-->
                                 <li>
                                     <div class="avatar-area">
-                                        <img src="<?=$a[0]['url']?>" class="avatar">
+                                        <img src="<?=$portrait['path']?>" class="avatar">
                                     </div>
                                 </li>
                                 <!--Avatar Area-->
                                 <li class="edit">
-                                    <?if(\Yii::$app->user->identity->pid<1){?>
+                                    <?php if(\Yii::$app->user->identity->pid<1){?>
                                         <a href="<?=Url::toRoute(['/user/manage/password','id'=>Yii::$app->user->identity->id])?>" class="pull-left" >修改密码</a>
-                                    <?}?>
+                                    <?php }?>
                                     <a href="<?=Url::toRoute(['/user/manage/update','id'=>Yii::$app->user->identity->id])?>" class="pull-right">更新资料</a>
                                 </li>
                                 <!--Theme Selector Area-->
                                 <li class="theme-area">
                                     <ul class="colorpicker" id="skin-changer">
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#5DB2FF;" data-rel="/admin/source/css/skins/blue.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#2dc3e8;" data-rel="/admin/source/css/skins/azure.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#03B3B2;" data-rel="/admin/source/css/skins/teal.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#53a93f;" data-rel="/admin/source/css/skins/green.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#FF8F32;" data-rel="/admin/source/css/skins/orange.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#cc324b;" data-rel="/admin/source/css/skins/pink.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#AC193D;" data-rel="/admin/source/css/skins/darkred.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#8C0095;" data-rel="/admin/source/css/skins/purple.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#0072C6;" data-rel="/admin/source/css/skins/darkblue.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#585858;" data-rel="/admin/source/css/skins/gray.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#474544;" data-rel="/admin/source/css/skins/black.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="javascript:;" style="background-color:#001940;" data-rel="/admin/source/css/skins/deepblue.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#5DB2FF;" data-rel="/admin/source/css/skins/blue.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#2dc3e8;" data-rel="/admin/source/css/skins/azure.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#03B3B2;" data-rel="/admin/source/css/skins/teal.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#53a93f;" data-rel="/admin/source/css/skins/green.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#FF8F32;" data-rel="/admin/source/css/skins/orange.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#cc324b;" data-rel="/admin/source/css/skins/pink.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#AC193D;" data-rel="/admin/source/css/skins/darkred.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#8C0095;" data-rel="/admin/source/css/skins/purple.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#0072C6;" data-rel="/admin/source/css/skins/darkblue.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#585858;" data-rel="/admin/source/css/skins/gray.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#474544;" data-rel="/admin/source/css/skins/black.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="javascript:" style="background-color:#001940;" data-rel="/admin/source/css/skins/deepblue.min.css"></a></li>
                                     </ul>
                                 </li>
                                 <!--/Theme Selector Area-->
                                 <li class="edit dropdown-footer">
-                                    <?if(Yii::$app->user->identity->pid<1){?>
+                                    <?php if(Yii::$app->user->identity->pid<1){?>
                                         <a href="<?=Url::toRoute(['/user/manage/index','id'=>Yii::$app->user->identity->id])?>" class="pull-left">子账号管理</a>
-                                    <?}?>
+                                    <?php }?>
                                     <a href="<?=Url::toRoute(['/user/access/logout'])?>" class="pull-right" >退出</a>
                                 </li>
                             </ul>
@@ -443,7 +427,7 @@ Purchase: http://wrapbootstrap.com
             <!-- /Page Header -->
             <!-- Page Body -->
             <div class="page-body">
-                <?if($AlertMsg=\Yii::$app->session->getFlash('AlertMsg')){
+                <?php if($AlertMsg=\Yii::$app->session->getFlash('AlertMsg')){
                     echo Alert::Widget(['body'=>$AlertMsg]);
                 }?>
                 <?=$content?>

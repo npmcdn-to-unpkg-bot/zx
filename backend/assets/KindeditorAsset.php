@@ -18,7 +18,6 @@ class KindeditorAsset extends AssetBundle
     ];
     public $js = [
         'vendor/kindeditor/kindeditor-all-min.js',
-        'vendor/kindeditor/index.js',
     ];
 
     public $jsOptions=[

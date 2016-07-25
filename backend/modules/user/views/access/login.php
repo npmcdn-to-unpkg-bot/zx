@@ -5,9 +5,10 @@
  * Date: 2016/3/29
  * Time: 20:22
  */
-use yii\helpers\Url;
 use backend\assets\BackendAsset;
 use backend\assets\BackheadAsset;
+use yii\helpers\Url;
+
 BackendAsset::register($this);
 BackheadAsset::register($this);
 
@@ -27,7 +28,7 @@ BackheadAsset::register($this);
     <?php $this->beginBody() ?>
 
     <div class="login-container animated fadeInDown">
-        <?if($AlertMsg=\Yii::$app->session->getFlash('AlertMsg')){
+        <?php if($AlertMsg=\Yii::$app->session->getFlash('AlertMsg')){
             echo yii\bootstrap\Alert::widget(['body'=>$AlertMsg]);
         }?>
         <div class="loginbox bg-white">
@@ -36,13 +37,13 @@ BackheadAsset::register($this);
                 <div class="loginbox-social">
                     <div class="social-title ">Connect with Your Social Accounts</div>
                     <div class="social-buttons">
-                        <a href="javascript:;" class="button-facebook">
+                        <a href="javascript:" class="button-facebook">
                             <i class="social-icon fa fa-facebook"></i>
                         </a>
-                        <a href="javascript:;" class="button-twitter">
+                        <a href="javascript:" class="button-twitter">
                             <i class="social-icon fa fa-twitter"></i>
                         </a>
-                        <a href="javascript:;" class="button-google">
+                        <a href="javascript:" class="button-google">
                             <i class="social-icon fa fa-google-plus"></i>
                         </a>
                     </div>

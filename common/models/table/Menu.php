@@ -47,7 +47,7 @@ class Menu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['wid', 'pid', 'title', 'img_menu'], 'required'],
+            [['wid', 'pid', 'title'], 'required'],
             [['wid', 'pid', 'type', 'tmp', 'sort_order', 'is_open'], 'integer'],
             [['description', 'tmp_config', 'ext_data', 'configs', 'configdata', 'configimg', 'share', 'seo'], 'string'],
             [['title', 'mtitle', 'link', 'plist'], 'string', 'max' => 255],
