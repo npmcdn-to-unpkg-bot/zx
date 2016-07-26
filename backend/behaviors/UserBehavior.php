@@ -36,10 +36,10 @@ class UserBehavior extends Behavior
     public function beforeAction($event)
     {
         $action = $event->action->id;
-        if(\Yii::$app->user->identity->pid>0 && !in_array($action,$this->actions)){//子帐号才进行判断
-            UHelper::alert('抱歉，你没有权限查看这个页面','error');
-            return \Yii::$app->response->redirect(Url::toRoute(['/index/index']));
-        }
+//        if(\Yii::$app->user->identity->pid>0 && !in_array($action,$this->actions)){//子帐号才进行判断
+//            UHelper::alert('抱歉，你没有权限查看这个页面','error');
+//            return \Yii::$app->response->redirect(Url::toRoute(['/index/index']));
+//        }
 
     }
 }

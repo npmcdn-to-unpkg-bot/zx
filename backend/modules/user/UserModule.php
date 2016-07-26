@@ -18,7 +18,7 @@ class UserModule extends \yii\base\Module
         return [
             'access' => [
                 'class' => \yii\filters\AccessControl::className(),
-                'except' => ['access/login', 'access/register','access/active'],
+                'except' => ['access/login', 'access/register','access/active','manage/reset'],
                 'rules' => [
                     [
                         'allow' => true,

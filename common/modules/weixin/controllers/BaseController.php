@@ -33,7 +33,6 @@ class BaseController extends Controller
         $tmpStr = sha1( $tmpStr );
 
         if( $tmpStr == $signature ){
-            echo $request->get('echostr');
             return true;
         }else{
             return false;

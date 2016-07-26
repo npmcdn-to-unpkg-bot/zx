@@ -17,12 +17,24 @@ class DefaultController extends BaseController
     {
         $request=\Yii::$app->request;
 
+        echo 123;
+        \Yii::info('微信接入wid-'.time(),__METHOD__);die;
+
+
         if($request->get('signature') && $request->get('timestamp') && $request->get('nonce') && $request->get('echostr')){
-            self::checkSignature($request->get('wid'));
+
+            if(self::checkSignature($request->get('wid'))){
+
+                \Yii::info('微信接入wid-'.$request->get('wid'),__METHOD__);
+
+                die($request->get('echostr'));
+
+            }else{
+
+                die(false);
+
+            }
         }
-
-
-
 
     }
 }

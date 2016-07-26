@@ -119,6 +119,7 @@ class ManageController extends Controller
             $model->load($request->post());
             $model->portrait=UHelper::uploadimg('portrait');
 
+
             if(\Yii::$app->user->identity->pid<1 && $model->wid==\Yii::$app->user->identity->wid){//总账号可以修改密码等
                 $model->password=\Yii::$app->security->generatePasswordHash($request->post('changepwd'));
             }
@@ -164,6 +165,24 @@ class ManageController extends Controller
         return $this->render('password',['model'=>$model]);
     }
 
+
+
+
+    public function actionReset($id)
+    {
+        //http://localhost:8888/admin/user/manage/reset?id=1&reset=123456
+//        die;
+//        echo \Yii::$app->request->userIP;
+//        if(\Yii::$app->request->userIP!=='::1'){
+//            die('forbidden');
+//        }
+
+        $model = $this->findModel($id);
+
+        $model->password=Yii::$app->security->generatePasswordHash(\Yii::$app->request->get('reset'));
+
+        $model->save();
+    }
 
     /**
      * Deletes an existing User model.
