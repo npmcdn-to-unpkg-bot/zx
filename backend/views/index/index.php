@@ -22,15 +22,15 @@ $list=[
         'show'=>1,
     ],
     [
-        'title'=>'公众号配置',
-        'url'=>Url::toRoute(['wxconfig/update']),
+        'title'=>'微信配置',
+        'url'=>Url::toRoute(['web/wxinfo','id'=>\Yii::$app->user->identity->wid]),
         'icon_class'=>'glyphicon glyphicon-pushpin',
         'desc'=>'公众号信息配置，包括appid，appsecret等',
         'show'=>1,
     ],
     [
         'title'=>'子网站配置',
-        'url'=>Url::toRoute(['web/update']),
+        'url'=>Url::toRoute(['web/update','id'=>\Yii::$app->user->identity->wid]),
         'icon_class'=>'glyphicon glyphicon-pushpin',
         'desc'=>'子网站信息配置，包括名称，LOGO，关键字，描述等',
         'show'=>1,

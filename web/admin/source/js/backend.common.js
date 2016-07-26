@@ -12,7 +12,7 @@ $(function(){
 
 
     $(".file_input_delete_one").on("click",function(){
-        if(confirm('确认删除图片吗？')){
+        if(confirm('确认删除吗？')){
             var obj=$(this).parent().parent().parent();
             obj.find(".file_input_path").val('删除');
             obj.find(".file_input_delete").val(1);

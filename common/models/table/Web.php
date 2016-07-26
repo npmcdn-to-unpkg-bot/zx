@@ -18,6 +18,8 @@ use Yii;
  * @property string $wx_merchant_key
  * @property string $wx_apiclient_cert
  * @property string $wx_apiclient_key
+ * @property string $wx_token
+ * @property string $wx_aeskey
  * @property integer $wx_use
  * @property string $wxinfo
  * @property string $smtp
@@ -46,7 +48,7 @@ class Web extends \yii\db\ActiveRecord
             [['admin', 'wx_use'], 'integer'],
             [['config', 'wxinfo', 'smtp', 'keyword', 'description'], 'string'],
             [['name', 'wx_merchant_number'], 'string', 'max' => 100],
-            [['logo', 'wx_appid', 'wx_appsecret', 'wx_merchant_key', 'wx_apiclient_cert', 'wx_apiclient_key'], 'string', 'max' => 255],
+            [['logo', 'wx_appid', 'wx_appsecret', 'wx_merchant_key', 'wx_apiclient_cert', 'wx_apiclient_key', 'wx_token', 'wx_aeskey'], 'string', 'max' => 255],
             [['created_at', 'updated_at'], 'string', 'max' => 20],
         ];
     }
@@ -68,6 +70,8 @@ class Web extends \yii\db\ActiveRecord
             'wx_merchant_key' => '微信支付秘钥',
             'wx_apiclient_cert' => '微信支付证书apiclient_cert',
             'wx_apiclient_key' => '微信支付证书apiclient_key',
+            'wx_token' => '微信token',
+            'wx_aeskey' => '微信EncodingAESKey',
             'wx_use' => '是否使用本公众号的授权接口',
             'wxinfo' => 'Wxinfo',
             'smtp' => 'SMTP邮箱配置',

@@ -3,7 +3,7 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'modules' => [
         'weixin' => [
-            'class' => 'common\modules\WeixinModule',
+            'class' => 'common\modules\weixin\WeixinModule',
         ],
     ],
     'components' => [

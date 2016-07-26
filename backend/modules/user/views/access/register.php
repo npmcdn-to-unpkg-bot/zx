@@ -38,7 +38,7 @@ BackheadAsset::register($this);
         <div class="registerbox-caption ">请输入你的信息</div>
         <form id="registerForm" action="" method="post" >
             <div class="registerbox-textbox">
-                <input type="text" value="<?if($reusername=\Yii::$app->session->getFlash('re_username')){echo $reusername;}?>" name="username" class="form-control " datatype="s6-12,en6-12" errormsg="用户名至少5个字符,最多16个字符！" sucmsg="成功"  placeholder="用户名" />
+                <input type="text" value="<?php if($reusername=\Yii::$app->session->getFlash('re_username')){echo $reusername;}?>" name="username" class="form-control " datatype="s6-12,en6-12" errormsg="用户名至少5个字符,最多16个字符！" sucmsg="成功"  placeholder="用户名" />
             </div>
             <div class="registerbox-textbox">
                 <input type="password" name="password" class="form-control" placeholder="密码" />
@@ -47,7 +47,7 @@ BackheadAsset::register($this);
                 <input type="password" name="confirmpassword"  class="form-control" placeholder="确认密码" />
             </div>
             <div class="registerbox-textbox">
-                <input type="text" name="email"  value="<?if($reemail=\Yii::$app->session->getFlash('re_email')){echo $reemail;}?>" class="form-control" placeholder="邮箱" />
+                <input type="text" name="email"  value="<?php if($reemail=\Yii::$app->session->getFlash('re_email')){echo $reemail;}?>" class="form-control" placeholder="邮箱" />
             </div>
             <input name="_backendCSRF"  type="hidden" id="_backendCSRF" value="<?= Yii::$app->request->csrfToken ?>">
             <hr class="wide" />

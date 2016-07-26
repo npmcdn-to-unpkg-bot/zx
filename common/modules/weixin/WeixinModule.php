@@ -1,6 +1,6 @@
 <?php
 
-namespace common\modules;
+namespace common\modules\weixin;
 
 /**
  * weixin module definition class
@@ -10,7 +10,7 @@ class WeixinModule extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'common\modules\controllers';
+    public $controllerNamespace = 'common\modules\weixin\controllers';
 
     /**
      * @inheritdoc
@@ -21,4 +21,8 @@ class WeixinModule extends \yii\base\Module
 
         // custom initialization code goes here
     }
+
+
+
+
 }

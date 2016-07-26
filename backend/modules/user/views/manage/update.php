@@ -13,29 +13,24 @@ $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="user-update">
 
-<!--    <h1>--><?//= Html::encode($this->title) ?><!--</h1>-->
 
     <div class="user-form">
 
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-        <?//= $form->field($model, 'wid')->textInput() ?>
 
-        <?//= $form->field($model, 'pid')->textInput() ?>
 
         <?= $form->field($model, 'email')->textInput(['maxlength' => true,'disabled'=>true]) ?>
 
         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-        <?//= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
-
-        <?if(\Yii::$app->user->identity->pid<1 ){?>
+        <?php if(\Yii::$app->user->identity->pid<1 ){?>
 
             <?= $form->field($model, 'is_active')->radioList(['1'=>'启用','0'=>'停用'])->label('使用状态') ?>
 
             <?= $form->field($model,'password')->passwordInput(['name'=>'changepwd','value'=>''])?>
 
-        <?}?>
+        <?php }?>
 
         <?= $form->field($model, 'nickname')->textInput(['maxlength' => true]) ?>
 
@@ -53,9 +48,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
         <?= $form->field($model, 'updated_at')->textInput(['maxlength' => true,'disabled'=>true,'value'=>\Yii::$app->formatter->asDatetime($model->updated_at)]) ?>
 
-        <?//= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
 
-        <?//= $form->field($model, 'access_token')->textInput(['maxlength' => true]) ?>
 
         <?= $form->field($model, 'expire')->textInput(['maxlength' => true,'disabled'=>true,'value'=>\Yii::$app->formatter->asDate($model->expire)])?>
 

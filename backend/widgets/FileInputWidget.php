@@ -14,6 +14,7 @@ class FileInputWidget extends Widget
     public $attribute;
     public $width=0;
     public $height=0;
+    public $type='image';
 
     public function init()
     {
@@ -27,6 +28,7 @@ class FileInputWidget extends Widget
             'attribute'=>$this->attribute,
             'width'=>$this->width,
             'height'=>$this->height,
+            'type'=>$this->type,
         ]);
     }
 }
