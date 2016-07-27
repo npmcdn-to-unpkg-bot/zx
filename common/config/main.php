@@ -10,6 +10,9 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'wxcache' => [
+            'class' => 'yii\caching\FileCache',
+        ]
 
     ],
     'language' =>'zh-CN',//中文提示

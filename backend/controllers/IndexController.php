@@ -43,6 +43,26 @@ class IndexController extends BaseController
 
 
 
+        \Yii::info('aaaaa',__METHOD__);
+
+
+
+        if(\Yii::$app->cache->get('wwiiddqq')){
+            echo \Yii::$app->cache->get('wwiiddqq').'****';
+        }else{
+            \Yii::$app->cache->set('wwiiddqq',time().'a',10);
+        }
+
+        if(\Yii::$app->wxcache->get('wx')){
+            echo \Yii::$app->wxcache->get('wx');
+        }else{
+            \Yii::$app->wxcache->set('wx','hahaha-'.date('H:i:s',time()),10);
+        }
+
+
+        die;
+
+
         if(\Yii::$app->request->isPost){
 
             echo '<pre>';
