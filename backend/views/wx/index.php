@@ -6,6 +6,12 @@
 use yii\helpers\Html;
 ?>
 
+<?php
+
+yii\helpers\UHelper::pre($info);
+
+?>
+
 <?= Html::a('新建菜单','javascript:;',['class'=>'btn btn-primary wx-create-menu'])?>
 
 <?= Html::a('删除菜单','javascript:;',['class'=>'btn btn-primary wx-delete-menu'])?>

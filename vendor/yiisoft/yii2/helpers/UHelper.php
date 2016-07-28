@@ -272,4 +272,16 @@ class UHelper
         }
         return $tojson?\yii\helpers\Json::encode($info):$info;
     }
+
+
+    public static function pre($data,$print=true)
+    {
+        echo '<pre>';
+            if($print){
+                print_r($data);
+            }else{
+                var_dump($data);
+            }
+        echo '</pre>';
+    }
 }
