@@ -1,0 +1,304 @@
+2016-07-29 18:04:29 [101.226.103.73][-][-][info][wxlog] <xml><ToUserName><![CDATA[gh_06d5468fd094]]></ToUserName>
+<FromUserName><![CDATA[o8cXMs4OqpFLIWW_nMx8lmelYSmE]]></FromUserName>
+<CreateTime>1469786671</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[哈哈哈回家]]></Content>
+<MsgId>6312685684467356188</MsgId>
+</xml>
+    in /data/home/qxu1193900179/htdocs/zx/common/modules/weixin/controllers/DefaultController.php:41
+2016-07-29 18:04:29 [101.226.103.73][-][-][info][application] $_GET = [
+    'wid' => '1'
+    'signature' => 'ee3b8ada66256941e7d22df9dd8587386af64939'
+    'timestamp' => '1469786671'
+    'nonce' => '1493982557'
+    'openid' => 'o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+]
+
+$_SERVER = [
+    'CONTENT_LENGTH' => '288'
+    'CONTENT_TYPE' => 'text/xml'
+    'DOCUMENT_ROOT' => '/usr/home/qxu1193900179/htdocs'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => '326108993.com'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/4.0'
+    'PATH' => '/bin:/usr/bin'
+    'PHPRC' => '/var/www/php55/hichina_ini/qxu1193900179'
+    'QUERY_STRING' => 'wid=1&signature=ee3b8ada66256941e7d22df9dd8587386af64939&timestamp=1469786671&nonce=1493982557&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_CONTENT_LENGTH' => '288'
+    'REDIRECT_CONTENT_TYPE' => 'text/xml'
+    'REDIRECT_DOCUMENT_ROOT' => '/usr/home/qxu1193900179/htdocs'
+    'REDIRECT_GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_HTTP_ACCEPT' => '*/*'
+    'REDIRECT_HTTP_HOST' => '326108993.com'
+    'REDIRECT_HTTP_PRAGMA' => 'no-cache'
+    'REDIRECT_HTTP_USER_AGENT' => 'Mozilla/4.0'
+    'REDIRECT_PATH' => '/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'REDIRECT_PATH_INFO' => '/default/index'
+    'REDIRECT_PATH_TRANSLATED' => 'redirect:/index.php/index'
+    'REDIRECT_QUERY_STRING' => 'wid=1&signature=ee3b8ada66256941e7d22df9dd8587386af64939&timestamp=1469786671&nonce=1493982557&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_REMOTE_ADDR' => '101.226.103.73'
+    'REDIRECT_REMOTE_PORT' => '60570'
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_REQUEST_URI' => '/weixin/default/index?wid=1&signature=ee3b8ada66256941e7d22df9dd8587386af64939&timestamp=1469786671&nonce=1493982557&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_SCRIPT_FILENAME' => '/usr/home/qxu1193900179/htdocs/weixin'
+    'REDIRECT_SCRIPT_NAME' => '/weixin'
+    'REDIRECT_SERVER_ADDR' => '121.42.95.234'
+    'REDIRECT_SERVER_ADMIN' => 'webmaster@qxu1193900179.my3w.com'
+    'REDIRECT_SERVER_NAME' => '326108993.com'
+    'REDIRECT_SERVER_PORT' => '80'
+    'REDIRECT_SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REDIRECT_SERVER_SIGNATURE' => ''
+    'REDIRECT_SERVER_SOFTWARE' => 'Apache'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_UNIQUE_ID' => 'V5sqLQqjzoUAADUkoTUAAAAa'
+    'REDIRECT_URL' => '/weixin/default/index'
+    'REDIRECT_gzip_only_text_html' => '1'
+    'REMOTE_ADDR' => '101.226.103.73'
+    'REMOTE_PORT' => '60570'
+    'REQUEST_METHOD' => 'POST'
+    'REQUEST_URI' => '/weixin/default/index?wid=1&signature=ee3b8ada66256941e7d22df9dd8587386af64939&timestamp=1469786671&nonce=1493982557&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'SCRIPT_FILENAME' => '/usr/home/qxu1193900179/htdocs/index.php'
+    'SCRIPT_NAME' => '/index.php'
+    'SERVER_ADDR' => '121.42.95.234'
+    'SERVER_ADMIN' => 'webmaster@qxu1193900179.my3w.com'
+    'SERVER_NAME' => '326108993.com'
+    'SERVER_PORT' => '80'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'UNIQUE_ID' => 'V5sqLQqjzoUAADUkoTUAAAAa'
+    'gzip_only_text_html' => '1'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1469786669.9131
+    'REQUEST_TIME' => 1469786669
+]
+2016-07-29 18:10:04 [101.226.233.142][-][-][info][wxlog] <xml><ToUserName><![CDATA[gh_06d5468fd094]]></ToUserName>
+<FromUserName><![CDATA[o8cXMs4OqpFLIWW_nMx8lmelYSmE]]></FromUserName>
+<CreateTime>1469787005</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[斤斤计较]]></Content>
+<MsgId>6312687118986433306</MsgId>
+</xml>
+    in /data/home/qxu1193900179/htdocs/zx/common/modules/weixin/controllers/DefaultController.php:38
+2016-07-29 18:10:04 [101.226.233.142][-][-][info][application] $_GET = [
+    'wid' => '1'
+    'signature' => 'faa0e11b2bbc27bee1d29c09685379c9faab8076'
+    'timestamp' => '1469787005'
+    'nonce' => '1592340342'
+    'openid' => 'o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+]
+
+$_SERVER = [
+    'CONTENT_LENGTH' => '285'
+    'CONTENT_TYPE' => 'text/xml'
+    'DOCUMENT_ROOT' => '/usr/home/qxu1193900179/htdocs'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => '326108993.com'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/4.0'
+    'PATH' => '/bin:/usr/bin'
+    'PHPRC' => '/var/www/php55/hichina_ini/qxu1193900179'
+    'QUERY_STRING' => 'wid=1&signature=faa0e11b2bbc27bee1d29c09685379c9faab8076&timestamp=1469787005&nonce=1592340342&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_CONTENT_LENGTH' => '285'
+    'REDIRECT_CONTENT_TYPE' => 'text/xml'
+    'REDIRECT_DOCUMENT_ROOT' => '/usr/home/qxu1193900179/htdocs'
+    'REDIRECT_GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_HTTP_ACCEPT' => '*/*'
+    'REDIRECT_HTTP_HOST' => '326108993.com'
+    'REDIRECT_HTTP_PRAGMA' => 'no-cache'
+    'REDIRECT_HTTP_USER_AGENT' => 'Mozilla/4.0'
+    'REDIRECT_PATH' => '/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'REDIRECT_PATH_INFO' => '/default/index'
+    'REDIRECT_PATH_TRANSLATED' => 'redirect:/index.php/index'
+    'REDIRECT_QUERY_STRING' => 'wid=1&signature=faa0e11b2bbc27bee1d29c09685379c9faab8076&timestamp=1469787005&nonce=1592340342&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_REMOTE_ADDR' => '101.226.233.142'
+    'REDIRECT_REMOTE_PORT' => '58182'
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_REQUEST_URI' => '/weixin/default/index?wid=1&signature=faa0e11b2bbc27bee1d29c09685379c9faab8076&timestamp=1469787005&nonce=1592340342&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_SCRIPT_FILENAME' => '/usr/home/qxu1193900179/htdocs/weixin'
+    'REDIRECT_SCRIPT_NAME' => '/weixin'
+    'REDIRECT_SERVER_ADDR' => '121.42.95.234'
+    'REDIRECT_SERVER_ADMIN' => 'webmaster@qxu1193900179.my3w.com'
+    'REDIRECT_SERVER_NAME' => '326108993.com'
+    'REDIRECT_SERVER_PORT' => '80'
+    'REDIRECT_SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REDIRECT_SERVER_SIGNATURE' => ''
+    'REDIRECT_SERVER_SOFTWARE' => 'Apache'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_UNIQUE_ID' => 'V5srfAqjzoUAADsa6P0AAAAN'
+    'REDIRECT_URL' => '/weixin/default/index'
+    'REDIRECT_gzip_only_text_html' => '1'
+    'REMOTE_ADDR' => '101.226.233.142'
+    'REMOTE_PORT' => '58182'
+    'REQUEST_METHOD' => 'POST'
+    'REQUEST_URI' => '/weixin/default/index?wid=1&signature=faa0e11b2bbc27bee1d29c09685379c9faab8076&timestamp=1469787005&nonce=1592340342&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'SCRIPT_FILENAME' => '/usr/home/qxu1193900179/htdocs/index.php'
+    'SCRIPT_NAME' => '/index.php'
+    'SERVER_ADDR' => '121.42.95.234'
+    'SERVER_ADMIN' => 'webmaster@qxu1193900179.my3w.com'
+    'SERVER_NAME' => '326108993.com'
+    'SERVER_PORT' => '80'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'UNIQUE_ID' => 'V5srfAqjzoUAADsa6P0AAAAN'
+    'gzip_only_text_html' => '1'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1469787004.6344
+    'REQUEST_TIME' => 1469787004
+]
+2016-07-29 18:12:38 [101.226.233.157][-][-][info][wxlog] <xml><ToUserName><![CDATA[gh_06d5468fd094]]></ToUserName>
+<FromUserName><![CDATA[o8cXMs4OqpFLIWW_nMx8lmelYSmE]]></FromUserName>
+<CreateTime>1469787159</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[ yh]]></Content>
+<MsgId>6312687780411397008</MsgId>
+</xml>
+    in /data/home/qxu1193900179/htdocs/zx/common/modules/weixin/controllers/DefaultController.php:38
+2016-07-29 18:12:38 [101.226.233.157][-][-][info][application] $_GET = [
+    'wid' => '1'
+    'signature' => 'ebc5e056ac22371bfa7accc67d59aff9022fa5b0'
+    'timestamp' => '1469787159'
+    'nonce' => '1907341026'
+    'openid' => 'o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+]
+
+$_SERVER = [
+    'CONTENT_LENGTH' => '276'
+    'CONTENT_TYPE' => 'text/xml'
+    'DOCUMENT_ROOT' => '/usr/home/qxu1193900179/htdocs'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => '326108993.com'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/4.0'
+    'PATH' => '/bin:/usr/bin'
+    'PHPRC' => '/var/www/php55/hichina_ini/qxu1193900179'
+    'QUERY_STRING' => 'wid=1&signature=ebc5e056ac22371bfa7accc67d59aff9022fa5b0&timestamp=1469787159&nonce=1907341026&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_CONTENT_LENGTH' => '276'
+    'REDIRECT_CONTENT_TYPE' => 'text/xml'
+    'REDIRECT_DOCUMENT_ROOT' => '/usr/home/qxu1193900179/htdocs'
+    'REDIRECT_GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_HTTP_ACCEPT' => '*/*'
+    'REDIRECT_HTTP_HOST' => '326108993.com'
+    'REDIRECT_HTTP_PRAGMA' => 'no-cache'
+    'REDIRECT_HTTP_USER_AGENT' => 'Mozilla/4.0'
+    'REDIRECT_PATH' => '/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'REDIRECT_PATH_INFO' => '/default/index'
+    'REDIRECT_PATH_TRANSLATED' => 'redirect:/index.php/index'
+    'REDIRECT_QUERY_STRING' => 'wid=1&signature=ebc5e056ac22371bfa7accc67d59aff9022fa5b0&timestamp=1469787159&nonce=1907341026&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_REMOTE_ADDR' => '101.226.233.157'
+    'REDIRECT_REMOTE_PORT' => '44241'
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_REQUEST_URI' => '/weixin/default/index?wid=1&signature=ebc5e056ac22371bfa7accc67d59aff9022fa5b0&timestamp=1469787159&nonce=1907341026&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_SCRIPT_FILENAME' => '/usr/home/qxu1193900179/htdocs/weixin'
+    'REDIRECT_SCRIPT_NAME' => '/weixin'
+    'REDIRECT_SERVER_ADDR' => '121.42.95.234'
+    'REDIRECT_SERVER_ADMIN' => 'webmaster@qxu1193900179.my3w.com'
+    'REDIRECT_SERVER_NAME' => '326108993.com'
+    'REDIRECT_SERVER_PORT' => '80'
+    'REDIRECT_SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REDIRECT_SERVER_SIGNATURE' => ''
+    'REDIRECT_SERVER_SOFTWARE' => 'Apache'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_UNIQUE_ID' => 'V5ssFgqjzoUAAD2LCRQAAAAA'
+    'REDIRECT_URL' => '/weixin/default/index'
+    'REDIRECT_gzip_only_text_html' => '1'
+    'REMOTE_ADDR' => '101.226.233.157'
+    'REMOTE_PORT' => '44241'
+    'REQUEST_METHOD' => 'POST'
+    'REQUEST_URI' => '/weixin/default/index?wid=1&signature=ebc5e056ac22371bfa7accc67d59aff9022fa5b0&timestamp=1469787159&nonce=1907341026&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'SCRIPT_FILENAME' => '/usr/home/qxu1193900179/htdocs/index.php'
+    'SCRIPT_NAME' => '/index.php'
+    'SERVER_ADDR' => '121.42.95.234'
+    'SERVER_ADMIN' => 'webmaster@qxu1193900179.my3w.com'
+    'SERVER_NAME' => '326108993.com'
+    'SERVER_PORT' => '80'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'UNIQUE_ID' => 'V5ssFgqjzoUAAD2LCRQAAAAA'
+    'gzip_only_text_html' => '1'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1469787158.2706
+    'REQUEST_TIME' => 1469787158
+]
+2016-07-29 18:13:51 [101.226.233.152][-][-][info][wxlog] <xml><ToUserName><![CDATA[gh_06d5468fd094]]></ToUserName>
+<FromUserName><![CDATA[o8cXMs4OqpFLIWW_nMx8lmelYSmE]]></FromUserName>
+<CreateTime>1469787232</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[刚刚好]]></Content>
+<MsgId>6312688093944009706</MsgId>
+</xml>
+    in /data/home/qxu1193900179/htdocs/zx/common/modules/weixin/controllers/DefaultController.php:38
+2016-07-29 18:13:51 [101.226.233.152][-][-][info][application] $_GET = [
+    'wid' => '1'
+    'signature' => '6848edefe8603cfcbed24e4ef31096057aa1684d'
+    'timestamp' => '1469787232'
+    'nonce' => '2088262533'
+    'openid' => 'o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+]
+
+$_SERVER = [
+    'CONTENT_LENGTH' => '282'
+    'CONTENT_TYPE' => 'text/xml'
+    'DOCUMENT_ROOT' => '/usr/home/qxu1193900179/htdocs'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_HOST' => '326108993.com'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/4.0'
+    'PATH' => '/bin:/usr/bin'
+    'PHPRC' => '/var/www/php55/hichina_ini/qxu1193900179'
+    'QUERY_STRING' => 'wid=1&signature=6848edefe8603cfcbed24e4ef31096057aa1684d&timestamp=1469787232&nonce=2088262533&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_CONTENT_LENGTH' => '282'
+    'REDIRECT_CONTENT_TYPE' => 'text/xml'
+    'REDIRECT_DOCUMENT_ROOT' => '/usr/home/qxu1193900179/htdocs'
+    'REDIRECT_GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_HTTP_ACCEPT' => '*/*'
+    'REDIRECT_HTTP_HOST' => '326108993.com'
+    'REDIRECT_HTTP_PRAGMA' => 'no-cache'
+    'REDIRECT_HTTP_USER_AGENT' => 'Mozilla/4.0'
+    'REDIRECT_PATH' => '/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'REDIRECT_PATH_INFO' => '/default/index'
+    'REDIRECT_PATH_TRANSLATED' => 'redirect:/index.php/index'
+    'REDIRECT_QUERY_STRING' => 'wid=1&signature=6848edefe8603cfcbed24e4ef31096057aa1684d&timestamp=1469787232&nonce=2088262533&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_REMOTE_ADDR' => '101.226.233.152'
+    'REDIRECT_REMOTE_PORT' => '60438'
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_REQUEST_URI' => '/weixin/default/index?wid=1&signature=6848edefe8603cfcbed24e4ef31096057aa1684d&timestamp=1469787232&nonce=2088262533&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'REDIRECT_SCRIPT_FILENAME' => '/usr/home/qxu1193900179/htdocs/weixin'
+    'REDIRECT_SCRIPT_NAME' => '/weixin'
+    'REDIRECT_SERVER_ADDR' => '121.42.95.234'
+    'REDIRECT_SERVER_ADMIN' => 'webmaster@qxu1193900179.my3w.com'
+    'REDIRECT_SERVER_NAME' => '326108993.com'
+    'REDIRECT_SERVER_PORT' => '80'
+    'REDIRECT_SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REDIRECT_SERVER_SIGNATURE' => ''
+    'REDIRECT_SERVER_SOFTWARE' => 'Apache'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_UNIQUE_ID' => 'V5ssXwqjzoUAAD@7JDAAAAAN'
+    'REDIRECT_URL' => '/weixin/default/index'
+    'REDIRECT_gzip_only_text_html' => '1'
+    'REMOTE_ADDR' => '101.226.233.152'
+    'REMOTE_PORT' => '60438'
+    'REQUEST_METHOD' => 'POST'
+    'REQUEST_URI' => '/weixin/default/index?wid=1&signature=6848edefe8603cfcbed24e4ef31096057aa1684d&timestamp=1469787232&nonce=2088262533&openid=o8cXMs4OqpFLIWW_nMx8lmelYSmE'
+    'SCRIPT_FILENAME' => '/usr/home/qxu1193900179/htdocs/index.php'
+    'SCRIPT_NAME' => '/index.php'
+    'SERVER_ADDR' => '121.42.95.234'
+    'SERVER_ADMIN' => 'webmaster@qxu1193900179.my3w.com'
+    'SERVER_NAME' => '326108993.com'
+    'SERVER_PORT' => '80'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'UNIQUE_ID' => 'V5ssXwqjzoUAAD@7JDAAAAAN'
+    'gzip_only_text_html' => '1'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1469787231.4558
+    'REQUEST_TIME' => 1469787231
+]

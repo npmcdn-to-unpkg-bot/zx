@@ -21,7 +21,14 @@ return [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error', 'warning','info'],
+                    'except' => ['wxmsg'],
+                ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['info'],
+                    'categories'=>['wxlog'],
+                    'logFile'=>\Yii::getAlias('@wxlog')
                 ],
             ],
         ],

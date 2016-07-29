@@ -77,15 +77,17 @@ class WeixinHelper
          * */
         if($accept_cache){
 
-            $openid= \Yii::$app->request->cookies->get('wxoauth2_'.$scope.$wid);
+            $openid_cookies= \Yii::$app->request->cookies->get('wxoauth2_'.$scope.$wid);
 
             /*
              * openid 缓存还在的时候直接返回
              * */
-            if($cache->get('wxoauth2_'.$wid.'_'.$openid)){
-                return $openid;
+            if($cache->get('wxoauth2_'.$wid.'_'.$openid_cookies->value)){
+                return $openid_cookies->value;
             }
         }
+
+
 
         $model= Web::findOne($wid);
 
@@ -97,44 +99,48 @@ class WeixinHelper
             $appid=$default->wx_appid;
             $appsecret=$default->wx_appsecret;
         }
+
+
         /*
          * 用户同意授权
          * */
         if($request->get('code')){
 
+
             $base_info=Wxoauth2Helper::getTokenAndOpenid($request->get('code'),$appid,$appsecret);
 
             $openid=$base_info['openid'];
 
+
             if($openid){
-                $oauth2_info=\common\models\table\Oauth2::find()->where(['openid'=>$openid,])->one();
+                $oauth2_info=\common\models\table\Oauth2::find()->where(['openid'=>$openid])->one();
 
-                if(!$oauth2_info->encrypt){
-                    /*
-                     * 新增或者是修改oauth2表的encrypt
-                     * */
-                    $insert_parame=array('openid'=>$info->openid,'appid'=>$appid,'appsecret'=>$appsecret);
-                    $encrypt=self::getSign($insert_parame);
-
-                    if($oauth2_info->id){
+                /*
+                 * 新增或者是修改oauth2表的encrypt
+                 * */
+                $parame=array('openid'=>$openid,'appid'=>$appid,'appsecret'=>$appsecret);
+                $encrypt=self::getSign($parame);
+                if($oauth2_info){
+                    if(empty($oauth2_info->encrypt)){
                         $oauth2_info->encrypt=$encrypt;
                         $oauth2_info->save();
-                    }else{
-                        $oauth2_new_info=new \common\models\table\Oauth2();
-                        $oauth2_info->wid=$wid;
-                        $oauth2_info->openid=$openid;
-                        $oauth2_new_info->encrypt=$encrypt;
-                        $oauth2_new_info->save();
                     }
+                }else{
+                    $oauth2_new_info=new \common\models\table\Oauth2();
+                    $oauth2_new_info->wid=$wid;
+                    $oauth2_new_info->openid=$openid;
+                    $oauth2_new_info->encrypt=$encrypt;
+                    $oauth2_new_info->save();
                 }
+
                 /*
-                 * 需要拿用户的信息的时候
+                 * 需要拿用户的信息的时候，把用户信息更新到数据库中oauth2
                  * */
                 if($scope=='snsapi_userinfo'){
 
                     $user_info=Wxoauth2Helper::getUserInfo($base_info['access_token'],$base_info['openid']);
 
-                    $oauth2_info=\common\models\table\Oauth2::find()->where(['openid'=>$openid,])->one();
+                    $oauth2_info=\common\models\table\Oauth2::find()->where(['openid'=>$openid])->one();
                     $oauth2_info->wxname=$user_info['nickname'];
                     $oauth2_info->wxpic=$user_info['headimgurl'];
                     $oauth2_info->sex =$user_info['sex'];

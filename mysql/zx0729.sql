@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2016-07-28 18:03:41
+Date: 2016-07-29 18:16:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -121,7 +121,7 @@ CREATE TABLE `zx_oauth2` (
   `created_at` varchar(30) CHARACTER SET utf8 DEFAULT NULL COMMENT '创建时间',
   `updated_at` varchar(30) CHARACTER SET utf8 DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of zx_oauth2
@@ -310,7 +310,7 @@ CREATE TABLE `zx_user` (
 -- ----------------------------
 -- Records of zx_user
 -- ----------------------------
-INSERT INTO `zx_user` VALUES ('1', '1', null, '陆荣泽', '$2y$13$B1PZjzx.XKlw2cVyu.MR8eWMTJIvo38BKcP6D8fuUgWJ.GpY888Le', '', '{\"path\":\"/upload/x00001/images/201607/25155458x4de91.jpg\",\"width\":\"100\",\"height\":\"100\",\"title\":\"\",\"link\":\"\",\"size\":\"3482\",\"uploadID\":52}', '1469432401', '::1', '4', '1946755280@qq.com', 'DEVELOPER', '1467884992', '1469433299', 'D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI', '5a81pcW5be-41A_1uXwrsXvPMG5psLYq', '1', '1567884992', null, null, null);
+INSERT INTO `zx_user` VALUES ('1', '1', null, '陆荣泽', '$2y$13$8uiYAALSAt8QSw6ONblwKOlBWnc4f1BpMOh7tWL2lhdrO/sKYUL7C', '', '{\"path\":\"/upload/x00001/images/201607/25155458x4de91.jpg\",\"width\":\"100\",\"height\":\"100\",\"title\":\"\",\"link\":\"\",\"size\":\"3482\",\"uploadID\":52}', '1469432401', '::1', '4', '1946755280@qq.com', 'DEVELOPER', '1467884992', '1469758940', 'D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI', '5a81pcW5be-41A_1uXwrsXvPMG5psLYq', '1', '1567884992', null, null, null);
 
 -- ----------------------------
 -- Table structure for `zx_web`
