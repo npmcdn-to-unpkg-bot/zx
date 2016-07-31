@@ -35,24 +35,28 @@ class DefaultController extends BaseController
 
         $postData = file_get_contents('php://input');
 
+
         \Yii::info($postData,'wxlog');
 
         if(!empty($postData)){
 
             $wid= $request->get('wid');
 
-            $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
-            /*消息发送者的openid*/
-            $WXOpenid = $postObj->FromUserName;
-            /*公众号*/
-            $WXgongzhong = $postObj->ToUserName;
-            /*消息类型*/
+            $accessToken=WeixinHelper::access_token($wid);
+
+            $postObj = simplexml_load_string($postData, 'SimpleXMLElement', LIBXML_NOCDATA);
+            /*
+             * 消息发送者的openid
+             * */
+            $wp_openid = $postObj->FromUserName;
+            /*
+             * 公众号
+             * */
+            $wp_number = $postObj->ToUserName;
+            /*
+             * 消息类型
+             * */
             $MsgType = strtolower($postObj->MsgType);
-
-            \Yii::info($WXOpenid.'--'.$WXgongzhong,'wxlog');
-
-
-            \common\weixin\ResponseHelper::text($WXgongzhong,$WXOpenid,'hahhaha');exit;
 
             switch($MsgType){
                 /*
@@ -61,9 +65,44 @@ class DefaultController extends BaseController
                 case 'text':
 
 
-                    \common\weixin\SendHelper::text($FromOpenid,'测试一下行不行',$wid);
+                    echo \common\weixin\ResponseHelper::text($wp_openid,$wp_number,'hahhahahah
+                    kdfjlskjdflskdj');
 
                     break;
+                /*
+                 * 事件推送，下面又分为菜单推送和二维码扫描等多个事件类型
+                 * */
+                case 'event':
+
+                    $event=strtolower($postObj->Event);
+
+                    switch($event){
+                        /*
+                         * 订阅公众号事件推送
+                         * */
+                        case 'subscribe':
+
+                            break;
+                        /*
+                         * 取消订阅公众号事件推送
+                         * */
+                        case 'unsubscribe':
+
+                            break;
+                        /*
+                         * 取消订阅公众号事件推送
+                         * */
+                        case 'unsubscribe':
+
+                            break;
+
+
+                    }
+
+
+
+
+
                 /*
                  * 发送地理位置
                  * */

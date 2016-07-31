@@ -22,9 +22,9 @@ class SendHelper
      * @param $content 回复的消息内容（换行：在content中能够换行，微信客户端就支持换行显示）
      * @return string
      */
-    public static function text($tousername, $content,$wid){
+    public static function text($tousername, $content,$accessToken){
 
-        $accessToken=WeixinHelper::access_token($wid);
+//        $accessToken=WeixinHelper::access_token($wid);
 
         //开始
         $template = array(
@@ -45,9 +45,9 @@ class SendHelper
      * @param $mediaId 通过上传多媒体文件，得到的id。
      * @return string
      */
-    public static function image($tousername, $mediaId ,$wid){
+    public static function image($tousername, $mediaId ,$accessToken){
         //获取ACCESS_TOKEN
-        $accessToken=WeixinHelper::access_token($wid);
+//        $accessToken=WeixinHelper::access_token($wid);
 
         //开始
         $template = array(
@@ -67,9 +67,9 @@ class SendHelper
      * @param $mediaId 通过上传多媒体文件，得到的id
      * @return string
      */
-    public static function voice($tousername, $mediaId ,$wid){
+    public static function voice($tousername, $mediaId ,$accessToken){
         //获取ACCESS_TOKEN
-        $accessToken=WeixinHelper::access_token($wid);
+//        $accessToken=WeixinHelper::access_token($wid);
 
         //开始
         $template = array(
@@ -91,9 +91,9 @@ class SendHelper
      * @param $description 描述
      * @return string
      */
-    public static function video($tousername, $mediaId, $title, $description,$wid){
+    public static function video($tousername, $mediaId, $title, $description,$accessToken){
         //获取ACCESS_TOKEN
-        $accessToken=WeixinHelper::access_token($wid);
+//        $accessToken=WeixinHelper::access_token($wid);
 
         //开始
         $template = array(
@@ -119,9 +119,9 @@ class SendHelper
      * @param $thumbMediaId 缩略图的媒体id，通过上传多媒体文件，得到的id
      * @return string
      */
-    public static function music($tousername, $title, $description, $musicUrl, $hqMusicUrl, $thumbMediaId ,$wid){
+    public static function music($tousername, $title, $description, $musicUrl, $hqMusicUrl, $thumbMediaId ,$accessToken){
         //获取ACCESS_TOKEN
-        $accessToken=WeixinHelper::access_token($wid);
+//        $accessToken=WeixinHelper::access_token($wid);
 
         //开始
         $template = array(
@@ -163,9 +163,9 @@ class SendHelper
      * @param $item 数组，每个项由self::newsItem()返回
      * @return string
      */
-    public static function news($tousername, $item , $wid){
+    public static function news($tousername, $item , $accessToken){
         //获取ACCESS_TOKEN
-        $accessToken=WeixinHelper::access_token($wid);
+//        $accessToken=WeixinHelper::access_token($wid);
 
         //开始
         $template = array(

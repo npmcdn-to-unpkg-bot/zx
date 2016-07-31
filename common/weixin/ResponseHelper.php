@@ -15,7 +15,8 @@ class ResponseHelper{
      * @param $funcFlag 默认为0，设为1时星标刚才收到的消息
      * @return string
      */
-    public static function text($fromusername, $tousername, $content, $funcFlag=0){
+    public static function text($tousername,$fromusername, $content, $funcFlag=0){
+
         $template = <<<XML
 <xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
@@ -26,7 +27,7 @@ class ResponseHelper{
     <FuncFlag>%s</FuncFlag>
 </xml>
 XML;
-        return sprintf($template, $fromusername, $tousername, time(), $content, $funcFlag);
+        return sprintf($template, $tousername , $fromusername, time(), $content, $funcFlag);
     }
 
     /**
@@ -37,7 +38,7 @@ XML;
      * @param $funcFlag 默认为0，设为1时星标刚才收到的消息
      * @return string
      */
-    public static function image($fromusername, $tousername, $mediaId, $funcFlag=0){
+    public static function image($tousername, $fromusername, $mediaId, $funcFlag=0){
         $template = <<<XML
 <xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
@@ -50,7 +51,7 @@ XML;
     <FuncFlag>%s</FuncFlag>
 </xml>
 XML;
-        return sprintf($template, $fromusername, $tousername, time(), $mediaId, $funcFlag);
+        return sprintf($template,$tousername,  $fromusername, time(), $mediaId, $funcFlag);
     }
 
     /**
@@ -61,7 +62,7 @@ XML;
      * @param $funcFlag 默认为0，设为1时星标刚才收到的消息
      * @return string
      */
-    public static function voice($fromusername, $tousername, $mediaId, $funcFlag=0){
+    public static function voice($tousername, $fromusername, $mediaId, $funcFlag=0){
         $template = <<<XML
 <xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
@@ -74,7 +75,7 @@ XML;
     <FuncFlag>%s</FuncFlag>
 </xml>
 XML;
-        return sprintf($template, $fromusername, $tousername, time(), $mediaId, $funcFlag);
+        return sprintf($template, $tousername, $fromusername, time(), $mediaId, $funcFlag);
     }
 
     /**
@@ -87,7 +88,7 @@ XML;
      * @param $funcFlag 默认为0，设为1时星标刚才收到的消息
      * @return string
      */
-    public static function video($fromusername, $tousername, $mediaId, $title, $description, $funcFlag=0){
+    public static function video($tousername, $fromusername, $mediaId, $title, $description, $funcFlag=0){
         $template = <<<XML
 <xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
@@ -102,7 +103,7 @@ XML;
     <FuncFlag>%s</FuncFlag>
 </xml>
 XML;
-        return sprintf($template, $fromusername, $tousername, time(), $mediaId, $title, $description, $funcFlag);
+        return sprintf($template, $tousername, $fromusername, time(), $mediaId, $title, $description, $funcFlag);
     }
 
     /**
@@ -117,7 +118,7 @@ XML;
      * @param $funcFlag 默认为0，设为1时星标刚才收到的消息
      * @return string
      */
-    public static function music($fromusername, $tousername, $title, $description, $musicUrl, $hqMusicUrl, $thumbMediaId, $funcFlag=0){
+    public static function music($tousername, $fromusername, $title, $description, $musicUrl, $hqMusicUrl, $thumbMediaId, $funcFlag=0){
         $template = <<<XML
 <xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
@@ -134,7 +135,7 @@ XML;
     <FuncFlag>%s</FuncFlag>
 </xml>
 XML;
-        return sprintf($template, $fromusername, $tousername, time(), $title, $description, $musicUrl, $hqMusicUrl, $thumbMediaId, $funcFlag);
+        return sprintf($template, $tousername, $fromusername, time(), $title, $description, $musicUrl, $hqMusicUrl, $thumbMediaId, $funcFlag);
     }
 
     /**
@@ -166,11 +167,10 @@ XML;
      * @param $funcFlag 默认为0，设为1时星标刚才收到的消息
      * @return string
      */
-    public static function news($fromusername, $tousername, $item, $funcFlag=0){
+    public static function news($tousername, $fromusername, $item, $funcFlag=0){
         //多条图文消息信息，默认第一个item为大图,注意，如果图文数超过10，则将会无响应
         if(count($item) >= 10){
             $request = array('fromusername'=>$fromusername, 'tousername'=>$tousername);
-//            return Msg::returnErrMsg(MsgConstant::ERROR_NEWS_ITEM_COUNT_MORE_TEN, '图文消息的项数不能超过10条', $request);
             return '图文消息的项数不能超过10条';
 
         }
@@ -187,7 +187,7 @@ XML;
     <FuncFlag>%s</FuncFlag>
 </xml>
 XML;
-        return sprintf($template, $fromusername, $tousername, time(), count($item), implode($item), $funcFlag);
+        return sprintf($template, $tousername, $fromusername, time(), count($item), implode($item), $funcFlag);
     }
 
     /**
@@ -197,7 +197,7 @@ XML;
      * @param $tousername
      * @return string
      */
-    public static function forwardToCustomService($fromusername, $tousername){
+    public static function forwardToCustomService($tousername , $fromusername){
         $template = <<<XML
 <xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
@@ -206,7 +206,7 @@ XML;
     <MsgType><![CDATA[transfer_customer_service]]></MsgType>
 </xml>
 XML;
-        return sprintf($template, $fromusername, $tousername, time());
+        return sprintf($template, $tousername, $fromusername, time());
     }
 
 
