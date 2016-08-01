@@ -12,8 +12,11 @@ use yii\base\NotSupportedException;
  */
 class UHelper
 {
-    /*设置跳转信息*/
-    public static function alert($msg,$success='original'){
+    /*
+     * 设置跳转信息
+     * */
+    public static function alert($msg,$success='original')
+    {
         if($success=='success'){
             $msg="<span class='glyphicon glyphicon-ok-circle'></span>".$msg;
         }elseif($success=='error'){
@@ -23,8 +26,11 @@ class UHelper
         \Yii::$app->session->setFlash('AlertMsg',$msg);
     }
 
-    /*inpus widget 拿数据*/
-    public static function w_inputs_post($data=['name','width','height'],$tojson=1){
+    /*
+     * inpus widget 拿数据
+     * */
+    public static function w_inputs_post($data=['name','width','height'],$tojson=1)
+    {
         $post=[];
         foreach($data as $k=>$v){
             $post[$v]=\Yii::$app->request->post($v);
@@ -40,7 +46,9 @@ class UHelper
         return $tojson?\yii\helpers\Json::encode($result):$result;
     }
 
-    /*图片上传*/
+    /*
+     * 图片上传
+     * */
     public static function uploadimg($attribute,$size='',$type='images',$tojson=1)
     {
         $request = \Yii::$app->request;
@@ -172,7 +180,9 @@ class UHelper
     }
 
 
-    /*文件上传*/
+    /*
+     * 文件上传
+     * */
     public static function uploadfile($attribute,$limitsize=10,$type='file',$tojson=1)
     {
         $request = \Yii::$app->request;
@@ -273,7 +283,9 @@ class UHelper
         return $tojson?\yii\helpers\Json::encode($info):$info;
     }
 
-
+    /*
+     * 原有输出数据
+     * */
     public static function pre($data,$print=true)
     {
         echo '<pre>';
@@ -283,5 +295,14 @@ class UHelper
                 var_dump($data);
             }
         echo '</pre>';
+    }
+
+    /*
+     * 利用phpqrcode 生成二维码图片
+     * */
+    public static function qrcode($text='', $outfile = false, $level = 0, $size = 3, $margin = 4, $saveandprint=false)
+    {
+        include \Yii::getAlias('@extensions').'/phpqrcode/phpqrcode.php';
+        \common\extensions\QRcode::png('http://www.tudou.com');
     }
 }

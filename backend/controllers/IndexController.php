@@ -35,6 +35,9 @@ class IndexController extends BaseController
             UHelper::alert('您的帐号有效期还有'.$day.'天','success');
         }
 
+        UHelper::qrcode();die;
+
+
         return $this->render('index');
     }
 

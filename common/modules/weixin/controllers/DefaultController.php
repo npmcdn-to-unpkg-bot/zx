@@ -5,6 +5,8 @@ namespace common\modules\weixin\controllers;
 use common\weixin\SendHelper;
 use yii\web\Controller;
 use yii\helpers\WeixinHelper;
+use common\weixin\ResponseHelper;
+
 
 /**
  * Default controller for the `weixin` module
@@ -64,9 +66,9 @@ class DefaultController extends BaseController
                  * */
                 case 'text':
 
+                    $content="<a href='http://www.baidu.com'>发送文本消息</a>\nkdfjlskjdflskdj";
 
-                    echo \common\weixin\ResponseHelper::text($wp_openid,$wp_number,'hahhahahah
-                    kdfjlskjdflskdj');
+                    echo ResponseHelper::text($wp_openid,$wp_number,$content);
 
                     break;
                 /*
@@ -74,34 +76,11 @@ class DefaultController extends BaseController
                  * */
                 case 'event':
 
-                    $event=strtolower($postObj->Event);
+                    //$event=strtolower($postObj->Event);
 
-                    switch($event){
-                        /*
-                         * 订阅公众号事件推送
-                         * */
-                        case 'subscribe':
+                    self::handleEvent($postObj,$wid);
 
-                            break;
-                        /*
-                         * 取消订阅公众号事件推送
-                         * */
-                        case 'unsubscribe':
-
-                            break;
-                        /*
-                         * 取消订阅公众号事件推送
-                         * */
-                        case 'unsubscribe':
-
-                            break;
-
-
-                    }
-
-
-
-
+                    break;
 
                 /*
                  * 发送地理位置
@@ -142,9 +121,106 @@ class DefaultController extends BaseController
 
             }
         }
+    }
+
+
+    /*
+     * 微信推送事件处理
+     * */
+    public static function handleEvent($postObj,$wid)
+    {
+
+        /*
+         * 消息发送者的openid
+         * */
+        $wp_openid = $postObj->FromUserName;
+        /*
+         * 公众号
+         * */
+        $wp_number = $postObj->ToUserName;
+
+        $event=strtolower($postObj->Event);
+
+        switch($event){
+            /*
+             * 订阅公众号事件推送
+             * */
+            case 'subscribe':
+                /* $eventkey 带参数二维码的参数，把前缀过滤掉了 */
+                $eventkey=str_replace('qrscene_','',trim($postObj->EventKey));
+
+                if($eventkey){
+                    /*
+                     * 扫码订阅公众号事件推送
+                     * */
+                    $content="<a href='http://www.baidu.com'>扫码订阅公众号了</a>\n感谢你".$eventkey;
+
+                    echo ResponseHelper::text($wp_openid,$wp_number,$content);exit;
+                }
+
+                $content="<a href='http://www.baidu.com'>欢迎订阅公众号</a>\n感谢你".$eventkey;
+
+                echo ResponseHelper::text($wp_openid,$wp_number,$content);
+
+
+                break;
+            /*
+             * 取消订阅公众号事件推送
+             * */
+            case 'unsubscribe':
+
+                \Yii::info('取消关注了'.date('Y-m-d H:i:s'),'wxlog');
+
+                break;
+            /*
+             * 用户已关注时扫描带参数二维码的事件推送
+             * */
+            case 'scan':
+
+                break;
+            /*
+             * 菜单点击事件
+             * */
+            case 'click':
+                /*$eventkey 自定义菜单的时候写的key值 */
+                $eventkey=trim($postObj->EventKey);
+
+                if($eventkey=='fasong'){
+                $item=[];
+                for($i=0;$i<8;$i++){
+                    $title='测试发送图文消息'.$i;
+                    $desc ='测试一下发送图文消息行不行啊！不行的话我还要在测试的'.$i;
+                    if($i%2==0){
+                        $picUrl='http://326108993.com/upload/x00001/images/201607/26224415xa8bfb.png';
+                    }else{
+                        $picUrl='http://326108993.com/upload/x00001/images/201607/26224634x71818.jpg';
+                    }
+                    $url   ='http://www.baidu.com';
+                    $item[$i]=ResponseHelper::newsItem($title,$desc,$picUrl,$url);
+                }
+                $content=ResponseHelper::news($wp_openid,$wp_number,$item);
+                echo $content;
+
+                }elseif($eventkey=='ceshi'){
+                    $content="<a href='http://www.baidu.com'>ceshi</a>\n感谢你".$eventkey;
+
+                    echo \common\weixin\ResponseHelper::text($wp_openid,$wp_number,$content);
+                }else{
+                    $content="<a href='http://www.baidu.com'>lingwaidedongxi</a>\n感谢你".$eventkey;
+
+                    echo \common\weixin\ResponseHelper::text($wp_openid,$wp_number,$content);
+                }
 
 
 
+
+
+                break;
+
+
+        }
     }
 
 }
+
+

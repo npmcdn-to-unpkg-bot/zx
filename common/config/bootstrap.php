@@ -24,6 +24,10 @@ Yii::setAlias('@uiiroot',dirname(dirname(__DIR__)) . '/web');
  * 微信信息的日志文件
  * */
 Yii::setAlias('@wxlog',dirname(__DIR__) . '/weixin/log/wx.log');
+/*
+ * 扩展目录
+ * */
+Yii::setAlias('@extensions',dirname(dirname(__DIR__)) . '/common/extensions');
 
 
 
