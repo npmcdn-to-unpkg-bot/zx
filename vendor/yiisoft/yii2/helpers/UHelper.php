@@ -300,9 +300,13 @@ class UHelper
     /*
      * 利用phpqrcode 生成二维码图片
      * */
-    public static function qrcode($text='', $outfile = false, $level = 0, $size = 3, $margin = 4, $saveandprint=false)
+    public static function qrcode($text='', $outfile = false, $level = 3, $size = 20, $margin = 2, $saveandprint=false)
     {
         include \Yii::getAlias('@extensions').'/phpqrcode/phpqrcode.php';
-        \common\extensions\QRcode::png('http://www.tudou.com');
+
+        \yii\helpers\FileHelper::createDirectory(dirname($outfile));
+
+
+        \common\extensions\QRcode::png($text,$outfile,$level,$size,$margin,$saveandprint);
     }
 }

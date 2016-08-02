@@ -4,6 +4,8 @@ Yii::setAlias('@frontend', dirname(dirname(__DIR__)) . '/frontend');
 Yii::setAlias('@backend', dirname(dirname(__DIR__)) . '/backend');
 Yii::setAlias('@console', dirname(dirname(__DIR__)) . '/console');
 
+defined('ADMIN_WID') or define('ADMIN_WID',1);
+
 /*
  * 网站域名
  * */

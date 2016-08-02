@@ -24,8 +24,6 @@ class SendHelper
      */
     public static function text($tousername, $content,$accessToken){
 
-//        $accessToken=WeixinHelper::access_token($wid);
-
         //开始
         $template = array(
             'touser'=>$tousername,

@@ -62,4 +62,7 @@ $list=[
             </a>
         </div>
     <?php }?>
+
+
+    <img src="<?=$file?>" />
 </div>

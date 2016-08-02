@@ -24,12 +24,22 @@ class WxController extends BaseController
 //        $info=WeixinHelper::oauth2(1);
 //
 //        UHelper::pre($info);
-        $info=[];
+
+        $info=\common\weixin\JssdkHelper::getSignPackage(1);
 
         return $this->render('index',[
             'info'=>$info,
         ]);
     }
+    public function actionJssdk()
+    {
+        $signPackage=\common\weixin\JssdkHelper::getSignPackage(1);
+
+        return $this->render('jssdk',[
+            'signPackage'=>$signPackage,
+        ]);
+    }
+
     /*
      * 自定义菜单
      * */

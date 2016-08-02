@@ -9,6 +9,8 @@ namespace common\weixin;
 use common\models\table\Web;
 use yii\helpers\CurlHelper;
 use common\weixin\Wxoauth2Helper;
+use common\weixin\WxqrcodeHelper;
+use yii\helpers\UHelper;
 
 class WeixinHelper
 {
@@ -22,27 +24,46 @@ class WeixinHelper
     /*
      * 获取access_token
      * */
-    public static function access_token($wid)
+    public static function accessToken($wid)
     {
-        if($access_token=\Yii::$app->wxcache->get('wx_access_token_'.$wid)){
+        $access_token=\Yii::$app->wxcache->get('wx_access_token_'.$wid);
+        if($access_token){
             return $access_token;
         }else{
             $model=Web::findOne($wid);
+
             $parame['grant_type']='client_credential';
+
             $parame['appid']=$model->wx_appid;
             $parame['secret']=$model->wx_appsecret;
+
             $return=CurlHelper::callWebServer(self::wx_access_token,$parame);
-            \Yii::info($return,__METHOD__);
-            \Yii::$app->wxcache->set('wx_access_token_'.$wid,$return['access_token'],$return['expires_in']-200);
+            \Yii::info($return,'wxlog');
+            \Yii::$app->wxcache->set('wx_access_token_'.$wid,$return['access_token'],7000);
+            \Yii::$app->wxcache->set('wx_appid_'.$wid,$parame['appid']);
+            \Yii::$app->wxcache->set('wx_appsecret_'.$wid,$parame['secret']);
             return $return['access_token'];
         }
     }
 
     /*
+     * 根据wid获取后台web的微信配置信息
+     * */
+    public static function getWxInfo($wid)
+    {
+        if(($model = Web::findOne($wid)) !== null){
+            return $model;
+        }else{
+            return Web::findOne(ADMIN_WEBID);
+        }
+    }
+
+
+    /*
      * 新建自定义菜单
      * url:wx_menu_create
      * */
-    public static function menu_create($data,$wid)
+    public static function menuCreate($data,$wid)
     {
         $url=self::wx_menu_create.'?access_token='.self::access_token($wid);
         $return=CurlHelper::callWebServer($url,$data,'post');
@@ -53,7 +74,7 @@ class WeixinHelper
      * 删除自定义菜单
      * url:wx_menu_delete
      * */
-    public static function menu_delete($wid)
+    public static function menuDelete($wid)
     {
         $url=self::wx_menu_delete.'?access_token='.self::access_token($wid);
         $return=CurlHelper::callWebServer($url,'','get');
@@ -172,6 +193,52 @@ class WeixinHelper
              * */
            return Wxoauth2Helper::getcode($request->absoluteUrl,$appid);
         }
+
+    }
+
+    /*
+     * 生成临时二维码
+     * */
+    public static function createQrcode($wid , $sceneId , $expireSeconds)
+    {
+        $accessToken=self::access_token($wid);
+
+        $ticket_info=WxqrcodeHelper::createTicket($sceneId , $expireSeconds ,$accessToken);
+
+        $dirNo = 'x' . sprintf("%05d", $wid) . '/';
+
+        $month = date("Ym", time()) . '/';
+
+        $name = date('dHis',time()).substr(md5($sceneId),8,8).'.png';
+
+        $outfile = \Yii::getAlias('@upload') . '/' . $dirNo . 'wxcode' . '/' . $month . $name;
+
+        WxqrcodeHelper::creatQrimg($ticket_info['url'],$outfile);
+
+        return \Yii::getAlias('@uploadreturn') . '/' . $dirNo . 'wxcode' . '/' . $month . $name;
+
+    }
+
+    /*
+     * 生成永久二维码
+     * */
+    public static function createLimitQrcode($wid , $sceneStr , $sceneId)
+    {
+        $accessToken=self::access_token($wid);
+
+        $ticket_info=WxqrcodeHelper::createLimitTicket($sceneStr,$sceneId,$accessToken);
+
+        $dirNo = 'x' . sprintf("%05d", $wid) . '/';
+
+        $month = date("Ym", time()) . '/';
+
+        $name = date('dHis',time()).substr(md5($sceneId),8,8).'.png';
+
+        $outfile = \Yii::getAlias('@upload') . '/' . $dirNo . 'wxcodelimit' . '/' . $month . $name;
+
+        WxqrcodeHelper::creatQrimg($ticket_info['url'],$outfile);
+
+        return \Yii::getAlias('@uploadreturn') . '/' . $dirNo . 'wxcodelimit' . '/' . $month . $name;
 
     }
 

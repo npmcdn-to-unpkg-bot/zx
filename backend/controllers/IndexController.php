@@ -35,10 +35,13 @@ class IndexController extends BaseController
             UHelper::alert('您的帐号有效期还有'.$day.'天','success');
         }
 
-        UHelper::qrcode();die;
+
+        $file=\common\weixin\WeixinHelper::createQrcode(1,time(),7200);
 
 
-        return $this->render('index');
+        return $this->render('index',[
+            'file'=>$file,
+        ]);
     }
 
     public function actionDev()

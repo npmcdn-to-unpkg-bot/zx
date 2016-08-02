@@ -4,8 +4,8 @@ namespace common\modules\weixin\controllers;
 
 use common\weixin\SendHelper;
 use yii\web\Controller;
-use yii\helpers\WeixinHelper;
 use common\weixin\ResponseHelper;
+use common\weixin\WeixinHelper;
 
 
 /**
@@ -44,7 +44,7 @@ class DefaultController extends BaseController
 
             $wid= $request->get('wid');
 
-            $accessToken=WeixinHelper::access_token($wid);
+            $accessToken=WeixinHelper::accessToken($wid);
 
             $postObj = simplexml_load_string($postData, 'SimpleXMLElement', LIBXML_NOCDATA);
             /*
@@ -153,6 +153,7 @@ class DefaultController extends BaseController
                     /*
                      * 扫码订阅公众号事件推送
                      * */
+
                     $content="<a href='http://www.baidu.com'>扫码订阅公众号了</a>\n感谢你".$eventkey;
 
                     echo ResponseHelper::text($wp_openid,$wp_number,$content);exit;
@@ -176,6 +177,14 @@ class DefaultController extends BaseController
              * 用户已关注时扫描带参数二维码的事件推送
              * */
             case 'scan':
+
+                /* $eventkey 带参数二维码的参数，把前缀过滤掉了 */
+                $eventkey=str_replace('qrscene_','',trim($postObj->EventKey));
+
+                $content="<a href='http://www.baidu.com'>扫码了</a>\n感谢你".$eventkey;
+
+                echo ResponseHelper::text($wp_openid,$wp_number,$content);exit;
+
 
                 break;
             /*

@@ -7,6 +7,7 @@
 namespace common\weixin;
 
 use yii\helpers\CurlHelper;
+use yii\helpers\UHelper;
 
 class WxqrcodeHelper
 {
@@ -56,6 +57,18 @@ class WxqrcodeHelper
         $template = json_encode($template);
         return CurlHelper::callWebServer($queryUrl, $template, $queryAction);
     }
+
+    /*
+     * 使用PHPQRCODE 直接生成一个二维码
+     * @param $text 二维码的解析地址，传入ticket 接口返回的URL
+     * @param $outfile 生成的二维码的文件地址
+     * */
+    public static function creatQrimg($text,$outfile)
+    {
+        UHelper::qrcode($text,$outfile);
+        return $outfile;
+    }
+
 
     /**
      * 生成带参数的二维码 - 第二步 通过ticket换取二维码
