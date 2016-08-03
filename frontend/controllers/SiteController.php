@@ -72,7 +72,23 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
+        \Yii::$app->params['wid']=1;
+
+
         return $this->render('index');
+    }
+
+    public function actionTest()
+    {
+
+        \Yii::$app->params['wid']=1;
+
+        \Yii::$app->params['wxShareTitle']='wxShareTitle';
+        \Yii::$app->params['wxShareLink']=\Yii::$app->request->absoluteUrl;
+        \Yii::$app->params['wxShareImg']='http://326108993.com/upload/x00001/images/201607/26224511xa8bfb.png';
+
+        return $this->render('test');
     }
 
     /**
