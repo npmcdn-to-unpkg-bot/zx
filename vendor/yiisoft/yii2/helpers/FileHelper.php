@@ -16,4 +16,40 @@ namespace yii\helpers;
  */
 class FileHelper extends BaseFileHelper
 {
+
+    /*
+     * 根据文件路径返回文件名
+     * @parame $path 文件路径
+     * @parame $extenstion 是否返回扩展名
+     * */
+    public static function filename($path,$extenstion=true)
+    {
+
+        $path=self::normalizePath($path);
+
+        $filename=basename($path);
+
+        if(!$extenstion){
+
+            $nameArray=explode(".",$filename);
+
+            $extenstion=end($nameArray);
+
+            $filename=str_replace(".".$extenstion,'',$filename);
+        }
+
+        return $filename;
+
+    }
+
+    /*
+     * 根据文件路径返回文件目录
+     * */
+    public static function dirname($path)
+    {
+        $path=self::normalizePath($path);
+
+        return dirname($path);
+    }
+
 }

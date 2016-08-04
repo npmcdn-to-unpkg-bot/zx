@@ -10,7 +10,15 @@ use yii\helpers\Html;
 
 yii\helpers\UHelper::pre($info);
 
+yii\helpers\UHelper::pre($wxinfo);
+
+
 ?>
+
+<?= Html::img($wxinfo['wxpic'],['style'=>'width:100%;height:100%;'])?>
+
+
+<img src="<?=$wxinfo['wxpic']?>" style="width:100%;height:100%;" />
 
 <?= Html::a('新建菜单','javascript:;',['class'=>'btn btn-primary wx-create-menu'])?>
 

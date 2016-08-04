@@ -21,14 +21,15 @@ class WxController extends BaseController
     public function actionIndex()
     {
 
-//        $info=WeixinHelper::oauth2(1);
-//
-//        UHelper::pre($info);
+        $openid=WeixinHelper::oauth2(1,true);
+
+        $wxinfo=WeixinHelper::openidInfo($openid);
 
         $info=\common\weixin\JssdkHelper::getSignPackage(1);
 
         return $this->render('index',[
             'info'=>$info,
+            'wxinfo'=>$wxinfo,
         ]);
     }
     public function actionJssdk()

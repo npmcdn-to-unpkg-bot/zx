@@ -103,7 +103,7 @@ class WeixinHelper
             /*
              * openid 缓存还在的时候直接返回
              * */
-            if($cache->get('wxoauth2_'.$wid.'_'.$openid_cookies->value)){
+            if($openid_cookies && $cache->get('wxoauth2_'.$wid.'_'.$openid_cookies->value)){
                 return $openid_cookies->value;
             }
         }
@@ -161,18 +161,18 @@ class WeixinHelper
 
                     $user_info=Wxoauth2Helper::getUserInfo($base_info['access_token'],$base_info['openid']);
 
+
                     $oauth2_info=\common\models\table\Oauth2::find()->where(['openid'=>$openid])->one();
+
                     $oauth2_info->wxname=$user_info['nickname'];
                     $oauth2_info->wxpic=$user_info['headimgurl'];
                     $oauth2_info->sex =$user_info['sex'];
                     $oauth2_info->province=$user_info['province'];
                     $oauth2_info->city=$user_info['city'];
                     $oauth2_info->country=$user_info['country'];
-                    $oauth2_info->privilege=$user_info['privilege'];
-                    $oauth2_info->unionid=$user_info['unionid'];
-
+                    $oauth2_info->privilege=json_encode($user_info['privilege']);
+                    $oauth2_info->unionid=isset($user_info['unionid'])?$user_info['unionid']:'';
                     $oauth2_info->save();
-
                 }
             }else{
                 return false;
@@ -191,10 +191,22 @@ class WeixinHelper
             /*
              * 跳转到授权页面
              * */
-           return Wxoauth2Helper::getcode($request->absoluteUrl,$appid);
+
+           return Wxoauth2Helper::getcode($request->absoluteUrl,$appid,$scope);
         }
 
     }
+
+    /*
+     * 根据openid查表拿信息，不一定是最新的，如需要最新要重新oauth2 不接受缓存授权
+     * */
+    public static function openidInfo($openid,$wid=0){
+
+        $model=\common\models\table\Oauth2::find()->where(['openid'=>$openid])->asArray()->one();
+
+        return $model!==null?$model:[];
+    }
+
 
     /*
      * 生成临时二维码
