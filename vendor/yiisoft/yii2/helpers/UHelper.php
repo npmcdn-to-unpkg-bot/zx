@@ -300,13 +300,17 @@ class UHelper
     /*
      * 利用phpqrcode 生成二维码图片
      * */
-    public static function qrcode($text='', $outfile = false, $level = 3, $size = 20, $margin = 2, $saveandprint=false)
+    public static function qrcode($text='', $outfile = false, $box=[0,0] , $level = 3, $size = 20, $margin = 2, $saveandprint=false)
     {
-        include \Yii::getAlias('@extensions').'/phpqrcode/phpqrcode.php';
+        include \Yii::getAlias('@vendor').'/phpqrcode/phpqrcode.php';
+        if($outfile){
+            \yii\helpers\FileHelper::createDirectory(dirname($outfile));
+        }
+        \phpqrcode\QRcode::png($text,$outfile,$level,$size,$margin,$saveandprint);
 
-        \yii\helpers\FileHelper::createDirectory(dirname($outfile));
+        if($box[0]>0 && $box[1]>0){//修改图片尺寸
+            \yii\imagine\Image::thumbnail($outfile,$box[0],$box[1])->save($outfile);
+        }
 
-
-        \common\extensions\QRcode::png($text,$outfile,$level,$size,$margin,$saveandprint);
     }
 }
