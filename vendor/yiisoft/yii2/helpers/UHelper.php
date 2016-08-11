@@ -313,4 +313,25 @@ class UHelper
         }
 
     }
+
+
+    /*
+     * 生成需要的缓存文件
+     *
+     * */
+    public static function phpexcelSetCache($title,$data,$page=0){
+
+    }
+
+    /*
+     *根据缓存的数据生成excel文件
+     * */
+    public static function downloadExcel($page=0){
+
+
+
+
+
+    }
+
 }
