@@ -39,6 +39,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'post/<id:\d+>' => 'index/index',
+
+                ['class' => 'yii\web\Route'],
             ],
         ],
     ],
