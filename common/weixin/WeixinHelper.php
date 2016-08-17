@@ -213,7 +213,7 @@ class WeixinHelper
      * */
     public static function createQrcode($wid , $sceneId , $expireSeconds)
     {
-        $accessToken=self::access_token($wid);
+        $accessToken=self::accessToken($wid);
 
         $ticket_info=WxqrcodeHelper::createTicket($sceneId , $expireSeconds ,$accessToken);
 
