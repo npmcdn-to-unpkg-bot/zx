@@ -2,6 +2,7 @@
 /**
  * Date: 2016/7/27
  * Time: 14:59
+ * 微信设置
  */
 namespace backend\controllers;
 

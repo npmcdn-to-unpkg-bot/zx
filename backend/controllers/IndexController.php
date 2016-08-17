@@ -36,12 +36,7 @@ class IndexController extends BaseController
         }
 
 
-        $file=\common\weixin\WeixinHelper::createQrcode(1,time(),7200);
-
-
-        return $this->render('index',[
-            'file'=>$file,
-        ]);
+        return $this->render('index');
     }
 
     public function actionDev()
@@ -64,7 +59,6 @@ class IndexController extends BaseController
         }else{
             \Yii::$app->wxcache->set('wx','hahaha-'.date('H:i:s',time()),10);
         }
-
 
         die;
 

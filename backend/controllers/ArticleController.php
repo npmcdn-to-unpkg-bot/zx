@@ -11,6 +11,7 @@ use yii\web\NotFoundHttpException;
 
 /**
  * ArticleController implements the CRUD actions for Article model.
+ * 文章
  */
 class ArticleController extends BaseController
 {
@@ -45,7 +46,7 @@ class ArticleController extends BaseController
 
         $params['ArticleSearch']['wid']=\Yii::$app->user->identity->wid;
 
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search($params);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

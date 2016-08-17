@@ -64,5 +64,4 @@ $list=[
     <?php }?>
 
 
-    <img src="<?=$file?>" />
 </div>
