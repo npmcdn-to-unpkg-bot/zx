@@ -7,7 +7,7 @@
 
 $rules= [
     '<controller:\w+>/<id:\d+><action:\w+>' => '<controller>/<action>',
-
+//
 //    'index/<id:\d+>/<action:(index | view)>' => '<controller>/<action>',
 
 

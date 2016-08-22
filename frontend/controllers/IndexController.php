@@ -9,6 +9,7 @@ namespace frontend\controllers;
 use yii\helpers\UHelper;
 use yii\web\Controller;
 use yii\helpers\Url;
+use frontend\controllers\BaseController;
 
 class IndexController extends BaseController
 {
@@ -16,6 +17,9 @@ class IndexController extends BaseController
 
     public function actionIndex()
     {
+
+
+       echo \Yii::$app->request->getServerName();
 
 
        Uhelper::pre(\Yii::$app->request->get()) ;

@@ -75,6 +75,7 @@ class SiteController extends Controller
 
         \Yii::$app->params['wid']=1;
 
+        echo 123;die;
 
         return $this->render('index');
     }

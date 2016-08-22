@@ -424,9 +424,8 @@ class UHelper
      * */
     public static function getWebId()
     {
-        $info=\Yii::$app->request->getHostInfo();
 
-        $info=str_replace('http://','',$info);
+        $info=\Yii::$app->request->getServerName();
 
         $info=explode(".",$info);
 

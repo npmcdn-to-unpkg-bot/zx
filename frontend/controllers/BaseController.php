@@ -16,6 +16,7 @@ class BaseController extends Controller
         parent::init();
 
         \Yii::$app->params['WEBID']=UHelper::getWebId();
+
     }
 
 
