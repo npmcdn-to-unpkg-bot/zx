@@ -6,10 +6,11 @@
 
 namespace frontend\controllers;
 
+use yii\helpers\UHelper;
 use yii\web\Controller;
 use yii\helpers\Url;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
 
 
@@ -17,7 +18,7 @@ class IndexController extends Controller
     {
 
 
-       echo \Yii::$app->request->get('id');
+       Uhelper::pre(\Yii::$app->request->get()) ;
 
         echo '<br/>';
 
@@ -28,6 +29,16 @@ class IndexController extends Controller
         return $this->renderPartial('index');
     }
 
+    public function actionView(){
+
+
+        UHelper::pre(\Yii::$app->request->get());
+
+        UHelper::pre(\Yii::$app->params);
+
+        echo Url::to(['index/view','id'=>54321],true);
+
+    }
 
     public function actionEm()
     {

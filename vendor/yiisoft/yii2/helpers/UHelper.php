@@ -419,4 +419,29 @@ class UHelper
 
     }
 
+    /*
+     * 获取wid
+     * */
+    public static function getWebId()
+    {
+        $info=\Yii::$app->request->getHostInfo();
+
+        $info=str_replace('http://','',$info);
+
+        $info=explode(".",$info);
+
+        if($cookie=\Yii::$app->request->cookies->get($info[0].'9QiDNZ4STXa1aDy')){
+            $wid=$cookie->value;
+        }else{
+            $model=\common\models\table\User::find()->select('wid')->where(['name'=>$info[0]])->asArray()->one();
+            $wid=$model['wid'];
+            \Yii::$app->response->cookies->add(new \yii\web\Cookie([
+                'name' => $info[0].'9QiDNZ4STXa1aDy',
+                'value' => $wid,
+            ]));
+        }
+
+        return $wid?$wid:0;
+    }
+
 }
