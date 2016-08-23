@@ -420,14 +420,13 @@ class UHelper
     }
 
     /*
+     * 通过二级域名的用户名查找wid
      * 获取wid
      * */
     public static function getWebId()
     {
 
-        $info=\Yii::$app->request->getServerName();
-
-        $info=explode(".",$info);
+        $info=explode(".",\Yii::$app->request->getServerName());
 
         if($cookie=\Yii::$app->request->cookies->get($info[0].'9QiDNZ4STXa1aDy')){
             $wid=$cookie->value;
