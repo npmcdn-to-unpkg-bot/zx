@@ -39,10 +39,12 @@ class SignupController extends Controller
         $searchModel = new SignupSearch();
 
         $params=Yii::$app->request->queryParams;
-        $params['SignupSearch']['mid']=\Yii::$app->request->get('mid');
+
         if(!\Yii::$app->request->get('mid')){
             throw new NotFoundHttpException('页面不存在！');
         }
+
+        $params['SignupSearch']['mid']=\Yii::$app->request->get('mid');
 
         $params['SignupSearch']['wid']=\Yii::$app->user->identity->wid;
 
@@ -73,23 +75,32 @@ class SignupController extends Controller
      * */
     public function actionSignupset($mid){
 
-        $model=new \common\models\table\Signupset();
+        $signup=new \common\models\table\Signupset();
 
-        if(!$model->find()->where(['mid'=>$mid])->one()){
-            $model->wid=\Yii::$app->user->identity->wid;
-            $model->mid=$mid;
-            $model->save();
+        $model=$signup->find()->where(['mid'=>$mid])->one();
+
+        if($model===null){
+
+            $signup->wid=\Yii::$app->user->identity->wid;
+
+            $signup->mid=$mid;
+
+            $signup->save();
+
+            $model=$signup->find()->where(['mid'=>$mid])->one();
+
         }
-
 
 
         if(\Yii::$app->request->isPost){
 
+            $model->load(\Yii::$app->request->post());
+
+            $model->save();
+
         }
 
         return $this->render('signupset',['model'=>$model]);
-
-
 
     }
 
@@ -143,7 +154,7 @@ class SignupController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(\Yii::$app->request->referrer);
     }
 
     /**

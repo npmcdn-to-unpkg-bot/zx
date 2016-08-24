@@ -57,11 +57,11 @@ class Signup extends \yii\db\ActiveRecord
             'name' => '姓名',
             'tel' => '电话',
             'mid' => '菜单id',
-            'sex' => '性别，0未知，1男，2女',
+            'sex' => '性别',
             'age' => '年龄',
             'st' => '状态',
             'info' => '额外数据',
-            'created_at' => '创建时间',
+            'created_at' => '提交时间',
             'updated_at' => '更新时间',
         ];
     }

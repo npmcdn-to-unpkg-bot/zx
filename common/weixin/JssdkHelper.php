@@ -45,7 +45,7 @@ class JssdkHelper
 
     private static function getJsApiTicket($wid)
     {
-        $cache=\Yii::$app->wxcache;
+        $cache=\Yii::$app->cache;
 
         if($api_ticket=$cache->get('wx_js_api_ticket_'.$wid)){
 

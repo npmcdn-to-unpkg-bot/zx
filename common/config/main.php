@@ -8,11 +8,11 @@ return [
     ],
     'components' => [
         'cache' => [
+            'class' => 'yii\caching\DbCache',
+        ],
+        'htmlcache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'wxcache' => [
-            'class' => 'yii\caching\FileCache',
-        ]
 
     ],
     'language' =>'zh-CN',//中文提示

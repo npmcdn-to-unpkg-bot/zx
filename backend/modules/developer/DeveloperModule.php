@@ -2,6 +2,8 @@
 
 namespace app\modules\developer;
 
+use yii\filters\VerbFilter;
+
 /**
  * developer module definition class
  */

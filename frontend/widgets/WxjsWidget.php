@@ -44,7 +44,7 @@ class WxjsWidget extends Widget
             $ApiListStr.="\n'".$value."',";
         }
 
-        $signPackage=\common\weixin\JssdkHelper::getSignPackage(\Yii::$app->params['wid']);
+        $signPackage=\common\weixin\JssdkHelper::getSignPackage(\Yii::$app->params['WEBID']);
 
         return $this->render('wxjs',[
             'model'=>$this->model,

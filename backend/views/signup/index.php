@@ -16,28 +16,31 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Signup', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('报名设置', ['signupset','mid'=>\Yii::$app->request->get('mid')], ['class' => 'btn btn-primary']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+//        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'wid',
-            'openid',
             'name',
             'tel',
-            // 'mid',
-            // 'sex',
-            // 'age',
-            // 'st',
-            // 'info:ntext',
-            // 'created_at',
-            // 'updated_at',
+             [
+                 'attribute' => 'sex' ,
+                 'value' => function($model){
+                     $sex=[0=>'未知',1=>'男',2=>'女'];
 
-            ['class' => 'yii\grid\ActionColumn'],
+                     return $sex[$model->sex];
+                 }
+             ],
+             [
+                 'attribute' => 'created_at',
+                 'format' => 'Datetime',
+             ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template'=>'{view}{delete}',
+            ],
         ],
     ]); ?>
 </div>

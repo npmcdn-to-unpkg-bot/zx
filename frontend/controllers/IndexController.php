@@ -19,14 +19,6 @@ class IndexController extends BaseController
     {
 
 
-       echo \Yii::$app->request->getServerName();
-
-
-       Uhelper::pre(\Yii::$app->request->get()) ;
-
-        echo '<br/>';
-
-       echo Url::to(['index/index','id'=>123123],true);die;
 
 
 
@@ -36,20 +28,17 @@ class IndexController extends BaseController
     public function actionView(){
 
 
-        UHelper::pre(\Yii::$app->request->get());
+        $cache=\Yii::$app->cache;
 
-        UHelper::pre(\Yii::$app->params);
 
-        echo Url::to(['index/view','id'=>54321],true);
 
     }
 
-    public function actionEm()
+    public function actionDemo()
     {
-        echo \Yii::$app->request->get('idd');
 
-        echo 123;die;
-
+        return $this->render('demo');
     }
+
 
 }

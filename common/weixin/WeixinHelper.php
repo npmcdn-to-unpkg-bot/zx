@@ -26,7 +26,7 @@ class WeixinHelper
      * */
     public static function accessToken($wid)
     {
-        $access_token=\Yii::$app->wxcache->get('wx_access_token_'.$wid);
+        $access_token=\Yii::$app->cache->get('wx_access_token_'.$wid);
         if($access_token){
             return $access_token;
         }else{
@@ -39,9 +39,9 @@ class WeixinHelper
 
             $return=CurlHelper::callWebServer(self::wx_access_token,$parame);
             \Yii::info($return,'wxlog');
-            \Yii::$app->wxcache->set('wx_access_token_'.$wid,$return['access_token'],7000);
-            \Yii::$app->wxcache->set('wx_appid_'.$wid,$parame['appid']);
-            \Yii::$app->wxcache->set('wx_appsecret_'.$wid,$parame['secret']);
+            \Yii::$app->cache->set('wx_access_token_'.$wid,$return['access_token'],7000);
+            \Yii::$app->cache->set('wx_appid_'.$wid,$parame['appid']);
+            \Yii::$app->cache->set('wx_appsecret_'.$wid,$parame['secret']);
             return $return['access_token'];
         }
     }
@@ -91,7 +91,7 @@ class WeixinHelper
 
         $request  = \Yii::$app->request;
         $response = \Yii::$app->response;
-        $cache    = \Yii::$app->wxcache;
+        $cache    = \Yii::$app->cache;
 
         /*
          *是否使用缓存，在确认需要获取用户最新的信息的时候需要设置为false
@@ -134,6 +134,7 @@ class WeixinHelper
 
 
             if($openid){
+
                 $oauth2_info=\common\models\table\Oauth2::find()->where(['openid'=>$openid])->one();
 
                 /*

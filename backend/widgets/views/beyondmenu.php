@@ -15,7 +15,7 @@ $dependency = [
 ?>
 
 <?php
-if ($this->beginCache(\Yii::$app->user->identity->wid.'beyondadmin_menu',['dependency'=>$dependency])) {
+if ($this->beginCache(\Yii::$app->user->identity->wid.'beyondadmin_menu',['dependency'=>$dependency,'cache'=>'htmlcache'])) {
 ?>
     <ul class="nav sidebar-menu">
         <li <?php if($route=="system/index/index"){?>class="active"<?php }?>>

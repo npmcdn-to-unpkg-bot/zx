@@ -428,18 +428,28 @@ class UHelper
 
         $info=explode(".",\Yii::$app->request->getServerName());
 
-        if($cookie=\Yii::$app->request->cookies->get($info[0].'9QiDNZ4STXa1aDy')){
-            $wid=$cookie->value;
+        $cache=\Yii::$app->cache;
+
+        $cacheValue=$cache->get($info[0].'LQiDNZ4STXa1aDy');
+
+        if($cacheValue){
+
+            $wid=$cacheValue;
+
         }else{
+
             $model=\common\models\table\User::find()->select('wid')->where(['name'=>$info[0]])->asArray()->one();
+
             $wid=$model['wid'];
-            \Yii::$app->response->cookies->add(new \yii\web\Cookie([
-                'name' => $info[0].'9QiDNZ4STXa1aDy',
-                'value' => $wid,
-            ]));
+
+            /*
+             * 一般来说是不会变的，缓存一次就好了
+             * */
+            $cache->set($info[0].'LQiDNZ4STXa1aDy',$wid);
+
         }
 
-        return $wid?$wid:0;
+        return $wid?$wid:1;
     }
 
 }

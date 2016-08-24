@@ -6,10 +6,10 @@
  */
 
 $rules= [
-    '<controller:\w+>/<id:\d+><action:\w+>' => '<controller>/<action>',
-//
-//    'index/<id:\d+>/<action:(index | view)>' => '<controller>/<action>',
 
+    '<module:\w+>/<controller:\w+>/<id:\d+><action:\w+>' => '<module>/<controller>/<action>',
+
+    '<controller:\w+>/<id:\d+><action:\w+>' => '<controller>/<action>',
 
     ['class' => 'yii\web\Route'],
 
