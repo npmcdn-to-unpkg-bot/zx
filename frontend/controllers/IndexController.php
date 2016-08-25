@@ -19,9 +19,6 @@ class IndexController extends BaseController
     {
 
 
-
-
-
         return $this->renderPartial('index');
     }
 
@@ -31,6 +28,7 @@ class IndexController extends BaseController
         $cache=\Yii::$app->cache;
 
 
+        return $this->render('view');
 
     }
 

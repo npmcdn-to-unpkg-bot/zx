@@ -25,6 +25,7 @@ $this->title=$this->title?$this->title:'露露';
     <?php $this->head() ?>
 </head>
 <body>
+<?= frontend\widgets\LoadingWidget::widget()?>
 <?php $this->beginBody() ?>
 
 <?= $content ?>

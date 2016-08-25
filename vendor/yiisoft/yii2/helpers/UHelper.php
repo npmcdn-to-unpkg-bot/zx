@@ -27,6 +27,31 @@ class UHelper
     }
 
     /*
+     * 设置页面提示
+     * */
+    public static function tips($tips)
+    {
+        \Yii::$app->params['showtips']=true;
+        \Yii::$app->params['tips']=$tips;
+    }
+
+    /*
+     * 设置跳转提示flash
+     * */
+    public static function flash($msg)
+    {
+        \Yii::$app->session->setFlash('XQmTEP1cdaF3CT4O',$msg);
+    }
+
+    /*
+     * 获取跳转提示
+     * */
+    public static function getFlash()
+    {
+        return \Yii::$app->session->getFlash('XQmTEP1cdaF3CT4O');
+    }
+
+    /*
      * inpus widget 拿数据
      * */
     public static function w_inputs_post($data=['name','width','height'],$tojson=1)

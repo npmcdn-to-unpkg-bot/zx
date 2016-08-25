@@ -13,6 +13,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'assets/css/normalize.css',
+//        'assets/css/common.css',
     ];
     public $js = [
         'assets/js/jquery.min.js',
@@ -24,5 +25,6 @@ class AppAsset extends AssetBundle
     ];
 
     public $depends = [
+//        'yii\web\YiiAsset',
     ];
 }
