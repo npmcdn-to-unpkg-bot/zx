@@ -1,0 +1,743 @@
+2016-08-01 09:16:23 [::1][-][-][info][wxlog] 
+    in E:\phpStudy\WWW\zx\common\modules\weixin\controllers\DefaultController.php:38
+2016-08-01 09:16:22 [::1][-][-][info][application] $_GET = [
+    'wid' => '1'
+]
+
+$_COOKIE = [
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    'current-skin' => '/admin/source/css/skins/blue.min.css'
+    'PHPSESSID' => 'nag8d1uoiu0mtrq34tgi4194l1'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    '_csrf' => '1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2432'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/weixin?wid=1'
+    'QUERY_STRING' => 'wid=1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/weixin'
+    'REDIRECT_QUERY_STRING' => 'wid=1'
+    'REMOTE_PORT' => '50031'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; current-skin=/admin/source/css/skins/blue.min.css; PHPSESSID=nag8d1uoiu0mtrq34tgi4194l1; _ga=GA1.1.1100389688.1457928056; _csrf=1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470014181.8454
+    'REQUEST_TIME' => 1470014181
+]
+2016-08-02 13:49:06 [::1][1][-][info][wxlog] [
+    'access_token' => 'pDlJ4krLBpPsmvVeIhml-JAiIB2D09hte8H4GXBn3GxwL1M8yH6VdK1qTcfJLwRz4VG7PwLL3-8MLkflXcQCzYGV0o988aoA1YWTzgYFfAgBVMgABALFW',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:37
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:185
+    in E:\phpStudy\WWW\zx\backend\controllers\IndexController.php:39
+2016-08-02 13:49:01 [::1][1][-][info][application] $_COOKIE = [
+    '_backendCSRF' => '9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84\";}'
+    'backend_session' => 'je2hf60ps2264n3i3onnavk7d6'
+    '_backendIdentity' => '1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda:2:{i:0;s:16:\"_backendIdentity\";i:1;s:45:\"[1,\"D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI\",604800]\";}'
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    'current-skin' => '/admin/source/css/skins/blue.min.css'
+    'PHPSESSID' => 'nag8d1uoiu0mtrq34tgi4194l1'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    '_csrf' => '1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        're_email' => -1
+        'AlertMsg' => -1
+    ]
+    're_email' => '1946755280@qq.com'
+    '__id' => 1
+    'AlertMsg' => '<span class=\'glyphicon glyphicon-ok-circle\'></span>您的帐号有效期还有1131天'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2516'
+    'SCRIPT_NAME' => '/admin/index.php'
+    'REQUEST_URI' => '/admin/index/index'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/admin/index/index'
+    'REMOTE_PORT' => '53637'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/admin/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_backendCSRF=9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84%22%3B%7D; backend_session=je2hf60ps2264n3i3onnavk7d6; _backendIdentity=1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22_backendIdentity%22%3Bi%3A1%3Bs%3A45%3A%22%5B1%2C%22D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI%22%2C604800%5D%22%3B%7D; _smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; current-skin=/admin/source/css/skins/blue.min.css; PHPSESSID=nag8d1uoiu0mtrq34tgi4194l1; _ga=GA1.1.1100389688.1457928056; _csrf=1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1470116941.0763
+    'REQUEST_TIME' => 1470116941
+]
+2016-08-02 13:52:09 [::1][1][-][info][wxlog] [
+    'access_token' => 'xPgLphqiwh72X1zVMPafTWAL7HpQTxfnrAnoMZVWEKDtUIxZmqY6FfDz95tifkhdeRF7GYHP-n95XceICbqCceKdRB-h4HYHYo9Xz0r2pxK3h-Uo5kbrxa-291YzoZddZLDiAAAHTL',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:37
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:188
+    in E:\phpStudy\WWW\zx\backend\controllers\IndexController.php:39
+2016-08-02 13:52:07 [::1][1][-][info][application] $_COOKIE = [
+    '_backendCSRF' => '9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84\";}'
+    'backend_session' => 'je2hf60ps2264n3i3onnavk7d6'
+    '_backendIdentity' => '1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda:2:{i:0;s:16:\"_backendIdentity\";i:1;s:45:\"[1,\"D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI\",604800]\";}'
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    'current-skin' => '/admin/source/css/skins/blue.min.css'
+    'PHPSESSID' => 'nag8d1uoiu0mtrq34tgi4194l1'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    '_csrf' => '1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        're_email' => -1
+        'AlertMsg' => -1
+    ]
+    're_email' => '1946755280@qq.com'
+    '__id' => 1
+    'AlertMsg' => '<span class=\'glyphicon glyphicon-ok-circle\'></span>您的帐号有效期还有1131天'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2516'
+    'SCRIPT_NAME' => '/admin/index.php'
+    'REQUEST_URI' => '/admin/index/index'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/admin/index/index'
+    'REMOTE_PORT' => '53726'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/admin/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_backendCSRF=9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84%22%3B%7D; backend_session=je2hf60ps2264n3i3onnavk7d6; _backendIdentity=1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22_backendIdentity%22%3Bi%3A1%3Bs%3A45%3A%22%5B1%2C%22D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI%22%2C604800%5D%22%3B%7D; _smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; current-skin=/admin/source/css/skins/blue.min.css; PHPSESSID=nag8d1uoiu0mtrq34tgi4194l1; _ga=GA1.1.1100389688.1457928056; _csrf=1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1470117127.6295
+    'REQUEST_TIME' => 1470117127
+]
+2016-08-02 13:52:36 [::1][1][-][info][wxlog] [
+    'access_token' => 'hriEQxfhfpXTVaG4j2lOW9jsTVIPoqejJ98ggaIndCzY4SXHY6p6wZW-UQFioSADURgAgH7JkBjz3r4WZRNkTvwkgGTuXdqceC-LNikgh0yEkv29waJom__RUQ1W2SuDUMCeAHANFV',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:37
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:186
+    in E:\phpStudy\WWW\zx\backend\controllers\IndexController.php:39
+2016-08-02 13:52:34 [::1][1][-][info][application] $_COOKIE = [
+    '_backendCSRF' => '9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84\";}'
+    'backend_session' => 'je2hf60ps2264n3i3onnavk7d6'
+    '_backendIdentity' => '1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda:2:{i:0;s:16:\"_backendIdentity\";i:1;s:45:\"[1,\"D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI\",604800]\";}'
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    'current-skin' => '/admin/source/css/skins/blue.min.css'
+    'PHPSESSID' => 'nag8d1uoiu0mtrq34tgi4194l1'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    '_csrf' => '1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        're_email' => -1
+        'AlertMsg' => -1
+    ]
+    're_email' => '1946755280@qq.com'
+    '__id' => 1
+    'AlertMsg' => '<span class=\'glyphicon glyphicon-ok-circle\'></span>您的帐号有效期还有1131天'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2516'
+    'SCRIPT_NAME' => '/admin/index.php'
+    'REQUEST_URI' => '/admin/index/index'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/admin/index/index'
+    'REMOTE_PORT' => '53735'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/admin/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_backendCSRF=9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84%22%3B%7D; backend_session=je2hf60ps2264n3i3onnavk7d6; _backendIdentity=1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22_backendIdentity%22%3Bi%3A1%3Bs%3A45%3A%22%5B1%2C%22D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI%22%2C604800%5D%22%3B%7D; _smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; current-skin=/admin/source/css/skins/blue.min.css; PHPSESSID=nag8d1uoiu0mtrq34tgi4194l1; _ga=GA1.1.1100389688.1457928056; _csrf=1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1470117154.6162
+    'REQUEST_TIME' => 1470117154
+]
+2016-08-02 15:07:18 [::1][1][o3cf8821khiomlvpaagehu3qm3][info][wxlog] [
+    'access_token' => '6MLIQEJGHd0MT0nduXj1nLcga5sHm3-XRRMM86eI7abuLvHt0IYRvimD9-Fd8m_peQsmFElKrdrZzjBHkWUgVpgkvyD05YrJMwof4tguPVyFh3IKZtmfp2pCUGWmVvWKOERfABACSF',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:37
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:49
+    in E:\phpStudy\WWW\zx\backend\controllers\WxController.php:71
+2016-08-02 15:07:15 [::1][1][o3cf8821khiomlvpaagehu3qm3][info][application] $_GET = [
+    'wid' => '1'
+]
+
+$_COOKIE = [
+    '_backendCSRF' => '9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84\";}'
+    'backend_session' => 'o3cf8821khiomlvpaagehu3qm3'
+    '_backendIdentity' => '1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda:2:{i:0;s:16:\"_backendIdentity\";i:1;s:45:\"[1,\"D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI\",604800]\";}'
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    'current-skin' => '/admin/source/css/skins/blue.min.css'
+    'PHPSESSID' => 'nag8d1uoiu0mtrq34tgi4194l1'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    '_csrf' => '1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php56n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2532'
+    'SCRIPT_NAME' => '/admin/index.php'
+    'REQUEST_URI' => '/admin/wx/menucreate?wid=1'
+    'QUERY_STRING' => 'wid=1'
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/admin/wx/menucreate'
+    'REDIRECT_QUERY_STRING' => 'wid=1'
+    'REMOTE_PORT' => '55001'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/admin/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_backendCSRF=9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84%22%3B%7D; backend_session=o3cf8821khiomlvpaagehu3qm3; _backendIdentity=1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22_backendIdentity%22%3Bi%3A1%3Bs%3A45%3A%22%5B1%2C%22D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI%22%2C604800%5D%22%3B%7D; _smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; current-skin=/admin/source/css/skins/blue.min.css; PHPSESSID=nag8d1uoiu0mtrq34tgi4194l1; _ga=GA1.1.1100389688.1457928056; _csrf=1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost:9191/admin/wx/index'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_CSRF_TOKEN' => 'ejZVTEUxUkY.cDseP1l/EgxnEThoHBUnJVwddR1VAxQ.VwEtcWdqcg=='
+    'HTTP_ORIGIN' => 'http://localhost:9191'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1470121635.8797
+    'REQUEST_TIME' => 1470121635
+]
+2016-08-02 16:46:52 [::1][1][-][info][wxlog] [
+    'access_token' => 'hXdjIEQDS9yPQ_EQ54H5xFVLMiD0dq2BA1MjItbdhFIQkujv0AE3JEqVAfd8GGerL0lvRhxwY1eMHFusmDOiylqZ3qYSVPrsyPlJh6lACJV0oGZQkTQlhR6FcA02QzoUABAcAHAUVU',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:41
+    in E:\phpStudy\WWW\zx\common\weixin\JssdkHelper.php:58
+    in E:\phpStudy\WWW\zx\common\weixin\JssdkHelper.php:19
+2016-08-02 16:46:48 [::1][1][-][info][application] $_COOKIE = [
+    '_backendCSRF' => '9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84\";}'
+    'backend_session' => 'dt30pb67pcd40rd41c1ap240d7'
+    '_backendIdentity' => '1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda:2:{i:0;s:16:\"_backendIdentity\";i:1;s:45:\"[1,\"D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI\",604800]\";}'
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    'current-skin' => '/admin/source/css/skins/blue.min.css'
+    'PHPSESSID' => 'nag8d1uoiu0mtrq34tgi4194l1'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    '_csrf' => '1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2448'
+    'SCRIPT_NAME' => '/admin/index.php'
+    'REQUEST_URI' => '/admin/wx/index'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/admin/wx/index'
+    'REMOTE_PORT' => '55569'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/admin/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_backendCSRF=9c54755090fc1075820e5de9b89c00f8887249e208e070d03116e83bfc89cbcda%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22DFnRzh-TvQDt--Ga_jH9XdQRDaTa4V84%22%3B%7D; backend_session=dt30pb67pcd40rd41c1ap240d7; _backendIdentity=1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22_backendIdentity%22%3Bi%3A1%3Bs%3A45%3A%22%5B1%2C%22D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI%22%2C604800%5D%22%3B%7D; _smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; current-skin=/admin/source/css/skins/blue.min.css; PHPSESSID=nag8d1uoiu0mtrq34tgi4194l1; _ga=GA1.1.1100389688.1457928056; _csrf=1c31f3eea43a68c93fe38f120857224bc87c7187ddf55d1c3023904a0785e764a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ELI0-u6oxzqpcCkrt0mDLrGvJzLgS49T%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1470127608.4823
+    'REQUEST_TIME' => 1470127608
+]
+2016-08-03 11:44:51 [::1][-][-][info][wxlog] [
+    'access_token' => 'HUFgepV0WU2qWgFDcYQcsCCJxW945YMtd7uYsG_Zy-kSp6bhgyVQJL_S-mjcDKdnwv89_YV_C6UQMpha0-8x7H_rCS0k_y61Ieu_rdhVmVU2QVseqUL3i0pdFzjVbrIcFEQdAIAPOA',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:41
+    in E:\phpStudy\WWW\zx\common\weixin\JssdkHelper.php:58
+    in E:\phpStudy\WWW\zx\common\weixin\JssdkHelper.php:19
+2016-08-03 11:44:48 [::1][-][-][info][application] $_COOKIE = [
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    'PHPSESSID' => 'nu4akubf3sn47s79pg2d80o5k4'
+    '_csrf' => 'fe0040609c19b89651a2a2e91f7acb9e0e3ebf51301139bc4c973f1b2e69226ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"mgfY5ZoV0-cpUuHA7oHB725bV_TB6iNH\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2496'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/site/test'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/site/test'
+    'REMOTE_PORT' => '51392'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; _ga=GA1.1.1100389688.1457928056; PHPSESSID=nu4akubf3sn47s79pg2d80o5k4; _csrf=fe0040609c19b89651a2a2e91f7acb9e0e3ebf51301139bc4c973f1b2e69226ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22mgfY5ZoV0-cpUuHA7oHB725bV_TB6iNH%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470195888.626
+    'REQUEST_TIME' => 1470195888
+]
+2016-08-03 13:55:00 [::1][-][-][info][wxlog] [
+    'access_token' => 'hXdjIEQDS9yPQ_EQ54H5xDIj96W30-IgllrBDeWHkVm8ss5qqk5pok9KsG1cF0WMHmjw6SAsqrFmMRoGzZyI2I2Nt_w6l91PoPc4mt13uXcCYiB1XEuDdekyHPYi4EBQVBTeAGAFLD',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:41
+    in E:\phpStudy\WWW\zx\common\weixin\JssdkHelper.php:58
+    in E:\phpStudy\WWW\zx\common\weixin\JssdkHelper.php:19
+2016-08-03 13:54:53 [::1][-][-][info][application] $_COOKIE = [
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    'PHPSESSID' => 'nu4akubf3sn47s79pg2d80o5k4'
+    '_csrf' => 'fe0040609c19b89651a2a2e91f7acb9e0e3ebf51301139bc4c973f1b2e69226ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"mgfY5ZoV0-cpUuHA7oHB725bV_TB6iNH\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2544'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/site/test'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/site/test'
+    'REMOTE_PORT' => '52025'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; _ga=GA1.1.1100389688.1457928056; PHPSESSID=nu4akubf3sn47s79pg2d80o5k4; _csrf=fe0040609c19b89651a2a2e91f7acb9e0e3ebf51301139bc4c973f1b2e69226ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22mgfY5ZoV0-cpUuHA7oHB725bV_TB6iNH%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470203692.7881
+    'REQUEST_TIME' => 1470203692
+]
+2016-08-12 10:39:45 [::1][1][-][info][wxlog] [
+    'access_token' => 'xNysRDZ1RJFpISNFxME9mgvds8S4MZdKLDX4aKR-DooKUCEEJqJkUILKOh_UPFkjjgJ-t2i6SqCo3TifUjTOk1I4e00LwSXzfikerXh__fQVttaPShsz5TKs6A8nVPisUJDeADAODX',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:41
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:216
+    in E:\phpStudy\WWW\zx\backend\controllers\IndexController.php:39
+2016-08-12 10:39:43 [::1][1][-][info][application] $_COOKIE = [
+    'backend_session' => 'ffmq7hbd8ift2iu1u4lncth747'
+    '_backendCSRF' => 'cb913ebc6d24e5b1ce3a2629c8a7ad8d1ea14d8fa4ccff1d4bc73873ce82d310a:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"m2_L4whNw6VfnFyxqcUQY_RVmQryPBVi\";}'
+    '_backendIdentity' => '1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda:2:{i:0;s:16:\"_backendIdentity\";i:1;s:45:\"[1,\"D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI\",604800]\";}'
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    'PHPSESSID' => '4hb5vkmb85kg4ch3n9lsc0fl35'
+    '_csrf' => 'acaa57665ce056201f3e03b274dec82789c9a2a9109832736fc51094ab611bdda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hbtM8rMbHWkI4DftNEFTG7XErQNrvCE-\";}'
+    'current-skin' => '/admin/source/css/skins/blue.min.css'
+]
+
+$_SESSION = [
+    '__flash' => [
+        're_email' => -1
+        'AlertMsg' => 1
+    ]
+    're_email' => '1946755280@qq.com'
+    '__id' => 1
+    'AlertMsg' => '<span class=\'glyphicon glyphicon-ok-circle\'></span>您的帐号有效期还有1121天'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2500'
+    'SCRIPT_NAME' => '/admin/index.php'
+    'REQUEST_URI' => '/admin/index/index'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/admin/index/index'
+    'REMOTE_PORT' => '50506'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/admin/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'backend_session=ffmq7hbd8ift2iu1u4lncth747; _backendCSRF=cb913ebc6d24e5b1ce3a2629c8a7ad8d1ea14d8fa4ccff1d4bc73873ce82d310a%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22m2_L4whNw6VfnFyxqcUQY_RVmQryPBVi%22%3B%7D; _backendIdentity=1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22_backendIdentity%22%3Bi%3A1%3Bs%3A45%3A%22%5B1%2C%22D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI%22%2C604800%5D%22%3B%7D; _smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; _ga=GA1.1.1100389688.1457928056; PHPSESSID=4hb5vkmb85kg4ch3n9lsc0fl35; _csrf=acaa57665ce056201f3e03b274dec82789c9a2a9109832736fc51094ab611bdda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hbtM8rMbHWkI4DftNEFTG7XErQNrvCE-%22%3B%7D; current-skin=/admin/source/css/skins/blue.min.css'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://localhost:9191/admin/user/access/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1470969583.1342
+    'REQUEST_TIME' => 1470969583
+]
+2016-08-17 14:59:41 [::1][1][-][info][wxlog] [
+    'access_token' => 'ObPsOZm6MrrmmHFxKQrHMbCm7m0VbNiwTf_kYOzhQuL9VuWbvoO3oAevzE4uD0IuyGvQ7djrYqjtYTnJI_5MgXnDWpveaVESEFbGSPnSibIxCV2lw3UfTU1u0mvC_fgrOAWiAIACOK',
+    'expires_in' => 7200,
+]
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:41
+    in E:\phpStudy\WWW\zx\common\weixin\WeixinHelper.php:216
+    in E:\phpStudy\WWW\zx\backend\controllers\IndexController.php:39
+2016-08-17 14:59:38 [::1][1][-][info][application] $_COOKIE = [
+    '_backendIdentity' => '1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda:2:{i:0;s:16:\"_backendIdentity\";i:1;s:45:\"[1,\"D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI\",604800]\";}'
+    'backend_session' => 'ro7ogjsn1kpntlfuak9k1tve15'
+    '_smt_uid' => '56d938e3.d534f3a'
+    'Hm_lvt_b1bf46392b98c88d43a643a845c77acb' => '1461908858,1462420944'
+    'CNZZDATA1000453229' => '576232393-1464833736-|1464833736'
+    'Hm_lvt_d54e2431820e6da15765124ba6b67d25' => '1464833738'
+    'Hm_lvt_d4b3728eb406c2be15b33b492cc55362' => '1467352515'
+    'uii-setting-sidebar' => 'false'
+    '_ga' => 'GA1.1.1100389688.1457928056'
+    'PHPSESSID' => 'lgebh971rqrleetoopqk0nmj31'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'AlertMsg' => 1
+    ]
+    '__id' => 1
+    'AlertMsg' => '<span class=\'glyphicon glyphicon-ok-circle\'></span>您的帐号有效期还有1116天'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;E:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;E:\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm;.;;.;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'E:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2508'
+    'SCRIPT_NAME' => '/admin/index.php'
+    'REQUEST_URI' => '/admin/index/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/admin/index/'
+    'REMOTE_PORT' => '54577'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/zx/web/admin/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW/zx/web'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '9191'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_backendIdentity=1004a26e3e1a261baf628847a1ce68ea3d6b05632ae628cb25c79a3b297f6cfda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22_backendIdentity%22%3Bi%3A1%3Bs%3A45%3A%22%5B1%2C%22D9KDaSvwmfS8s5m2tT0HBrjYTZr_N8mI%22%2C604800%5D%22%3B%7D; backend_session=ro7ogjsn1kpntlfuak9k1tve15; _smt_uid=56d938e3.d534f3a; Hm_lvt_b1bf46392b98c88d43a643a845c77acb=1461908858,1462420944; CNZZDATA1000453229=576232393-1464833736-%7C1464833736; Hm_lvt_d54e2431820e6da15765124ba6b67d25=1464833738; Hm_lvt_d4b3728eb406c2be15b33b492cc55362=1467352515; uii-setting-sidebar=false; _ga=GA1.1.1100389688.1457928056; PHPSESSID=lgebh971rqrleetoopqk0nmj31'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'localhost:9191'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1471417178.3139
+    'REQUEST_TIME' => 1471417178
+]
