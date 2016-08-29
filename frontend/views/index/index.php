@@ -5,14 +5,8 @@
  */
 
 ?>
-<!doctype html>
-<html ng-app>
-<head>
-    <script src="/vendor/angular/angular.min.js"></script>
-</head>
-<body>
-Your name: <input type="text" ng-model="yourname" placeholder="World">
-<hr>
-Hello {{yourname || 'World'}}!
-</body>
-</html>
+
+
+<?//=\yii\captcha\Captcha::widget(['template'=>'{image}','name'=>'123'])?>
+
+<img src="<?=\yii\helpers\Url::to(['base/generateverifycode'])?>" />

@@ -13,17 +13,17 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         "assets/css/normalize.css",
-        'assets/css/common.css',
+        "assets/css/common.css",
     ];
     public $js = [
-        'assets/js/common.js',
+        "assets/js/common.js",
     ];
 
     public $jsOptions=[
-        'position' => \yii\web\View::POS_HEAD,
+        "position" => \yii\web\View::POS_HEAD,
     ];
 
     public $depends = [
-        'yii\web\YiiAsset',
+        "yii\web\YiiAsset",
     ];
 }

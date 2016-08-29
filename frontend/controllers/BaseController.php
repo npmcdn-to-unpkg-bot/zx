@@ -17,7 +17,27 @@ class BaseController extends Controller
 
         \Yii::$app->params['WEBID']=UHelper::getWebId();
 
+        \Yii::$app->security->generateRandomString();
     }
+
+    /*
+     * 生成二维码
+     * */
+    public function actionGenerateverifycode()
+    {
+        $headers = \Yii::$app->response->headers;
+
+        // 增加一个 Pragma 头，已存在的Pragma 头不会被覆盖。
+        $headers->set('Content-Type', 'image/png');
+
+        \Yii::$app->response->send();
+
+        $v=new \yii\helpers\VerifyHelper();
+
+        return $v->entry();
+
+    }
+
 
 
 }
