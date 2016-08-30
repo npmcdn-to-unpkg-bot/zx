@@ -30,7 +30,7 @@ class SignupModel extends Model
 
         $this->mid=$mid;
 
-        $this->wid=UHelper::getWebId();
+        $this->wid=\Yii::$app->params['WEBID'];
 
         $this->data_model=Signup::find()->where(['mid'=>$mid,'wid'=>$this->wid])->one();
 

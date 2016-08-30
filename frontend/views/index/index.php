@@ -9,4 +9,4 @@
 
 <?//=\yii\captcha\Captcha::widget(['template'=>'{image}','name'=>'123'])?>
 
-<img src="<?=\yii\helpers\Url::to(['base/generateverifycode'])?>" />
+<img src="<?=\yii\helpers\Url::to(['base/genverifycode'])?>" />

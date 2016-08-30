@@ -175,10 +175,27 @@ class VerifyHelper {
         $secode['verify_code'] = $code; // 把校验码保存到session
         $secode['verify_time'] = time();  // 验证码创建时间
         $_SESSION[$key.$id]=$secode;
+
+
         header('Cache-Control: private, max-age=0, no-store, no-cache, must-revalidate');
         header('Cache-Control: post-check=0, pre-check=0', false);
         header('Pragma: no-cache');
         header("content-type: image/png");
+
+        $headers = \Yii::$app->response->headers;
+
+        // 增加一个 Pragma 头，已存在的Pragma 头不会被覆盖。
+
+
+        $headers->set('Content-Type', 'image/png');
+        $headers->set('Content-Type', 'image/png');
+        $headers->set('Content-Type', 'image/png');
+
+        $headers->set('Content-Type', 'image/png');
+
+        \Yii::$app->response->send();
+
+
 
         // 输出图像
         imagepng($this->_image);

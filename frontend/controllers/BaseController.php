@@ -15,26 +15,27 @@ class BaseController extends Controller
     {
         parent::init();
 
-        \Yii::$app->params['WEBID']=UHelper::getWebId();
+        \Yii::$app->params['WEBID']=UHelper::getWebId(2);
 
         \Yii::$app->security->generateRandomString();
     }
 
     /*
-     * 生成二维码
+     * 生成验证码
      * */
-    public function actionGenerateverifycode()
+    public function actionGenverifycode($fontsize=12,$mask=false)
     {
-        $headers = \Yii::$app->response->headers;
+        /*
+         $verfy=new Verify();
+         $code_check=$verfy->check($request['code']);
+         * */
+        $verify=new \yii\helpers\VerifyHelper([
+            'fontSize'  =>  $fontsize,              // 验证码字体大小(px)
+            'useCurve'  =>  $mask,            // 是否画混淆曲线
+            'useNoise'  =>  $mask,            // 是否添加杂点
+        ]);
 
-        // 增加一个 Pragma 头，已存在的Pragma 头不会被覆盖。
-        $headers->set('Content-Type', 'image/png');
-
-        \Yii::$app->response->send();
-
-        $v=new \yii\helpers\VerifyHelper();
-
-        return $v->entry();
+        return $verify->entry();
 
     }
 
