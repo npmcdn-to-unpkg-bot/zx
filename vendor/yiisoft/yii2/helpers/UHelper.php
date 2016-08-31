@@ -448,7 +448,7 @@ class UHelper
      * 通过二级域名的用户名查找wid
      * 获取wid
      * */
-    public static function getWebId()
+    public static function getWebId($defaultWEBID=1)
     {
 
         $info=explode(".",\Yii::$app->request->getServerName());
@@ -474,7 +474,7 @@ class UHelper
 
         }
 
-        return $wid?$wid:1;
+        return $wid?$wid:$defaultWEBID;
     }
 
 }

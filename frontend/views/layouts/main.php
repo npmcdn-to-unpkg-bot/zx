@@ -16,7 +16,7 @@ $this->title=$this->title?$this->title:'露露';
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <meta name="WEBID" content="<?= \Yii::$app->params['WEBID'] ?>">
     <meta name="HOSTINFO" content="<?= \Yii::$app->request->hostInfo ?>" >
     <meta name="SOURCEPATH" content="<?= SOURCEPATH ?>" >

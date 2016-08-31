@@ -7,32 +7,6 @@
 ?>
 
 
+<?//=\yii\captcha\Captcha::widget(['template'=>'{image}','name'=>'123'])?>
 
-
-
-
-
-
-
-<script>
-$(function(){
-
-
-        yii.confirm('nihao',function(){
-
-            alert('点击了确认！');
-        },function(){
-
-            alert('你取消了这个东西！');
-        });
-
-        yii.getQueryParams();
-
-
-})
-
-
-
-
-
-</script>
+<img src="<?=\yii\helpers\Url::to(['base/genverifycode'])?>" />
