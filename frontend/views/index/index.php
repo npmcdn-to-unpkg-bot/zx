@@ -5,14 +5,34 @@
  */
 
 ?>
-<!doctype html>
-<html ng-app>
-<head>
-    <script src="/vendor/angular/angular.min.js"></script>
-</head>
-<body>
-Your name: <input type="text" ng-model="yourname" placeholder="World">
-<hr>
-Hello {{yourname || 'World'}}!
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+<script>
+$(function(){
+
+
+        yii.confirm('nihao',function(){
+
+            alert('点击了确认！');
+        },function(){
+
+            alert('你取消了这个东西！');
+        });
+
+        yii.getQueryParams();
+
+
+})
+
+
+
+
+
+</script>
