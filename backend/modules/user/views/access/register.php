@@ -32,13 +32,18 @@ BackheadAsset::register($this);
     <?php if($AlertMsg=\Yii::$app->session->getFlash('AlertMsg')){
         echo yii\bootstrap\Alert::widget(['body'=>$AlertMsg]);
     }?>
+    <div id="waring-box">
+
+    </div>
+
+
     <div class="registerbox bg-white">
         <div class="registerbox-title">注册</div>
 
         <div class="registerbox-caption ">请输入你的信息</div>
         <form id="registerForm" action="" method="post" >
             <div class="registerbox-textbox">
-                <input type="text" value="<?php if($reusername=\Yii::$app->session->getFlash('re_username')){echo $reusername;}?>" name="username" class="form-control " datatype="s6-12,en6-12" errormsg="用户名至少5个字符,最多16个字符！" sucmsg="成功"  placeholder="用户名" />
+                <input type="text" value="<?php if($reusername=\Yii::$app->session->getFlash('re_username')){echo $reusername;}?>" name="username" class="form-control "   placeholder="用户名(将用作二级域名，不可修改，仅限字母)" />
             </div>
             <div class="registerbox-textbox">
                 <input type="password" name="password" class="form-control" placeholder="密码" />
@@ -64,10 +69,81 @@ BackheadAsset::register($this);
             </div>
         </form>
     </div>
-    <div class="logobox" style="display:none;line-height: 40px;font-size: 18px;color: #FF0000;text-align: left;padding-left: 10px;">
-        <?//=Yii::$app->session->getFlash("info")?>
-    </div>
 </div>
+<script>
+    $(function(){
+
+        $("input[name=username]").on("blur",function(){
+
+            var obj=$(this);
+
+            $.ajax({
+                url: '<?=\yii\helpers\Url::to(['access/username'])?>?name='+obj.val(),
+                type:"get",
+                dataType:"json",
+                beforeSend:function(){
+                },
+                complete:function(){
+                },
+                error:function (XMLHttpRequest, textStatus, errorThrown){
+                    alert("网络错误,请重试...");
+                },
+                success: function(data){
+
+                    if(data.success){
+                        $("#waring-box").html('');
+                    }else{
+                        $("#waring-box").html(getHtml(data.msg));
+                        obj.focus();
+                    }
+                }
+            });
+
+        });
+
+
+
+
+    })
+
+    function checkUser(username){
+
+        $.ajax({
+            url: '<?=\yii\helpers\Url::to(['access/checkusername'])?>?name='+username,
+            type:"get",
+            dataType:"json",
+            beforeSend:function(){
+            },
+            complete:function(){
+            },
+            error:function (XMLHttpRequest, textStatus, errorThrown){
+                alert("网络错误,请重试...");
+            },
+            success: function(data){
+
+                console.log(data);return;
+
+                if(data.success){
+                    $("#waring-box").html('');
+                }else{
+                    $("#waring-box").html(getHtml(data.msg));
+                }
+            }
+        });
+
+    }
+
+    function getHtml(data){
+
+        var html='<div id="w11111" class="alert fade in">\
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>\
+        <span id="waring-msg">'+data+'</span>\
+        </div>';
+
+        return html;
+    }
+
+</script>
 <?php $this->endBody() ?>
 </body>
 </html>

@@ -22,17 +22,19 @@ $this->params['breadcrumbs'][] = 'Update';
 
         <?= $form->field($model, 'email')->textInput(['maxlength' => true,'disabled'=>true]) ?>
 
-        <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'name')->textInput(['maxlength' => true,'disabled'=>true]) ?>
+
+        <?= $form->field($model, 'nickname')->textInput(['maxlength' => true]) ?>
 
         <?php if(\Yii::$app->user->identity->pid<1 ){?>
 
             <?= $form->field($model, 'is_active')->radioList(['1'=>'启用','0'=>'停用'])->label('使用状态') ?>
 
-            <?= $form->field($model,'password')->passwordInput(['name'=>'changepwd','value'=>''])?>
+            <?php //= $form->field($model,'password')->passwordInput(['name'=>'changepwd','value'=>''])?>
 
         <?php }?>
 
-        <?= $form->field($model, 'nickname')->textInput(['maxlength' => true]) ?>
+
 
         <?= $form->field($model, 'portrait')->widget(backend\widgets\FileInputWidget::className(),['width'=>100,'height'=>100]) ?>
 

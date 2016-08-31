@@ -30,6 +30,7 @@ Purchase: http://wrapbootstrap.com
     <meta name="description" content="<?=$this->title?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="WEBID" content="<?=\Yii::$app->user->identity->wid?>" />
     <link id="themeCss" href="" rel="stylesheet"/>
     <title><?=$this->title?></title>
     <?= Html::csrfMetaTags() //必须加，不然gridview不能删除?>

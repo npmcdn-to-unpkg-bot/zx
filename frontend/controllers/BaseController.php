@@ -15,7 +15,7 @@ class BaseController extends Controller
     {
         parent::init();
 
-        \Yii::$app->params['WEBID']=UHelper::getWebId(2);
+        \Yii::$app->params['WEBID']=UHelper::getWebId();
 
         \Yii::$app->security->generateRandomString();
     }

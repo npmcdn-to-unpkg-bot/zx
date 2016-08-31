@@ -7,6 +7,8 @@
  */
 namespace app\modules\user\controllers;
 
+use yii\base\Exception;
+use yii\helpers\Json;
 use yii\helpers\Url;
 use yii\web\Controller;
 //use common\models\table\User;
@@ -81,6 +83,8 @@ class AccessController extends Controller
                 \Yii::$app->session->setFlash("AlertMsg","密码至少6个字符");
             }elseif($model::findOne(['email'=>$RQ->post("email")])){
                 \Yii::$app->session->setFlash("AlertMsg","邮箱已注册！");
+            }elseif($model::findOne(['name'=>$RQ->post("username")])){
+                \Yii::$app->session->setFlash("AlertMsg","用户名已注册！");
             }else{
                 $model->name=$RQ->post("username");
                 $model->email=$RQ->post("email");
@@ -127,10 +131,10 @@ class AccessController extends Controller
     }
 
     /*
-     * 账号邮箱登录
+     * 账号邮箱激活
      * */
-    public function actionActive(){
-
+    public function actionActive()
+    {
 
         $info=UserAccess::find()->where(['email'=>\Yii::$app->request->get('email')])->one();
 
@@ -158,7 +162,8 @@ class AccessController extends Controller
     /*
      * 退出登录
      * */
-    public function actionLogout(){
+    public function actionLogout()
+    {
 
         if(\Yii::$app->user->logout()){
             if(\Yii::$app->request->post('changepwd')){
@@ -170,7 +175,45 @@ class AccessController extends Controller
         }
     }
 
-    protected function afterLogin(){
+
+    /*
+     * ajax 判断用户名是否被使用
+     * */
+    public function actionUsername()
+    {
+
+
+        $return['success']=true;
+
+        try{
+            if(!\Yii::$app->request->isAjax){
+                throw new Exception("非法请求！");
+            }
+
+            if(\common\models\table\User::findOne(['name'=>\Yii::$app->request->get('name')])){
+
+                throw new Exception("用户名已存在！");
+
+            }
+
+        }catch (Exception $e){
+
+            $return['success']=false;
+
+            $return['msg']=$e->getMessage();
+
+        }
+
+        Json::ajaxreturn($return);
+
+    }
+
+
+
+
+
+    protected function afterLogin()
+    {
         $model=UserAccess::findOne(['id'=>\Yii::$app->user->getId()]);
         $model->login_times=$model->login_times+1;
         $model->last_login_time=(string)time();
