@@ -27,10 +27,11 @@ Yii::setAlias('@uiiroot',dirname(dirname(__DIR__)) . '/web');
  * */
 Yii::setAlias('@wxlog',dirname(__DIR__) . '/weixin/log/wx.log');
 /*
- * 扩展目录
+ * 不可访问文件上传目录
  * */
-Yii::setAlias('@extensions',dirname(dirname(__DIR__)) . '/common/extensions');
-
-
-
+Yii::setAlias('@saveuploadreturn','/safeupload');
+/*
+ *不可访问文件上传路径
+ * */
+Yii::setAlias('@saveupload',dirname(__DIR__) . '/safeupload');
 

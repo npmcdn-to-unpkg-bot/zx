@@ -62,7 +62,7 @@ class BaseController extends Controller
 
             $share['title']=$request->post('share_title');
             $share['desc']=$request->post('share_desc');
-            $img=UHelper::uploadimg('share','','images',0);
+            $img=UHelper::uploadImg('share','','images',0);
             $share['img']=$img['path'];
 
             $seo['title']=$request->post('seo_title');

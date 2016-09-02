@@ -80,9 +80,9 @@ class ArticleController extends BaseController
         if ($request->isPost) {
             $model->load($request->post());
 
-            $model->img_list=UHelper::uploadimg('img_list');
+            $model->img_list=UHelper::uploadImg('img_list');
 
-            $model->img_title=UHelper::uploadimg('img_title');
+            $model->img_title=UHelper::uploadImg('img_title');
 
             if($model->save()){
                 UHelper::alert($model->title.'新增成功！可继续添加','success');
@@ -115,9 +115,9 @@ class ArticleController extends BaseController
         if ($request->isPost) {
             $model->load($request->post());
 
-            $model->img_list=UHelper::uploadimg('img_list');
+            $model->img_list=UHelper::uploadImg('img_list');
 
-            $model->img_title=UHelper::uploadimg('img_title');
+            $model->img_title=UHelper::uploadImg('img_title');
 
             if($model->save()){
                 UHelper::alert($model->title.'修改成功！','success');

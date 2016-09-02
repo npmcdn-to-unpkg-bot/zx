@@ -106,9 +106,9 @@ class MenuController extends BaseController
         if($request->isPost){
             $model->load($request->post());
 
-            $model->img_menu=UHelper::uploadimg('img_menu');
+            $model->img_menu=UHelper::uploadImg('img_menu');
 
-            $model->img_smenu=UHelper::uploadimg('img_smenu');
+            $model->img_smenu=UHelper::uploadImg('img_smenu');
 
             if($model->save()){
                 UHelper::alert($model->title.'新增成功！','success');
@@ -143,9 +143,9 @@ class MenuController extends BaseController
 
             $model->load($request->post());
 
-            $model->img_menu=UHelper::uploadimg('img_menu');
+            $model->img_menu=UHelper::uploadImg('img_menu');
 
-            $model->img_smenu=UHelper::uploadimg('img_smenu');
+            $model->img_smenu=UHelper::uploadImg('img_smenu');
 
             if($model->save()){
                 UHelper::alert($model->title.'修改成功！','success');

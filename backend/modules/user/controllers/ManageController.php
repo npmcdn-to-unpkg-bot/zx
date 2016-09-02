@@ -117,7 +117,7 @@ class ManageController extends Controller
         $request=\Yii::$app->request;
         if ($request->isPost) {
             $model->load($request->post());
-            $model->portrait=UHelper::uploadimg('portrait');
+            $model->portrait=UHelper::uploadImg('portrait');
 
 
             if(\Yii::$app->user->identity->pid<1 && $model->wid==\Yii::$app->user->identity->wid){//总账号可以修改密码等

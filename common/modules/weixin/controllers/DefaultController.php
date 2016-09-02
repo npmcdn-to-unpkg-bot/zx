@@ -34,7 +34,9 @@ class DefaultController extends BaseController
             }
         }
 
-
+        /*
+         * 获取微信传输过来的信息
+         * */
         $postData = file_get_contents('php://input');
 
 
@@ -195,26 +197,29 @@ class DefaultController extends BaseController
                 $eventkey=trim($postObj->EventKey);
 
                 if($eventkey=='fasong'){
-                $item=[];
-                for($i=0;$i<8;$i++){
-                    $title='测试发送图文消息'.$i;
-                    $desc ='测试一下发送图文消息行不行啊！不行的话我还要在测试的'.$i;
-                    if($i%2==0){
-                        $picUrl='http://326108993.com/upload/x00001/images/201607/26224415xa8bfb.png';
-                    }else{
-                        $picUrl='http://326108993.com/upload/x00001/images/201607/26224634x71818.jpg';
+                    $item=[];
+                    for($i=0;$i<8;$i++){
+                        $title='测试发送图文消息'.$i;
+                        $desc ='测试一下发送图文消息行不行啊！不行的话我还要在测试的'.$i;
+                        if($i%2==0){
+                            $picUrl='http://326108993.com/upload/x00001/images/201607/26224415xa8bfb.png';
+                        }else{
+                            $picUrl='http://326108993.com/upload/x00001/images/201607/26224634x71818.jpg';
+                        }
+                        $url   ='http://www.baidu.com';
+                        $item[$i]=ResponseHelper::newsItem($title,$desc,$picUrl,$url);
                     }
-                    $url   ='http://www.baidu.com';
-                    $item[$i]=ResponseHelper::newsItem($title,$desc,$picUrl,$url);
-                }
-                $content=ResponseHelper::news($wp_openid,$wp_number,$item);
-                echo $content;
+                    $content=ResponseHelper::news($wp_openid,$wp_number,$item);
+                    echo $content;
 
                 }elseif($eventkey=='ceshi'){
+
                     $content="<a href='http://www.baidu.com'>ceshi</a>\n感谢你".$eventkey;
 
                     echo \common\weixin\ResponseHelper::text($wp_openid,$wp_number,$content);
+
                 }else{
+
                     $content="<a href='http://www.baidu.com'>lingwaidedongxi</a>\n感谢你".$eventkey;
 
                     echo \common\weixin\ResponseHelper::text($wp_openid,$wp_number,$content);

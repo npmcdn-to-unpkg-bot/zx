@@ -121,7 +121,7 @@ class WebController extends BaseController
 
             $model->load($request->post());
 
-            $model->logo= UHelper::uploadimg('logo');
+            $model->logo= UHelper::uploadImg('logo');
 
             if($model->save()){
                 UHelper::alert('保存成功！','success');
@@ -150,9 +150,9 @@ class WebController extends BaseController
 
             $model->load($request->post());
 
-            $apiclient_cert=json_decode(UHelper::uploadfile('wx_apiclient_cert'),1);
+            $apiclient_cert=json_decode(UHelper::uploadSafeFile('wx_apiclient_cert'),1);
 
-            $apiclient_key =json_decode(UHelper::uploadfile('wx_apiclient_key'),1);
+            $apiclient_key =json_decode(UHelper::uploadSafeFile('wx_apiclient_key'),1);
 
             $model->wx_apiclient_cert=$apiclient_cert['path'];
 
