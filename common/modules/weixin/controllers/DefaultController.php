@@ -37,6 +37,7 @@ class DefaultController extends BaseController
         /*
          * 获取微信传输过来的信息
          * */
+
         $postData = file_get_contents('php://input');
 
 
@@ -62,6 +63,11 @@ class DefaultController extends BaseController
              * */
             $MsgType = strtolower($postObj->MsgType);
 
+            /*
+             * 回复输出的字符串，方便加解密
+             * */
+            $rexml="";
+
             switch($MsgType){
                 /*
                  * 发送文本消息
@@ -70,7 +76,7 @@ class DefaultController extends BaseController
 
                     $content="<a href='http://www.baidu.com'>发送文本消息</a>\nkdfjlskjdflskdj";
 
-                    echo ResponseHelper::text($wp_openid,$wp_number,$content);
+                    $REXML=ResponseHelper::text($wp_openid,$wp_number,$content);
 
                     break;
                 /*
@@ -80,7 +86,7 @@ class DefaultController extends BaseController
 
                     //$event=strtolower($postObj->Event);
 
-                    self::handleEvent($postObj,$wid);
+                    $rexml=self::handleEvent($postObj,$wid);
 
                     break;
 
@@ -119,9 +125,10 @@ class DefaultController extends BaseController
                  * */
                 case 'shortvideo':
                     break;
-
-
             }
+
+            die($rexml);
+
         }
     }
 
@@ -143,6 +150,8 @@ class DefaultController extends BaseController
 
         $event=strtolower($postObj->Event);
 
+        $rexml="";
+
         switch($event){
             /*
              * 订阅公众号事件推送
@@ -158,12 +167,12 @@ class DefaultController extends BaseController
 
                     $content="<a href='http://www.baidu.com'>扫码订阅公众号了</a>\n感谢你".$eventkey;
 
-                    echo ResponseHelper::text($wp_openid,$wp_number,$content);exit;
+                    $rexml = ResponseHelper::text($wp_openid,$wp_number,$content);
                 }
 
                 $content="<a href='http://www.baidu.com'>欢迎订阅公众号</a>\n感谢你".$eventkey;
 
-                echo ResponseHelper::text($wp_openid,$wp_number,$content);
+                $rexml = ResponseHelper::text($wp_openid,$wp_number,$content);
 
 
                 break;
@@ -185,7 +194,7 @@ class DefaultController extends BaseController
 
                 $content="<a href='http://www.baidu.com'>扫码了</a>\n感谢你".$eventkey;
 
-                echo ResponseHelper::text($wp_openid,$wp_number,$content);exit;
+                $rexml = ResponseHelper::text($wp_openid,$wp_number,$content);exit;
 
 
                 break;
@@ -209,30 +218,26 @@ class DefaultController extends BaseController
                         $url   ='http://www.baidu.com';
                         $item[$i]=ResponseHelper::newsItem($title,$desc,$picUrl,$url);
                     }
-                    $content=ResponseHelper::news($wp_openid,$wp_number,$item);
-                    echo $content;
+                    $rexml=ResponseHelper::news($wp_openid,$wp_number,$item);
 
                 }elseif($eventkey=='ceshi'){
 
                     $content="<a href='http://www.baidu.com'>ceshi</a>\n感谢你".$eventkey;
 
-                    echo \common\weixin\ResponseHelper::text($wp_openid,$wp_number,$content);
+                    $rexml = ResponseHelper::text($wp_openid,$wp_number,$content);
 
                 }else{
 
                     $content="<a href='http://www.baidu.com'>lingwaidedongxi</a>\n感谢你".$eventkey;
 
-                    echo \common\weixin\ResponseHelper::text($wp_openid,$wp_number,$content);
+                    $rexml = ResponseHelper::text($wp_openid,$wp_number,$content);
                 }
 
-
-
-
-
                 break;
-
-
         }
+
+        return $rexml;
+
     }
 
 }

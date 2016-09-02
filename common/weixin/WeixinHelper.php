@@ -234,6 +234,7 @@ class WeixinHelper
 
     /*
      * 生成永久二维码
+     * $sceneStr 二维码参数字段
      * */
     public static function createLimitQrcode($wid , $sceneStr , $sceneId)
     {
